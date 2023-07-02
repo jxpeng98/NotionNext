@@ -7,6 +7,9 @@ module.exports = {
   theme: {
     fontFamily: fontFamilies,
     extend: {
+      fontWeight: {
+        light: 400
+      },
       colors: {
         day: {
           DEFAULT: BLOG.BACKGROUND_LIGHT || '#ffffff'
