@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/*#draggableBox {*/
+/*    left: 0px;*/
+/*    bottom: 0px;*/
+/*}*/
+
 html {
   --scrollbarBG: #ffffff00;
   --thumbBG: #b8b8b8;
@@ -22,7 +27,14 @@ body::-webkit-scrollbar-thumb {
 ::selection {
   background: rgba(45, 170, 219, 0.3);
 }
-
+.bg-indigo-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0/var(--tw-bg-opacity));
+}
+.bg-indigo-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0/var(--tw-bg-opacity));
+}
 .wrapper {
   min-height: 100vh;
   display: flex;
