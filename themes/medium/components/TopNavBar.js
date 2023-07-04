@@ -1,11 +1,12 @@
 import LogoBar from './LogoBar'
-import { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Collapse from '@/components/Collapse'
 import { MenuBarMobile } from './MenuBarMobile'
 import { useGlobal } from '@/lib/global'
 import CONFIG_MEDIUM from '../config_medium'
 import BLOG from '@/blog.config'
 import { MenuItemDrop } from './MenuItemDrop'
+import DarkModeButton from '@/components/DarkModeButton'
 
 /**
  * 顶部导航栏 + 菜单
@@ -61,12 +62,18 @@ export default function TopNavBar(props) {
                 <div className='mr-1 flex md:hidden justify-end items-center text-sm space-x-4 font-serif dark:text-gray-200'>
                     <div onClick={toggleMenuOpen} className='cursor-pointer'>
                         {isOpen ? <i className='fas fa-times' /> : <i className='fas fa-bars' />}
+                      <div className='px-0 h-full whitespace-nowrap duration-300 text-sm justify-between dark:text-gray-300 cursor-pointer flex flex-nowrap items-center hover:text-green-600'>
+                        <DarkModeButton/>
+                      </div>
                     </div>
                 </div>
 
                 {/* 桌面端顶部菜单 */}
                 <div className='hidden md:flex'>
                     {links && links?.map(link => <MenuItemDrop key={link?.id} link={link}/>)}
+                  <div className='px-0 h-full whitespace-nowrap duration-300 text-sm justify-between dark:text-gray-300 cursor-pointer flex flex-nowrap items-center hover:text-green-600'>
+                  <DarkModeButton/>
+                  </div>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { MenuList } from './MenuList'
+import DarkModeButton from '@/components/DarkModeButton'
 
 /**
  * 菜单导航
@@ -29,7 +30,10 @@ export const NavBar = (props) => {
             <div id="nav-bar-inner" className="h-12 mx-auto max-w-9/10 justify-between items-center text-sm md:text-md md:justify-start">
                 {/* 左侧菜单 */}
                 <div className="h-full w-full float-left text-center md:text-left flex flex-wrap items-stretch md:justify-start md:items-start space-x-4">
-                    {showSearchInput && <input autoFocus id="theme-simple-search" onKeyUp={onKeyUp} className='float-left w-full outline-none h-full px-4' aria-label="Submit search" type="search" name="s" autoComplete="off" placeholder="Type then hit enter to search..." />}
+                  <div className='font-sans menu-link py-2 pl-2 text-gray-200 dark:text-gray-200 no-underline tracking-widest pb-1'>
+                    <DarkModeButton/>
+                  </div>
+                  {showSearchInput && <input autoFocus id="theme-simple-search" onKeyUp={onKeyUp} className='float-left w-full outline-none h-full px-4' aria-label="Submit search" type="search" name="s" autoComplete="off" placeholder="Type then hit enter to search..." />}
                     {!showSearchInput && (<MenuList {...props}/>)}
                 </div>
 

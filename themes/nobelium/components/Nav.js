@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import BLOG from '@/blog.config'
 import { useGlobal } from '@/lib/global'
@@ -7,6 +7,7 @@ import { SvgIcon } from './SvgIcon'
 import { MenuItemDrop } from './MenuItemDrop'
 import Collapse from '@/components/Collapse'
 import { MenuItemCollapse } from './MenuItemCollapse'
+import DarkModeButton from '@/components/DarkModeButton'
 
 const Nav = props => {
   const { navBarTitle, fullWidth, siteInfo } = props
@@ -105,12 +106,18 @@ const NavBar = props => {
         <div className="flex-shrink-0">
             <ul className=" hidden md:flex flex-row">
                 {links?.map(link => <MenuItemDrop key={link?.id} link={link} />)}
+                <div className='my-1.5'>
+                <DarkModeButton/>
+              </div>
             </ul>
             <div className='md:hidden'><i onClick={toggleOpen} className='fas fa-bars cursor-pointer px-5 block md:hidden'></i>
                 <Collapse collapseRef={collapseRef} isOpen={isOpen} type='vertical' className='fixed top-16 right-6'>
                     <div className='dark:border-black bg-white dark:bg-black rounded border p-2 text-sm'>
                         {links?.map(link => <MenuItemCollapse key={link?.id} link={link} onHeightChange={(param) => collapseRef.current?.updateCollapseHeight(param)}/>)}
                     </div>
+                  <div className='my-1.5'>
+                    <DarkModeButton/>
+                  </div>
                 </Collapse>
             </div>
         </div>
