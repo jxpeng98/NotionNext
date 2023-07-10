@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import useDarkMode from 'use-dark-mode'
 
 // global
 import Prism from 'prismjs'
