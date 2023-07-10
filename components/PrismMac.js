@@ -1,6 +1,4 @@
 import { useEffect } from 'react'
-
-// global
 import Prism from 'prismjs'
 // 所有语言的prismjs 使用autoloader引入
 // import 'prismjs/plugins/autoloader/prism-autoloader'
@@ -20,28 +18,12 @@ import { useRouter } from 'next/navigation'
  * @author https://github.com/txs/
  * @returns
  */
-// const isDarkMode = () => {
-//   const htmlElement = document.getElementsByTagName('html')[0]
-//   return htmlElement.classList.contains('dark')
-// }
-//
-// const handleDarkModeToggle = () => {
-//   const isInDarkMode = isDarkMode();
-//   console.log(`HTML is in dark mode: ${isInDarkMode}`);
-//   // Perform any additional actions based on the dark mode state
-// }
-//
-// // Add event listener to dark mode switch button
-// const darkModeSwitchButton = document.getElementById('darkModeSwitchButton')
-// darkModeSwitchButton.addEventListener('click', handleDarkModeToggle)
-
 const PrismMac = () => {
   const router = useRouter()
   useEffect(() => {
     const handleDarkModeChange = () => {
-
       if (JSON.parse(BLOG.CODE_MAC_BAR)) {
-      loadExternalResource('/css/prism-mac-style.css', 'css')
+        loadExternalResource('/css/prism-mac-style.css', 'css')
       }
       let PRISM_THEME
       let PRISM_PREVIOUS
@@ -74,23 +56,24 @@ const PrismMac = () => {
         renderMermaid()
       })
 
-    handleDarkModeChange()
-
-    const handleDarkModeToggle = () => {
-      const currentTheme = document.documentElement.className
       handleDarkModeChange()
-      document.documentElement.className = currentTheme === 'light' ? 'dark' : 'light'
-    }
 
-    const darkModeSwitchButton = document.getElementById('darkModeButton')
-    darkModeSwitchButton.addEventListener('click', handleDarkModeToggle)
+      const handleDarkModeToggle = () => {
+        const currentTheme = document.documentElement.className
+        handleDarkModeChange()
+        document.documentElement.className = currentTheme === 'light' ? 'dark' : 'light'
+      }
 
-    return () => {
-      darkModeSwitchButton.removeEventListener('click', handleDarkModeToggle)
+      const darkModeSwitchButton = document.getElementById('darkModeButton')
+      darkModeSwitchButton.addEventListener('click', handleDarkModeToggle)
+
+      return () => {
+        darkModeSwitchButton.removeEventListener('click', handleDarkModeToggle)
+      }
     }
   }, [router])
 
-  return <></> // Return the necessary JSX content
+    return <></> // Return the necessary JSX content
 }
 
 /**
