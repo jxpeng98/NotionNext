@@ -2016,7 +2016,7 @@ code.language-mermaid {
 }
 
 .code-toolbar{
-  @apply w-full shadow-md;
+  @apply w-full;
 }
 
 .mermaid > svg {

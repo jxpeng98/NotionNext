@@ -14,3 +14,8 @@
 //     });
 //   }
 // });
+
+// const isDarkMode = () => {
+//   const htmlElement = document.getElementsByTagName('html')[0]
+//   return htmlElement.classList.contains('dark')
+// }
