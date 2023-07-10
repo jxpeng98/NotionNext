@@ -102,7 +102,7 @@ const BLOG = {
   PRISM_THEME_LIGHT_PATH:
     'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-solarizedlight.css', // 代码样式主题 更多参考 https://github.com/PrismJS/prism-themes
   PRISM_THEME_DARK_PATH:
-    'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css', // 代码样式主题 更多参考 https://github.com/PrismJS/prism-themes
+    'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css', // 代码样式主题 更多参考 https://github.com/PrismJS/prism-themes
   CODE_MAC_BAR: false, // 代码左上角显示mac的红黄绿图标
   CODE_LINE_NUMBERS: process.env.NEXT_PUBLIC_CODE_LINE_NUMBERS || 'true', // 是否显示行号
 
