@@ -41,8 +41,8 @@ const PrismMac = () => {
   useEffect(() => {
     const handleDarkModeChange = () => {
 
-      if (BLOG.CODE_MAC_BAR) {
-        loadExternalResource('/css/prism-mac-style.css', 'css')
+      if (JSON.parse(BLOG.CODE_MAC_BAR)) {
+      loadExternalResource('/css/prism-mac-style.css', 'css')
       }
       let PRISM_THEME
       let PRISM_PREVIOUS
@@ -74,7 +74,6 @@ const PrismMac = () => {
         renderPrismMac()
         renderMermaid()
       })
-    }
 
     handleDarkModeChange()
 

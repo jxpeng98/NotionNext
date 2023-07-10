@@ -2,7 +2,7 @@ import BLOG from '@/blog.config'
 import Link from 'next/link'
 import TagItemMini from './TagItemMini'
 import React from 'react'
-import CONFIG_FUKA from '../config_fuka'
+import CONFIG_FUKA from '../config'
 
 const BlogCard = ({ index, post, showSummary, siteInfo }) => {
   const showPreview = CONFIG_FUKA.POST_LIST_PREVIEW && post.blockMap
@@ -28,7 +28,7 @@ const BlogCard = ({ index, post, showSummary, siteInfo }) => {
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src={post?.pageCoverThumbnail}
-                                alt={post.title}
+                                alt={post?.title || BLOG.TITLE}
                                 className="object-cover w-full h-full hover:scale-125 transform duration-500"
                             ></img>
                         </Link>
@@ -37,23 +37,20 @@ const BlogCard = ({ index, post, showSummary, siteInfo }) => {
 
                 {/* 文字部分 */}
                 <div className="flex flex-col w-full">
-                    <Link
-                        href={`${BLOG.SUB_PATH}/${post.slug}`}
-                        passHref
-                        className={`break-words cursor-pointer font-bold hover:underline text-xl ${showPreview ? 'justify-center' : 'justify-start'
-                            } leading-tight text-gray-700 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400`}
+                    <Link passHref href={`${BLOG.SUB_PATH}/${post.slug}`}
+                         className={`break-words cursor-pointer font-bold hover:underline text-xl ${showPreview ? 'justify-center' : 'justify-start'} leading-tight text-gray-700 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400`}
                     >
                         {post.title}
                     </Link>
 
                     {(!showPreview || showSummary) && (
-                        <p className="my-1 line-clamp-3 text-gray-700 dark:text-gray-300 text-sm font-light leading-5">
+                        <p className="my-2 tracking-wide line-clamp-3 text-gray-800 dark:text-gray-300 text-md font-light leading-6">
                             {post.summary}
                         </p>
                     )}
 
                     {/* 分类标签 */}
-                    <div className="mt-auto text-gray-400 justify-between flex">
+                    <div className="mt-auto justify-between flex">
                         {post.category && <Link
                             href={`/category/${post.category}`}
                             passHref

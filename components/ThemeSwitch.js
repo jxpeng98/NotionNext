@@ -1,7 +1,7 @@
 import { useGlobal } from '@/lib/global'
 import React from 'react'
 import { Draggable } from './Draggable'
-import { ALL_THEME } from '@/themes/theme'
+import { THEMES } from '@/themes/theme'
 import { useRouter } from 'next/router'
 /**
  *
@@ -25,7 +25,7 @@ const ThemeSwitch = () => {
             <div id="draggableBox" style={{ left: '10px', top: '85vh' }} className="fixed text-white bg-black z-50 rounded-lg shadow-card">
                 <div className="py-2 flex items-center text-sm px-2">
                     <select value={theme} onChange={onSelectChange} name="cars" className='text-white bg-black uppercase cursor-pointer'>
-                        {ALL_THEME.map(t => {
+                        {THEMES?.map(t => {
                           return <option key={t} value={t}>{t}</option>
                         })}
                     </select>

@@ -1,7 +1,7 @@
 // import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Typed from 'typed.js'
-import CONFIG_HEXO from '../config_hexo'
+import CONFIG from '../config'
 import NavButtonGroup from './NavButtonGroup'
 import { useGlobal } from '@/lib/global'
 import BLOG from '@/blog.config'
@@ -9,10 +9,10 @@ import BLOG from '@/blog.config'
 let wrapperTop = 0
 
 /**
- *
- * @returns 头图
+ * 顶部全屏大图
+ * @returns
  */
-const Header = props => {
+const Hero = props => {
   const [typed, changeType] = useState()
   const { siteInfo } = props
   const { locale } = useGlobal()
@@ -63,7 +63,7 @@ const Header = props => {
                 </div>
 
                 {/* 首页导航大按钮 */}
-                {CONFIG_HEXO.HOME_NAV_BUTTONS && <NavButtonGroup {...props} />}
+                {CONFIG.HOME_NAV_BUTTONS && <NavButtonGroup {...props} />}
 
                 {/* 滚动按钮 */}
                 <div onClick={scrollToWrapper} className="z-10 cursor-pointer w-full text-center py-4 text-3xl absolute bottom-10 text-white">
@@ -73,10 +73,10 @@ const Header = props => {
             </div>
 
             <div id='header-cover' style={{ backgroundImage: `url('${siteInfo.pageCover}')` }}
-                className={`header-cover bg-center w-full h-screen bg-cover ${CONFIG_HEXO.HOME_NAV_BACKGROUND_IMG_FIXED ? 'bg-fixed' : ''}`} />
+                className={`header-cover bg-center w-full h-screen bg-cover ${CONFIG.HOME_NAV_BACKGROUND_IMG_FIXED ? 'bg-fixed' : ''}`} />
 
         </header>
   )
 }
 
-export default Header
+export default Hero

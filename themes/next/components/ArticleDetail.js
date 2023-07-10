@@ -10,7 +10,7 @@ import { useRouter } from 'next/router'
 import ArticleCopyright from './ArticleCopyright'
 import WordCount from './WordCount'
 import NotionPage from '@/components/NotionPage'
-import CONFIG_NEXT from '../config_next'
+import CONFIG from '../config'
 import NotionIcon from '@/components/NotionIcon'
 
 /**
@@ -22,10 +22,10 @@ export default function ArticleDetail(props) {
   const { post, recommendPosts, prev, next } = props
   const url = BLOG.LINK + useRouter().asPath
   const { locale } = useGlobal()
-  const showArticleInfo = CONFIG_NEXT.ARTICLE_INFO
+  const showArticleInfo = CONFIG.ARTICLE_INFO
 
   return (
-        <div id="container"
+        <div id="article-wrapper"
             className="shadow md:hover:shadow-2xl overflow-x-auto flex-grow mx-auto w-screen md:w-full ">
             <div itemScope itemType="https://schema.org/Movie"
                 data-aos="fade-down"
@@ -37,7 +37,7 @@ export default function ArticleDetail(props) {
 
                 {showArticleInfo && <header>
                     {/* 头图 */}
-                    {CONFIG_NEXT.POST_HEADER_IMAGE_VISIBLE && post?.type && !post?.type !== 'Page' && post?.pageCover && (
+                    {CONFIG.POST_HEADER_IMAGE_VISIBLE && post?.type && !post?.type !== 'Page' && post?.pageCover && (
                         <div className="w-full relative md:flex-shrink-0 overflow-hidden">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img alt={post.title} src={post?.pageCover} className='object-center w-full' />
@@ -77,7 +77,7 @@ export default function ArticleDetail(props) {
                 </header>}
 
                 {/* Notion内容主体 */}
-                <article id='notion-article' className='px-1 max-w-3xl mx-auto'>
+                <article className='px-1 max-w-3xl mx-auto'>
                     {post && (<NotionPage post={post} />)}
                 </article>
 

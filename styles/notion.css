@@ -768,7 +768,7 @@ code[class*='language-'] {
   overflow: auto;
   font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier,
     monospace;
-  @apply w-full mb-4 dark:bg-black;
+  @apply w-full mb-0 dark:bg-black !important;
 }
 
 .notion-column {
@@ -2016,7 +2016,7 @@ code.language-mermaid {
 }
 
 .code-toolbar{
-  @apply w-full;
+  @apply w-full shadow-md pb-0;
 }
 
 .mermaid > svg {
@@ -2025,4 +2025,39 @@ code.language-mermaid {
 
 .notion-equation-inline .katex-display {
   margin: 0 0 !important;
+}
+
+.notion-external-title {
+  @apply dark:text-white !important;
+}
+
+.notion-external-subtitle {
+  @apply dark:text-gray-400 !important;
+}
+
+.notion-external-block {
+  @apply dark:border-gray-200 !important;
+}
+
+.notion-external-image > svg > g > path{
+  @apply dark:fill-gray-200 !important;
+}
+
+.notion-external-image {
+  @apply w-6 h-6 mx-3 my-2 !important;
+}
+
+/* 表格 #f5f6f8*/
+.notion-simple-table-row {
+}
+
+/* 表格头 */
+.notion-simple-table tr:first-child td{
+  background-color: #f5f6f8 !important;
+  @apply text-center font-bold !important;
+
+}
+
+.notion-simple-table td{
+  border: 1px solid var(#eee) !important
 }

@@ -13,7 +13,7 @@ const Footer = ({ siteInfo }) => {
 
   return (
         <footer
-            className='z-10 bg:white dark:bg-hexo-black-gray justify-center text-center w-full text-sm relative'
+            className='z-20 py-2 bg:white dark:bg-hexo-black-gray justify-center text-center w-full text-sm relative'
         >
             <hr className='py-2' />
             <div className='flex justify-center'>
