@@ -55,31 +55,29 @@ const PrismMac = () => {
         renderPrismMac()
         renderMermaid()
       })
+    }
+    handleDarkModeChange()
 
+    const handleDarkModeToggle = () => {
+      const currentTheme = document.documentElement.className
       handleDarkModeChange()
+      document.documentElement.className = currentTheme === 'light' ? 'dark' : 'light'
+    }
 
-      const handleDarkModeToggle = () => {
-        const currentTheme = document.documentElement.className
-        handleDarkModeChange()
-        document.documentElement.className = currentTheme === 'light' ? 'dark' : 'light'
-      }
+    const darkModeSwitchButton = document.getElementById('darkModeButton')
+    darkModeSwitchButton.addEventListener('click', handleDarkModeToggle)
 
-      const darkModeSwitchButton = document.getElementById('darkModeButton')
-      darkModeSwitchButton.addEventListener('click', handleDarkModeToggle)
-
-      return () => {
-        darkModeSwitchButton.removeEventListener('click', handleDarkModeToggle)
-      }
+    return () => {
+      darkModeSwitchButton.removeEventListener('click', handleDarkModeToggle)
     }
   }, [router])
-
-    return <></> // Return the necessary JSX content
+  return <></>
 }
 
 /**
  * 将mermaid语言 渲染成图片
  */
-const renderMermaid = async () => {
+const renderMermaid = async() => {
   const observer = new MutationObserver(async mutationsList => {
     for (const m of mutationsList) {
       if (m.target.className === 'notion-code language-mermaid') {
