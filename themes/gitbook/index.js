@@ -30,6 +30,7 @@ import TocDrawer from './components/TocDrawer'
 import NotionPage from '@/components/NotionPage'
 import { ArticleLock } from './components/ArticleLock'
 import { Transition } from '@headlessui/react'
+import { Style } from './style'
 
 // 主题全局变量
 const ThemeGlobalGitbook = createContext()
@@ -58,6 +59,7 @@ const LayoutBase = (props) => {
   return (
         <ThemeGlobalGitbook.Provider value={{ tocVisible, changeTocVisible, filteredPostGroups, setFilteredPostGroups, allNavPages, pageNavVisible, changePageNavVisible }}>
             <CommonHead meta={meta} />
+            <Style/>
 
             <div id='theme-gitbook' className='bg-white dark:bg-hexo-black-gray w-full h-full min-h-screen justify-center dark:text-gray-300'>
                 {/* 顶部导航栏 */}
@@ -76,7 +78,7 @@ const LayoutBase = (props) => {
                         </div>
 
                         <div className='w-72 fixed left-0 bottom-0 z-20 bg-white'>
-                            <Footer {...props}/>
+                            <Footer {...props} />
                         </div>
                     </div>
 
@@ -179,7 +181,7 @@ const LayoutIndex = (props) => {
     })
   }, [])
 
-  return <LayoutBase {...props}/>
+  return <LayoutBase {...props} />
 }
 
 /**
@@ -189,7 +191,7 @@ const LayoutIndex = (props) => {
  * @returns
  */
 const LayoutPostList = (props) => {
-  return <LayoutBase {...props}/>
+  return <LayoutBase {...props} />
 }
 
 /**
@@ -213,9 +215,6 @@ const LayoutSlug = (props) => {
                 {/* Notion文章主体 */}
                 {post && (<section id="article-wrapper" className="px-1">
                     <NotionPage post={post} />
-                </section>)}
-
-                <section>
 
                     {/* 分享 */}
                     <ShareBar post={post} />
@@ -232,7 +231,7 @@ const LayoutSlug = (props) => {
                     <AdSlot />
 
                     <Comment frontMatter={post} />
-                </section>
+                </section>)}
 
                 <TocDrawer {...props} />
             </div>}

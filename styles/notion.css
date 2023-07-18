@@ -179,9 +179,6 @@
   color: var(--select-color-2) !important;
 }
 
-.notion-simple-table {
-  @apply whitespace-nowrap overflow-x-auto block
-}
 
 .notion-app {
   position: relative;
@@ -446,6 +443,7 @@ summary > .notion-h {
 
 .notion-h:hover .notion-hash-link {
   opacity: 1;
+  @apply dark:fill-gray-200
 }
 
 .notion-hash-link {
@@ -1939,23 +1937,11 @@ svg + .notion-page-title-text {
 }
 
 .notion-simple-table  {
- width: 100% !important;
+  @apply whitespace-nowrap overflow-x-auto block w-full border-0 !important;
 }
 
 .notion-asset-wrapper-pdf > div {
     display: block !important;
-}
-
-::selection {
-    @apply bg-blue-500 text-gray-50 !important;
-}
-
-.dark img{
-    @apply opacity-80
-}
-
-.dark #live2d {
-    @apply opacity-80
 }
 
 /* https://github.com/kchen0x */
@@ -2053,8 +2039,8 @@ code.language-mermaid {
 
 /* 表格头 */
 .notion-simple-table tr:first-child td{
-  background-color: #f5f6f8 !important;
-  @apply text-center font-bold !important;
+  background-color: #f5f6f8;
+  @apply text-center font-bold dark:bg-gray-800 !important;
 
 }
 

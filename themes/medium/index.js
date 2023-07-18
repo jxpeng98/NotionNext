@@ -34,6 +34,7 @@ import TagItemMini from './components/TagItemMini'
 import ShareBar from '@/components/ShareBar'
 import Link from 'next/link'
 import { Transition } from '@headlessui/react'
+import { Style } from './style'
 
 // 主题全局状态
 const ThemeGlobalMedium = createContext()
@@ -54,7 +55,10 @@ const LayoutBase = props => {
 
   return (
         <ThemeGlobalMedium.Provider value={{ tocVisible, changeTocVisible }}>
+            {/* SEO相关 */}
             <CommonHead meta={meta} />
+            {/* CSS样式 */}
+            <Style/>
 
             <div id='theme-medium' className='bg-white dark:bg-hexo-black-gray w-full h-full min-h-screen justify-center dark:text-gray-300'>
 
@@ -174,7 +178,7 @@ const LayoutSlug = props => {
                         </div>
                     </div>
                     {/* 上一篇下一篇文章 */}
-                    {post.type === 'Post' && <ArticleAround prev={prev} next={next} />}
+                    {post?.type === 'Post' && <ArticleAround prev={prev} next={next} />}
                     {/* 评论区 */}
                     <Comment frontMatter={post} />
                 </section>
