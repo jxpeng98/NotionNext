@@ -55,7 +55,7 @@ const PrismMac = () => {
         }
         renderPrismMac()
         renderMermaid()
-      renderCollapseCode()
+        renderCollapseCode()
       })
     }
     handleDarkModeChange()
