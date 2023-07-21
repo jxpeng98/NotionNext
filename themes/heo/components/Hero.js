@@ -25,7 +25,7 @@ const Hero = props => {
                 <BannerGroup {...props} />
 
                 {/* 右侧置顶文章组 */}
-                <TopGroup {...props} />
+                {/* <TopGroup {...props} /> */}
 
             </div>
         </div>
@@ -41,7 +41,7 @@ function BannerGroup(props) {
         // 左侧英雄区
         <div id='bannerGroup' className='flex flex-col justify-between flex-1 mr-2 max-w-[42rem]'>
             {/* 动图 */}
-            <Banner {...props} />
+            {/* <Banner {...props} /> */}
             {/* 导航分类 */}
             <GroupMenu />
         </div>

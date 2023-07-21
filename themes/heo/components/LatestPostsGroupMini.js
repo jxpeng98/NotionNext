@@ -1,4 +1,5 @@
 import BLOG from '@/blog.config'
+import CONFIG from '@/themes/heo/config'
 import LazyImage from '@/components/LazyImage'
 import { useGlobal } from '@/lib/global'
 // import Image from 'next/image'
@@ -39,10 +40,11 @@ export default function LatestPostsGroupMini ({ latestPosts, siteInfo }) {
                     href={`${BLOG.SUB_PATH}/${post.slug}`}
                     passHref
                     className={'my-3 flex'}>
-
-                    <div className="w-20 h-14 overflow-hidden relative">
+              {!CONFIG.POST_LIST_COVER && !CONFIG.POST_LIST_COVER_DEFAULT
+                ? ('')
+                : (<div className="w-20 h-14 overflow-hidden relative">
                             <LazyImage src={`${headerImage}`} className='object-cover w-full h-full rounded-lg'/>
-                    </div>
+                    </div>)}
                     <div
                         className={
                             (selected ? ' text-indigo-400 ' : 'dark:text-gray-400 ') +

@@ -133,15 +133,22 @@ const NavBar = props => {
             <div className='flex h-full mx-auto justify-between items-center max-w-[86rem] px-8'>
                 {/* 左侧logo */}
                 <div className='flex'>
-                  {activeIndex === 0 && <Logo {...props} />}
-                  {activeIndex === 1 && <></>}
+                  <Logo {...props} />
+                  {/* {activeIndex === 0 && <Logo {...props} />} */}
+                  {/* {activeIndex === 1 && <></>} */}
                 </div>
 
                 {/* 中间菜单 */}
-                <div id='nav-bar-swipe' className={`hidden lg:flex flex-grow flex-col items-center justify-center h-full relative w-full ${activeIndex === 0 ? 'fade-in-down' : 'fade-in-up'}`}>
-                    {activeIndex === 0 && <MenuListTop {...props} />}
-                    {activeIndex === 1 && <h1 className='font-bold text-center text-light-400 dark:text-gray-400'>{BLOG.TITLE} </h1>}
-                </div>
+              <div
+                id='nav-bar-swipe'
+                className={`lg:flex flex-grow flex-col items-center justify-center h-full relative w-full ${
+                  activeIndex === 0 ? 'hidden lg:flex' : 'flex'
+                } ${activeIndex === 0 ? 'fade-in-down' : 'fade-in-up'}`}
+              >
+                {activeIndex === 0 && <MenuListTop {...props} />}
+                {activeIndex === 1 && <></>}
+                {/* {activeIndex === 1 && (<nav className='font-bold text-center text-light-400 dark:text-gray-400'><a href='/'>{BLOG.TITLE}</a></nav>)} */}
+              </div>
 
                 {/* 右侧固定 */}
                 <div className='flex flex-shrink-0 justify-center items-center space-x-1'>
