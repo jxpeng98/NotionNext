@@ -132,7 +132,8 @@ const NavBar = props => {
             <div className='flex h-full mx-auto justify-between items-center max-w-[86rem] px-8'>
                 {/* 左侧logo */}
                 <div className='flex'>
-                    <Logo {...props} />
+                  {activeIndex ===0 && <Logo {...props} />}
+                  {activeIndex === 1 && <></>}
                 </div>
 
                 {/* 中间菜单 */}

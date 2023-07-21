@@ -20,8 +20,12 @@ const CONFIG = {
   HERO_CATEGORY_3: { title: 'PLOG', url: 'https://plog.pengjiaxin.com' },
   // 右侧个人资料卡牌欢迎语，点击可自动切换
   INFOCARD_GREETINGS: [
-    'Welcome'
+    'Welcome',
+    '欢迎',
+    'Bienvenue',
+    'Benvenuto'
   ],
+
   INFO_CARD_URL: 'https://github.com/jxpeng98', // 个人资料底部按钮链接
 
   // 用户技能图标
