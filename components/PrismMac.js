@@ -67,10 +67,14 @@ const PrismMac = () => {
     }
 
     const darkModeSwitchButton = document.getElementById('darkModeButton')
-    darkModeSwitchButton.addEventListener('click', handleDarkModeToggle)
+    if (darkModeSwitchButton) {
+      darkModeSwitchButton.addEventListener('click', handleDarkModeToggle)
+    }
 
     return () => {
-      darkModeSwitchButton.removeEventListener('click', handleDarkModeToggle)
+      if (darkModeSwitchButton) {
+        darkModeSwitchButton.removeEventListener('click', handleDarkModeToggle)
+      }
     }
   }, [router])
   return <></>
