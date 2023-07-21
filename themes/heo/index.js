@@ -85,7 +85,7 @@ const LayoutIndex = (props) => {
         <div id='nav-bar-wrapper' className='h-16'><NavBar {...props} /></div>
         {/* 通知横幅 */}
         <NoticeBar />
-        <Hero {...props} />
+        {/* <Hero {...props} /> */}
     </header>
 
   // 右侧栏 用户信息+标签列表
