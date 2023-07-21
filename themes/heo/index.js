@@ -67,7 +67,6 @@ const LayoutBase = props => {
 
                 </div>
             </main>
-
             {/* 页脚 */}
             <Footer title={siteInfo?.title || BLOG.TITLE} />
         </div>
@@ -233,7 +232,7 @@ const LayoutSlug = props => {
                         data-aos-duration="300"
                         data-aos-once="false"
                         data-aos-anchor-placement="top-bottom"
-                         itemScope itemType="https://schema.org/Movie" className="subpixel-antialiased overflow-y-hidden" >
+                        itemScope itemType="https://schema.org/Movie" className="subpixel-antialiased overflow-y-hidden" >
                         {/* Notion文章主体 */}
                         <section className='px-5 justify-center mx-auto'>
                             {post && <NotionPage post={post} />}

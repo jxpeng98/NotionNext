@@ -15,8 +15,8 @@ const CONFIG = {
   HERO_TITLE_1: 'Random Blog',
 
   // 英雄区显示三个置顶分类
-  HERO_CATEGORY_1: { title: '必看精选', url: '/tag/必看精选' },
-  HERO_CATEGORY_2: { title: '热门文章', url: '/tag/热门文章' },
+  HERO_CATEGORY_1: { title: 'MustRead', url: '/tag/mustread' },
+  HERO_CATEGORY_2: { title: 'Popular', url: '/tag/popular' },
   HERO_CATEGORY_3: { title: 'PLOG', url: 'https://plog.pengjiaxin.com' },
   // 右侧个人资料卡牌欢迎语，点击可自动切换
   INFOCARD_GREETINGS: [
@@ -102,7 +102,7 @@ const CONFIG = {
   MENU_ARCHIVE: true, // 显示归档
   MENU_SEARCH: true, // 显示搜索
 
-  POST_LIST_COVER: true, // 列表显示文章封面
+  POST_LIST_COVER: false, // 列表显示文章封面
   POST_LIST_COVER_HOVER_ENLARGE: false, // 列表鼠标悬停放大
 
   POST_LIST_COVER_DEFAULT: true, // 封面为空时用站点背景做默认封面
