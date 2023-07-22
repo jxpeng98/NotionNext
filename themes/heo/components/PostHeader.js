@@ -78,11 +78,13 @@ export default function PostHeader({ post, siteInfo }) {
                                         href={`/archive#${post?.publishTime?.substr(0, 7)}`}
                                         passHref
                                         className="pl-1 mr-2 cursor-pointer hover:underline">
-                                        <i className="fa-solid fa-calendar-days"></i> {post?.publishTime}
+                                        <i className="fa-solid fa-calendar-days"></i> First Post: {post?.publishTime}
                                     </Link>
                                 </>
                             )}
-
+                          <div className="pl-1 mr-2">
+                            <i className="fa-solid fa-calendar-days"></i> Last Edit: {post?.lastEditedTime}
+                          </div>
                         </div>
 
                         {BLOG.ANALYTICS_BUSUANZI_ENABLE && <div className="busuanzi_container_page_pv font-light mr-2">

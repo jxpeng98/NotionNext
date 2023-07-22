@@ -21,45 +21,53 @@ export default function LatestPostsGroupMini ({ latestPosts, siteInfo }) {
     return <></>
   }
 
+  // Sort the latestPosts array by date
+  latestPosts.sort((a, b) => {
+    const dateA = a.date?.start_date || a.createdTime;
+    const dateB = b.date?.start_date || b.createdTime;
+    return new Date(dateB) - new Date(dateA); // this will sort in descending order
+  })
+
   return <>
-        <div className=" mb-2 px-1 flex flex-nowrap justify-between">
+    <div className=" mb-2 px-1 flex flex-nowrap justify-between">
+      <div>
+        <i className="mr-2 fas fas fa-history" />
+        {locale.COMMON.LATEST_POSTS}
+      </div>
+    </div>
+    {latestPosts.map(post => {
+      const selected = currentPath === `${BLOG.SUB_PATH}/${post.slug}`
+
+      const headerImage = post?.pageCoverThumbnail ? post.pageCoverThumbnail : siteInfo?.pageCover
+
+      return (
+        (<Link
+          key={post.id}
+          title={post.title}
+          href={`${BLOG.SUB_PATH}/${post.slug}`}
+          passHref
+          className={'my-3 flex'}>
+          {!CONFIG.POST_LIST_COVER && !CONFIG.POST_LIST_COVER_DEFAULT
+            ? ('')
+            : (<div className="w-20 h-14 overflow-hidden relative">
+              <LazyImage src={`${headerImage}`} className='object-cover w-full h-full rounded-lg'/>
+            </div>)}
+          <div
+            className={
+              (selected ? ' text-indigo-400 ' : 'dark:text-gray-400 ') +
+              ' text-sm overflow-x-hidden hover:text-indigo-600 px-2 duration-200 w-full rounded ' +
+              ' hover:text-indigo-400 cursor-pointer items-center flex'
+            }
+          >
             <div>
-                <i className="mr-2 fas fas fa-history" />
-                {locale.COMMON.LATEST_POSTS}
+              <div className='line-clamp-2 menu-link'>{post.title}</div>
+              <div className="text-gray-500">{post.date?.start_date || post.createdTime}</div>
             </div>
-        </div>
-        {latestPosts.map(post => {
-          const selected = currentPath === `${BLOG.SUB_PATH}/${post.slug}`
+          </div>
 
-          const headerImage = post?.pageCoverThumbnail ? post.pageCoverThumbnail : siteInfo?.pageCover
-
-          return (
-            (<Link
-                    key={post.id}
-                    title={post.title}
-                    href={`${BLOG.SUB_PATH}/${post.slug}`}
-                    passHref
-                    className={'my-3 flex'}>
-              {!CONFIG.POST_LIST_COVER && !CONFIG.POST_LIST_COVER_DEFAULT
-                ? ('')
-                : (<div className="w-20 h-14 overflow-hidden relative">
-                            <LazyImage src={`${headerImage}`} className='object-cover w-full h-full rounded-lg'/>
-                    </div>)}
-                    <div
-                        className={
-                            (selected ? ' text-indigo-400 ' : 'dark:text-gray-400 ') +
-                            ' text-sm overflow-x-hidden hover:text-indigo-600 px-2 duration-200 w-full rounded ' +
-                            ' hover:text-indigo-400 cursor-pointer items-center flex'
-                        }
-                    >
-                        <div>
-                            <div className='line-clamp-2 menu-link'>{post.title}</div>
-                            <div className="text-gray-500">{post.createdTime}</div>
-                        </div>
-                    </div>
-
-                </Link>)
-          )
-        })}
-    </>
+        </Link>)
+      )
+    })}
+  </>
 }
+
