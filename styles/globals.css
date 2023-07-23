@@ -23,6 +23,10 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--thumbBG);
 }
 
+.dark img {
+    filter: brightness(.8);
+  }
+
 ::selection {
   background: rgba(45, 170, 219, 0.3);
 }

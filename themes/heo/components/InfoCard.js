@@ -45,10 +45,10 @@ export function InfoCard(props) {
             <div className='flex justify-between'>
                 <div className='flex space-x-3  hover:text-black dark:hover:text-white'>
                     {/* 两个社交按钮 */}
-                    <div className='bg-indigo-400 p-2 rounded-full w-10 items-center flex justify-center transition-colors duration-200 dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
+                    <div className='bg-indigo-400 p-2 rounded-full w-10 h-10 items-center flex justify-center transition-colors duration-200 dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
                         <Link href={BLOG.WEBURL}><GlobeAlt className={'w-6 h-6'} /></Link>
                     </div>
-                    <div className='bg-indigo-400 p-2 rounded-full w-10 items-center flex justify-center transition-colors duration-200 dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
+                    <div className='bg-indigo-400 p-2 rounded-full w-10 h-10 items-center flex justify-center transition-colors duration-200 dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
                         <Link href={CONFIG.INFO_CARD_URL}><i className='fab fa-github text-xl' />
                         </Link>
                     </div>

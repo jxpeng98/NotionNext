@@ -1675,8 +1675,8 @@ svg + .notion-page-title-text {
 }
 
 .notion-bookmark {
-  @apply border-2;
-  @apply border-gray-100;
+  @apply border;
+  @apply border-gray-200;
   color: inherit;
 }
 

@@ -5,6 +5,7 @@ import WavesArea from './WavesArea'
 import { HashTag } from '@/components/HeroIcons'
 import WordCount from '@/components/WordCount'
 import LazyImage from '@/components/LazyImage'
+import CONFIG from '@/themes/heo/config'
 
 export default function PostHeader({ post, siteInfo }) {
   if (!post) {

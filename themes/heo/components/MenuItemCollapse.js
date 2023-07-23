@@ -26,10 +26,10 @@ export const MenuItemCollapse = ({ link }) => {
   }
 
   return <>
-        <div className='select-none w-full px-2 py-2 border dark:border-gray-500  rounded-xl text-left dark:bg-hexo-black-gray' onClick={toggleShow} >
+        <div className='select-none w-full px-2 py-2 border dark:border-gray-500  rounded-xl text-left dark:bg-hexo-black-gray hover:bg-blue-600 dark:hover:bg-yellow-600 hover:scale-100 hover:text-white' onClick={toggleShow} >
             {!hasSubMenu && <Link
                 href={link?.to}
-                className="font-light  flex justify-between pl-2 pr-4 dark:text-gray-200 no-underline tracking-widest pb-1">
+                className="font-light  flex justify-between pl-2 pr-4 dark:text-gray-200 no-underline tracking-widest pb-1 pt-1">
                 <span className=' transition-all items-center duration-200'>{link?.icon && <i className={link.icon + ' mr-4'} />}{link?.name}</span>
             </Link>}
             {hasSubMenu && <div
