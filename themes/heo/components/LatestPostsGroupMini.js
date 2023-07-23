@@ -61,7 +61,7 @@ export default function LatestPostsGroupMini ({ latestPosts, siteInfo }) {
           >
             <div>
               <div className='line-clamp-2 menu-link'>{post.title}</div>
-              <div className="text-gray-300">{post.date?.start_date || post.createdTime}</div>
+              <div className="text-gray-600 dark:text-gray-300">{post.date?.start_date || post.createdTime}</div>
             </div>
           </div>
 
