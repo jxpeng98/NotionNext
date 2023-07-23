@@ -23,9 +23,9 @@ export default function LatestPostsGroupMini ({ latestPosts, siteInfo }) {
 
   // Sort the latestPosts array by date
   latestPosts.sort((a, b) => {
-    const dateA = a.date?.start_date || a.createdTime;
-    const dateB = b.date?.start_date || b.createdTime;
-    return new Date(dateB) - new Date(dateA); // this will sort in descending order
+    const dateA = a.date?.start_date || a.createdTime
+    const dateB = b.date?.start_date || b.createdTime
+    return new Date(dateB) - new Date(dateA) // this will sort in descending order
   })
 
   return <>
@@ -54,14 +54,14 @@ export default function LatestPostsGroupMini ({ latestPosts, siteInfo }) {
             </div>)}
           <div
             className={
-              (selected ? ' text-indigo-400 ' : 'dark:text-gray-400 ') +
-              ' text-sm overflow-x-hidden hover:text-indigo-600 px-2 duration-200 w-full rounded ' +
-              ' hover:text-indigo-400 cursor-pointer items-center flex'
+              (selected ? ' text-indigo-400 dark:text-yellow-400 ' : 'text-black dark:text-white ') +
+              ' text-sm overflow-x-hidden hover:text-indigo-600 dark:hover:text-yellow-600 px-2 duration-200 w-full rounded ' +
+              ' hover:text-indigo-400 dark:hover:text-yellow-400 cursor-pointer items-center flex'
             }
           >
             <div>
               <div className='line-clamp-2 menu-link'>{post.title}</div>
-              <div className="text-gray-500">{post.date?.start_date || post.createdTime}</div>
+              <div className="text-gray-300">{post.date?.start_date || post.createdTime}</div>
             </div>
           </div>
 
@@ -70,4 +70,3 @@ export default function LatestPostsGroupMini ({ latestPosts, siteInfo }) {
     })}
   </>
 }
-
