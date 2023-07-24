@@ -1,6 +1,30 @@
+const purgecss = require('@fullhuman/postcss-purgecss')
+
 module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {}
-  }
+  plugins: [
+    'postcss-flexbugs-fixes',
+    ['postcss-preset-env', {
+      autoprefixer: {
+        flexbox: 'no-2009'
+      },
+      stage: 3,
+      features: {
+        'custom-properties': false
+      }
+    }],
+    'tailwindcss',
+    'autoprefixer',
+    ...(process.env.NODE_ENV === 'production'
+      ? [purgecss({
+          content: [
+            './pages/**/*.{js,jsx,ts,tsx}',
+            './components/**/*.{js,jsx,ts,tsx}',
+            './**/*.html'
+          ],
+          defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+          safelist: ['html', 'body']
+        })]
+      : []
+    )
+  ]
 }

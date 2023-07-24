@@ -40,6 +40,8 @@
     "notion-client": "6.15.6",
     "notion-utils": "6.15.6",
     "nprogress": "^0.2.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^9.0.0",
     "preact": "^10.5.15",
     "prism-themes": "1.9.0",
     "qrcode.react": "^1.0.1",
@@ -56,6 +58,7 @@
     "use-ackee": "^3.0.0"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@waline/client": "^2.5.1",
     "autoprefixer": "^10.4.13",
     "eslint": "^7.26.0",
