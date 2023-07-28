@@ -80,7 +80,7 @@ export default function PostHeader({ post, siteInfo }) {
                                         href={`/archive#${formatDateFmt(post?.publishDate, 'yyyy-MM')}`}
                                         passHref
                                         className="pl-1 mr-2 cursor-pointer hover:underline">
-                                        <i className="fa-solid fa-calendar-days"></i> {post?.publishTime}
+                                        <i className="fa-solid fa-calendar-days"></i> First Post: {post?.publishTime}
                                     </Link>
                                 </>
                             )}
