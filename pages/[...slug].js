@@ -9,6 +9,7 @@ import { getPageTableOfContents } from '@/lib/notion/getPageTableOfContents'
 import { getLayoutByTheme } from '@/themes/theme'
 import md5 from 'js-md5'
 import { isBrowser } from '@/lib/utils'
+import { uploadDataToAlgolia } from '@/lib/algolia'
 
 /**
  * 根据notion的slug访问页面
@@ -94,8 +95,8 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params: { slug } }) {
-  let fullSlug = slug.join('/')
+export async function getStaticProps({ params: { prefix } }) {
+  let fullSlug = prefix
   if (JSON.parse(BLOG.PSEUDO_STATIC)) {
     if (!fullSlug.endsWith('.html')) {
       fullSlug += '.html'
@@ -128,6 +129,10 @@ export async function getStaticProps({ params: { slug } }) {
     props.post.blockMap = await getPostBlocks(props.post.id, from)
   }
 
+  if (BLOG.ALGOLIA_APP_ID && BLOG.ALGOLIA_APP_KEY) {
+    uploadDataToAlgolia(props?.post)
+  }
+
   // 推荐关联文章处理
   const allPosts = props.allPages.filter(page => page.type === 'Post' && page.status === 'Published')
   if (allPosts && allPosts.length > 0) {
@@ -155,7 +160,7 @@ export async function getStaticProps({ params: { slug } }) {
  * @param {*} count
  * @returns
  */
-function getRecommendPost(post, allPosts, count = 6) {
+export function getRecommendPost(post, allPosts, count = 6) {
   let recommendPosts = []
   const postIds = []
   const currentTags = post?.tags || []
