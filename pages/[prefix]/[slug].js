@@ -21,7 +21,6 @@ export async function getStaticPaths() {
       fallback: true
     }
   }
-
   const from = 'slug-paths'
   const { allPages } = await getGlobalData({ from })
   return {

@@ -130,19 +130,22 @@ const NavBar = props => {
 
         {/* 顶部导航菜单栏 */}
         <nav id='nav' className={`${fixedNav ? 'fixed' : 'relative bg-none'} ${textWhite ? 'text-white ' : 'text-black dark:text-white'}  ${navBgWhite ? 'bg-white dark:bg-[#18171d]' : 'bg-none'} z-20 h-12 top-0 w-full`}>
-            <div className='flex h-full mx-auto justify-between items-center max-w-[86rem] px-8'>
+            <div className='flex h-full mx-auto justify-between items-center max-w-[86rem] xl:px-8 lg:px-6 pl-4 pr-2'>
                 {/* 左侧logo */}
-                <div className='flex'>
+                <div className='flex justify-center'>
                   <Logo {...props} />
-                  {/* {activeIndex === 0 && <Logo {...props} />} */}
-                  {/* {activeIndex === 1 && <></>} */}
+                  {/*
+                  {activeIndex === 0 && <Logo {...props} />}
+                  {activeIndex === 1 && <i className="fa-solid fa-house"><link href = '/'> </link></i>
+                  }
+                  */}
                 </div>
 
                 {/* 中间菜单 */}
               <div
                 id='nav-bar-swipe'
                 className={`lg:flex flex-grow flex-col items-center justify-center h-full relative w-full ${
-                  activeIndex === 0 ? 'hidden lg:flex' : 'flex'
+                  activeIndex === 0 ? 'hidden flex' : 'hidden flex'
                 } ${activeIndex === 0 ? 'fade-in-down' : 'fade-in-up'}`}
               >
                 {activeIndex === 0 && <MenuListTop {...props} />}

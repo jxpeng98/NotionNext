@@ -111,10 +111,12 @@ export async function getStaticProps({ params: { prefix } }) {
 
   // 处理非列表内文章的内信息
   if (!props?.post) {
-    const pageId = prefix.slice(-1)[0]
-    if (pageId.length >= 32) {
-      const post = await getNotion(pageId)
-      props.post = post
+    if (prefix) {
+      const pageId = prefix.slice(-1)[0]
+      if (pageId.length >= 32) {
+        const post = await getNotion(pageId)
+        props.post = post
+      }
     }
   }
 
