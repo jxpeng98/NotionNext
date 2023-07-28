@@ -21,6 +21,7 @@
     "bundle-report": "ANALYZE=true yarn build"
   },
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@giscus/react": "^2.2.6",
     "@headlessui/react": "^1.7.15",
     "@next/bundle-analyzer": "^12.1.1",
@@ -41,6 +42,7 @@
     "notion-client": "6.15.6",
     "notion-utils": "6.15.6",
     "nprogress": "^0.2.0",
+    "postcss": "^8.4.20",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^9.0.0",
     "preact": "^10.5.15",
