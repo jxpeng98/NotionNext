@@ -55,10 +55,10 @@ export async function getStaticProps() {
   }
 
   // 生成robotTxt
-  generateRobotsTxt()
+  await generateRobotsTxt()
   // 生成Feed订阅
   if (JSON.parse(BLOG.ENABLE_RSS)) {
-    generateRss(props?.latestPosts || [])
+    await generateRss(props?.latestPosts || [])
   }
 
   delete props.allPages
