@@ -21,7 +21,6 @@
     "bundle-report": "ANALYZE=true yarn build"
   },
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@giscus/react": "^2.2.6",
     "@headlessui/react": "^1.7.15",
     "@next/bundle-analyzer": "^12.1.1",

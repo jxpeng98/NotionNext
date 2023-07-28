@@ -9,7 +9,6 @@ import { getPageTableOfContents } from '@/lib/notion/getPageTableOfContents'
 import { getLayoutByTheme } from '@/themes/theme'
 import md5 from 'js-md5'
 import { isBrowser } from '@/lib/utils'
-import { uploadDataToAlgolia } from '@/lib/algolia'
 
 /**
  * 根据notion的slug访问页面
@@ -26,7 +25,7 @@ const Slug = props => {
   /**
    * 验证文章密码
    * @param {*} result
-  */
+   */
   const validPassword = passInput => {
     const encrypt = md5(post.slug + passInput)
     if (passInput && encrypt === post.password) {
@@ -90,13 +89,13 @@ export async function getStaticPaths() {
   const from = 'slug-paths'
   const { allPages } = await getGlobalData({ from })
   return {
-    paths: allPages?.filter(row => row.slug.indexOf('/') < 0).map(row => ({ params: { prefix: row.slug } })),
+    paths: allPages?.map(row => ({ params: { slug: [row.slug] } })),
     fallback: true
   }
 }
 
-export async function getStaticProps({ params: { prefix } }) {
-  let fullSlug = prefix
+export async function getStaticProps({ params: { slug } }) {
+  let fullSlug = slug.join('/')
   if (JSON.parse(BLOG.PSEUDO_STATIC)) {
     if (!fullSlug.endsWith('.html')) {
       fullSlug += '.html'
@@ -111,12 +110,10 @@ export async function getStaticProps({ params: { prefix } }) {
 
   // 处理非列表内文章的内信息
   if (!props?.post) {
-    if (prefix) {
-      const pageId = prefix.slice(-1)[0]
-      if (pageId.length >= 32) {
-        const post = await getNotion(pageId)
-        props.post = post
-      }
+    const pageId = slug.slice(-1)[0]
+    if (pageId.length >= 32) {
+      const post = await getNotion(pageId)
+      props.post = post
     }
   }
 
@@ -129,10 +126,6 @@ export async function getStaticProps({ params: { prefix } }) {
   // 文章内容加载
   if (!props?.posts?.blockMap) {
     props.post.blockMap = await getPostBlocks(props.post.id, from)
-  }
-
-  if (BLOG.ALGOLIA_APP_ID && BLOG.ALGOLIA_APP_KEY) {
-    uploadDataToAlgolia(props?.post)
   }
 
   // 推荐关联文章处理
@@ -162,7 +155,7 @@ export async function getStaticProps({ params: { prefix } }) {
  * @param {*} count
  * @returns
  */
-export function getRecommendPost(post, allPosts, count = 6) {
+function getRecommendPost(post, allPosts, count = 6) {
   let recommendPosts = []
   const postIds = []
   const currentTags = post?.tags || []

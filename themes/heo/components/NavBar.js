@@ -130,7 +130,7 @@ const NavBar = props => {
 
         {/* 顶部导航菜单栏 */}
         <nav id='nav' className={`${fixedNav ? 'fixed' : 'relative bg-none'} ${textWhite ? 'text-white ' : 'text-black dark:text-white'}  ${navBgWhite ? 'bg-white dark:bg-[#18171d]' : 'bg-none'} z-20 h-12 top-0 w-full`}>
-            <div className='flex h-full mx-auto justify-between items-center max-w-[86rem] xl:px-8 lg:px-6 pl-4 pr-2'>
+            <div className='flex h-full mx-auto justify-between items-center max-w-[86rem] xl:px-8 lg:px-6 pl-4 pr-5'>
                 {/* 左侧logo */}
                 <div className='flex justify-center'>
                   <Logo {...props} />
