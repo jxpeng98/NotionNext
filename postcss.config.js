@@ -23,6 +23,8 @@ module.exports = {
               './components/**/*.{js,jsx,ts,tsx}',
               './lib/**/*.{js,jsx,ts,tsx}',
               './themes/**/*.{js,jsx,ts,tsx}',
+              './styles/**/*.{css,scss,sass}',
+              './public/**/*.{html,js,css}',
               '.html'
             ],
             extractors: [
@@ -37,26 +39,7 @@ module.exports = {
             ],
             safelist: ['html', 'body']
           }
-        : false,
-      {
-        content: [
-          './pages/**/*.{js,jsx,ts,tsx}',
-          './components/**/*.{js,jsx,ts,tsx}',
-          './lib/**/*.{js,jsx,ts,tsx}',
-          './themes/**/*.{js,jsx,ts,tsx}'
-        ],
-        extractors: [
-          {
-            extractor: purgeJs,
-            extensions: ['js']
-          },
-          {
-            extractor: purgeHtml,
-            extensions: ['html']
-          }
-        ],
-        safelist: ['html', 'body']
-      }
+        : false
     ]
   ]
 }
