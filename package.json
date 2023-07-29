@@ -41,7 +41,7 @@
     "notion-client": "6.15.6",
     "notion-utils": "6.15.6",
     "nprogress": "^0.2.0",
-    "postcss": "^8.4.20",
+    "postcss": "^8.4.27",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^9.1.0",
     "preact": "^10.5.15",
