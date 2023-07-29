@@ -6,6 +6,7 @@ import { generateRobotsTxt } from '@/lib/robots.txt'
 
 import { useRouter } from 'next/router'
 import { getLayoutByTheme } from '@/themes/theme'
+
 /**
  * 首页布局
  * @param {*} props
@@ -55,7 +56,7 @@ export async function getStaticProps() {
   }
 
   // 生成robotTxt
-  await generateRobotsTxt()
+  generateRobotsTxt()
   // 生成Feed订阅
   if (JSON.parse(BLOG.ENABLE_RSS)) {
     generateRss(props?.latestPosts || [])
