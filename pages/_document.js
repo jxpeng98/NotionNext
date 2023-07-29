@@ -21,7 +21,7 @@ class MyDocument extends Document {
                       <link rel="stylesheet" href={BLOG.FONT_AWESOME} crossOrigin="anonymous" referrerPolicy="no-referrer" />
                   </>}
 
-                  {BLOG.FONT_URL?.map((fontUrl, index) => {
+                  {BLOG.FONT_URL && BLOG.FONT_URL.map((fontUrl, index) => {
                     if (fontUrl.endsWith('.css')) {
                       return <link key={index} rel="stylesheet" href={fontUrl} />
                     } else {

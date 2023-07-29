@@ -1,5 +1,5 @@
 const purgeJs = require('purgecss-from-js')
-const purgeHtml = require('purgecss-from-html')
+const purgeHTML = require('purgecss-from-html')
 
 module.exports = {
   plugins: [
@@ -23,17 +23,21 @@ module.exports = {
               './components/**/*.{js,jsx,ts,tsx}',
               './lib/**/*.{js,jsx,ts,tsx}',
               './themes/**/*.{js,jsx,ts,tsx}',
-              './styles/**/*.{css,scss,sass}',
-              './public/**/*.{html,js,css}',
+              './public/**/*.{js,jsx,ts,tsx}',
               '.html'
             ],
+            css: [
+              './public/**/*.{css,scss,sass}',
+              './styles/**/*.{css,scss,sass}'
+            ],
+            defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
             extractors: [
               {
                 extractor: purgeJs,
                 extensions: ['js']
               },
               {
-                extractor: purgeHtml,
+                extractor: purgeHTML,
                 extensions: ['html']
               }
             ],
