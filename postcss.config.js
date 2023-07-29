@@ -13,8 +13,8 @@ module.exports = {
     //     'custom-properties': false
     //   }
     // }],
-    'tailwindcss',
-    'autoprefixer'
+    // 'tailwindcss',
+    // 'autoprefixer'
     // ['@fullhuman/postcss-purgecss',
     //   process.env.NODE_ENV === 'production'
     //     ? {
