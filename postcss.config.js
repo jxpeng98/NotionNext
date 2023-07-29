@@ -21,36 +21,12 @@ module.exports = {
             content: [
               './pages/**/*.{js,jsx,ts,tsx}',
               './components/**/*.{js,jsx,ts,tsx}',
-              './lib/**/*.{js,jsx,ts,tsx}',
-              './public/**/*.{js,jsx,ts,tsx}',
-              '.html'
-            ],
-            css: [
-              './public/**/*.{css,scss,sass}',
-              './styles/**/*.{css,scss,sass}'
+              './lib/**/*.{js,jsx,ts,tsx}'
             ],
             defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
             safelist: ['html', 'body']
           }
         : false
     ]
-      [
-        '@fullhuman/postcss-purgecss',
-        {
-          content: [
-            './pages/**/*.{js,jsx,ts,tsx}',
-            './components/**/*.{js,jsx,ts,tsx}',
-            './lib/**/*.{js,jsx,ts,tsx}',
-            './public/**/*.{js,jsx,ts,tsx}',
-            '.html'
-          ],
-          css: [
-            './public/**/*.{css,scss,sass}',
-            './styles/**/*.{css,scss,sass}'
-          ],
-          defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
-          safelist: ['html', 'body']
-        }
-      ]
   ]
 }
