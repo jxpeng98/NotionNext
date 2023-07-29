@@ -1,3 +1,6 @@
+const purgeJs = require('purgecss-from-js')
+const purgeHtml = require('purgecss-from-html')
+
 module.exports = {
   plugins: [
     'postcss-flexbugs-fixes',
@@ -22,7 +25,16 @@ module.exports = {
               './themes/**/*.{js,jsx,ts,tsx}',
               '.html'
             ],
-            defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+            extractors: [
+              {
+                extractor: purgeJs,
+                extensions: ['js']
+              },
+              {
+                extractor: purgeHtml,
+                extensions: ['html']
+              }
+            ],
             safelist: ['html', 'body']
           }
         : false,
@@ -31,10 +43,18 @@ module.exports = {
           './pages/**/*.{js,jsx,ts,tsx}',
           './components/**/*.{js,jsx,ts,tsx}',
           './lib/**/*.{js,jsx,ts,tsx}',
-          './themes/**/*.{js,jsx,ts,tsx}',
-          '.html'
+          './themes/**/*.{js,jsx,ts,tsx}'
         ],
-        defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+        extractors: [
+          {
+            extractor: purgeJs,
+            extensions: ['js']
+          },
+          {
+            extractor: purgeHtml,
+            extensions: ['html']
+          }
+        ],
         safelist: ['html', 'body']
       }
     ]
