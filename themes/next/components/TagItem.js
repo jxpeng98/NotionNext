@@ -21,7 +21,7 @@ const TagItem = ({ tag, selected }) => {
         </div>
       </li>
     </Link>
-  );
+  )
 }
 
 export default TagItem

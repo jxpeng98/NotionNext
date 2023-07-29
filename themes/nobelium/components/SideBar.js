@@ -25,7 +25,7 @@ export const SideBar = (props) => {
                                   legacyBehavior>
                                     <li>  <a href="#" className="text-gray-darkest text-sm">{category.name}({category.count})</a></li>
                                 </Link>
-                          );
+                          )
                         })}
                     </ul>
                 </div>
@@ -42,7 +42,7 @@ export const SideBar = (props) => {
                               <Link key={p.id} href={`/${p.slug}`} passHref legacyBehavior>
                                     <li>  <a href="#" className="text-gray-darkest text-sm">{p.title}</a></li>
                                 </Link>
-                          );
+                          )
                         })}
                     </ul>
                 </div>
@@ -61,5 +61,5 @@ export const SideBar = (props) => {
             </aside>
 
         </div>
-  );
+  )
 }

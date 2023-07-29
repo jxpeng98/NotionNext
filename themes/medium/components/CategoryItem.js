@@ -14,5 +14,5 @@ export default function CategoryItem ({ selected, category, categoryCount }) {
       </div>
 
     </Link>
-  );
+  )
 }

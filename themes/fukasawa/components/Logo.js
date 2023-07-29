@@ -10,7 +10,7 @@ const Logo = props => {
      {siteInfo?.title}
     </Link>
    </section>
-  );
+  )
 }
 
 export default Logo

@@ -18,7 +18,7 @@ const ContactButton = () => {
       </span>
 
     </Link>)
-  );
+  )
 }
 
 export default ContactButton
