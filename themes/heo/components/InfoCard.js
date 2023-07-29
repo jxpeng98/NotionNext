@@ -20,18 +20,29 @@ export function InfoCard(props) {
   const isSlugPage = router.pathname === '/[...slug]'
 
   return (
-        <Card className='bg-[#4f65f0] dark:bg-yellow-600 text-white flex flex-col w-72 overflow-hidden relative'>
+        <Card className='bg-[#4f65f0] bg-indigo-600 dark:bg-[#1e1e1e] text-white flex flex-col w-72 overflow-hidden relative'>
             {/* 信息卡牌第一行 */}
-            <div className='flex justify-between'>
+            {/* <div className='flex justify-between'> */}
                 {/* 问候语 */}
-                <GreetingsWords />
-                <div className={`${isSlugPage ? 'absolute right-0 -mt-8 -mr-5 hover:opacity-0 hover:scale-150 blur' : 'cursor-pointer'} justify-center items-center flex dark:text-gray-100 transform transitaion-all duration-200`}>
-                    <LazyImage src={siteInfo?.icon} className='rounded-full' width={isSlugPage ? 100 : 28} alt={BLOG.AUTHOR} />
-                </div>
-            </div>
+                {/* <GreetingsWords /> */}
+                {/* <div className={`${isSlugPage ? 'absolute right-0 -mt-8 -mr-5 hover:opacity-0 hover:scale-150 blur' : 'cursor-pointer'} justify-center items-center flex dark:text-gray-100 transform transitaion-all duration-200`}> */}
+                {/*    <LazyImage src={siteInfo?.icon} className='rounded-full' width={isSlugPage ? 100 : 28} alt={BLOG.AUTHOR} /> */}
+                {/* </div> */}
+            {/* </div> */}
 
-            <h2 className='text-3xl font-extrabold mt-3'>
+            <h2 className='flex text-3xl font-extrabold mt-3 justify-between items-center'>
                 {BLOG.AUTHOR}
+                <div className={`${isSlugPage ? 'absolute right-0 -mt-8 -mr-5 hover:opacity-0 hover:scale-150 blur' : 'cursor-pointer'} justify-center items-center flex dark:text-gray-100 transform transitaion-all duration-200`}>
+                  <LazyImage
+                    src={siteInfo?.icon}
+                    className='rounded-full'
+                    style={{
+                      width: isSlugPage ? 100 : 65,
+                      height: isSlugPage ? 100 : 75
+                    }}
+                    alt={BLOG.AUTHOR}
+                  />
+              </div>
             </h2>
 
             {/* 公告栏 */}
@@ -42,11 +53,11 @@ export function InfoCard(props) {
             <div className='flex justify-between'>
                 <div className='flex space-x-3  hover:text-black dark:hover:text-white'>
                     {/* 两个社交按钮 */}
-                    <div className='bg-indigo-400 p-2 rounded-full  transition-colors duration-200 dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
-                        <Link href='/about'><GlobeAlt className={'w-6 h-6'} /></Link>
+                    <div className=' p-2 rounded-full w-10 h-10 items-center flex justify-center transition-colors duration-200 dark:bg-[#1e1e1e] dark:hover:bg-black hover:bg-white'>
+                        <Link href={BLOG.WEBURL} alt={BLOG.AUTHOR}><GlobeAlt className={'w-6 h-6'} /></Link>
                     </div>
-                    <div className='bg-indigo-400 p-2 rounded-full w-10 items-center flex justify-center transition-colors duration-200 dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
-                        <Link href={CONFIG.INFO_CARD_URL}><i className='fab fa-github text-xl' />
+                    <div className=' p-2 rounded-full w-10 h-10 items-center flex justify-center transition-colors duration-200 dark:bg-[#1e1e1e] dark:hover:bg-black hover:bg-white'>
+                        <Link href={CONFIG.INFO_CARD_URL} alt="GitHub"><i className='fab fa-github text-xl' />
                         </Link>
                     </div>
                 </div>
@@ -68,7 +79,7 @@ function GreetingsWords() {
     setGreeting(greetings[randomIndex])
   }
 
-  return <div onClick={handleChangeGreeting} className=' select-none cursor-pointer py-1 px-2 bg-indigo-400 hover:bg-indigo-50  hover:text-indigo-950 dark:bg-yellow-500 dark:hover:text-white dark:hover:bg-black text-sm rounded-lg  duration-200 transition-colors'>
+  return <div onClick={handleChangeGreeting} className=' select-none cursor-pointer py-2 px-2 bg-indigo-400 hover:bg-indigo-50  hover:text-indigo-950 dark:bg-yellow-500 dark:hover:text-white dark:hover:bg-black text-sm rounded-lg  duration-200 transition-colors'>
         {greeting}
     </div>
 }
@@ -79,7 +90,7 @@ function GreetingsWords() {
  */
 function MoreButton() {
   return <Link href='/about'>
-        <div className={'group bg-indigo-400 dark:bg-yellow-500 hover:bg-white dark:hover:bg-black hover:text-black dark:hover:text-white flex items-center transition-colors duration-200 py-2 px-3 rounded-full space-x-1'}>
+        <div className={'group dark:bg-[#1e1e1e] hover:bg-white dark:hover:bg-black hover:text-black dark:hover:text-white flex items-center transition-colors duration-200 py-2 px-3 rounded-full space-x-1'}>
             <ArrowRightCircle className={'group-hover:stroke-black dark:group-hover:stroke-white w-6 h-6 transition-all duration-100'} />
             <div className='font-bold'>了解更多</div>
         </div>

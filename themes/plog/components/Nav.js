@@ -28,7 +28,8 @@ const Header = props => {
 
                         </div>
                         <p className="ml-2 font-medium text-gray-800 dark:text-gray-300 header-name">
-                            {title}  {/* ,{' '}<span className="font-normal">{siteInfo?.description}</span> */}
+                            {title}
+                          {/* ,{' '}<span className="font-normal">{siteInfo?.description}</span> */}
                         </p>
                     </>
                 </Link>

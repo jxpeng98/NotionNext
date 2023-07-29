@@ -2,6 +2,7 @@ import React from 'react'
 import BLOG from '@/blog.config'
 import SocialButton from './SocialButton'
 import { AdSlot } from '@/components/GoogleAdsense'
+import LazyImage from '@/components/LazyImage'
 // import DarkModeButton from '@/components/DarkModeButton'
 
 const Footer = ({ title }) => {
@@ -25,7 +26,7 @@ const Footer = ({ title }) => {
             </div>
 
             {/* 社交按钮 */}
-            <div className='w-full h-24'>
+            <div className='w-full h-8'>
                 <SocialButton />
             </div>
 
@@ -35,9 +36,25 @@ const Footer = ({ title }) => {
             {/* 底部页面信息 */}
             <div id='footer-bottom' className='w-full h-20 flex flex-col p-3 lg:flex-row justify-between px-6 items-center bg-[#f1f3f7] dark:bg-[#30343f]'>
 
-                <div id='footer-bottom-left'>
-                   NotionNext {BLOG.VERSION} <i className='fas fa-copyright' /> {`${copyrightDate}`} <i className='mx-1 animate-pulse fas fa-heart' /> <a href={BLOG.LINK} className='underline font-bold  dark:text-gray-300 '>{BLOG.AUTHOR}</a>.
-                </div>
+              <div id='footer-bottom-left' className="flex items-center">
+                <a href='https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral' className='mr-1'>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <LazyImage
+                    src="https://img.jxpeng.dev/2023-07-fdb8e19f89df3d1d0cd86bec5e725bc2.webp"
+                    alt="upyun"
+                    style={{
+                      width: 60,
+                      marginLeft: 1, // adjust spacing as necessary
+                      marginRight: 5 // adjust spacing as necessary
+                    }}
+                  />
+                </a>
+                <a href='https://github.com/tangly1024/NotionNext' className='underline font-bold dark:text-gray-300 mr-1'>NotionNext</a>
+                {/* {` ${BLOG.VERSION} `} */}
+                <i className='fas fa-copyright mx-1' /> {`${copyrightDate}`}
+                {/* <i className='mx-1 animate-pulse fas fa-heart' /> */}
+                <a href={BLOG.WEBURL} className='underline font-bold dark:text-gray-300 ml-1'>{BLOG.AUTHOR}</a>
+              </div>
 
             <div id='footer-bottom-right'>
                 {BLOG.BEI_AN && <><i className='fas fa-shield-alt' /> <a href='https://beian.miit.gov.cn/' className='mr-2'>{BLOG.BEI_AN}</a></>}

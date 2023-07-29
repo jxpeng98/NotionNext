@@ -79,13 +79,13 @@ export default function PostHeader({ post, siteInfo }) {
                                         href={`/archive#${formatDateFmt(post?.publishDate, 'yyyy-MM')}`}
                                         passHref
                                         className="pl-1 mr-2 cursor-pointer hover:underline">
-                                        <i className="fa-regular fa-calendar"></i> {post?.publishDay}
+                                        <i className="fa-regular fa-calendar"></i> First Post: {post?.publishDay}
                                     </Link>
                                 </>
                             )}
 
                             <div className="pl-1 mr-2">
-                              <i className="fa-regular fa-calendar-check"></i> {post.lastEditedDay}
+                              <i className="fa-regular fa-calendar-check"></i> Last Edit: {post.lastEditedDay}
                             </div>
 
                         </div>
