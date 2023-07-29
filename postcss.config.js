@@ -19,12 +19,24 @@ module.exports = {
               './pages/**/*.{js,jsx,ts,tsx}',
               './components/**/*.{js,jsx,ts,tsx}',
               './lib/**/*.{js,jsx,ts,tsx}',
-              './themes/**/*.{js,jsx,ts,tsx}'
+              './themes/**/*.{js,jsx,ts,tsx}',
+              '.html'
             ],
             defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
             safelist: ['html', 'body']
           }
-        : false
+        : false,
+      {
+        content: [
+          './pages/**/*.{js,jsx,ts,tsx}',
+          './components/**/*.{js,jsx,ts,tsx}',
+          './lib/**/*.{js,jsx,ts,tsx}',
+          './themes/**/*.{js,jsx,ts,tsx}',
+          '.html'
+        ],
+        defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+        safelist: ['html', 'body']
+      }
     ]
   ]
 }
