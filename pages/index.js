@@ -58,8 +58,10 @@ export async function getStaticProps() {
   await generateRobotsTxt()
   // 生成Feed订阅
   if (JSON.parse(BLOG.ENABLE_RSS)) {
-    await generateRss(props?.latestPosts || [])
+    generateRss(props?.latestPosts || [])
   }
+
+  // 生成全文索引 - 仅在 yarn build 时执行 && process.env.npm_lifecycle_event === 'build'
 
   delete props.allPages
 

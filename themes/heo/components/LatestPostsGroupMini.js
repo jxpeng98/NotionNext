@@ -1,6 +1,6 @@
 import BLOG from '@/blog.config'
-import CONFIG from '@/themes/heo/config'
-import LazyImage from '@/components/LazyImage'
+// import CONFIG from '@/themes/heo/config'
+// import LazyImage from '@/components/LazyImage'
 import { useGlobal } from '@/lib/global'
 // import Image from 'next/image'
 import Link from 'next/link'
@@ -12,7 +12,7 @@ import { useRouter } from 'next/router'
  * @param sliceCount 截取展示的数量 默认6
  * @constructor
  */
-export default function LatestPostsGroupMini ({ latestPosts, siteInfo }) {
+export default function LatestPostsGroupMini({ latestPosts, siteInfo }) {
   // 获取当前路径
   const currentPath = useRouter().asPath
   const { locale } = useGlobal()
@@ -38,35 +38,35 @@ export default function LatestPostsGroupMini ({ latestPosts, siteInfo }) {
     {latestPosts.map(post => {
       const selected = currentPath === `${BLOG.SUB_PATH}/${post.slug}`
 
-      const headerImage = post?.pageCoverThumbnail ? post.pageCoverThumbnail : siteInfo?.pageCover
+      // const headerImage = post?.pageCoverThumbnail ? post.pageCoverThumbnail : siteInfo?.pageCover
 
       return (
         (<Link
-          key={post.id}
-          title={post.title}
-          href={`${BLOG.SUB_PATH}/${post.slug}`}
-          passHref
-          className={'my-3 flex'}>
-          {!CONFIG.POST_LIST_COVER && !CONFIG.POST_LIST_COVER_DEFAULT
-            ? ('')
-            : (<div className="w-20 h-14 overflow-hidden relative">
-              <LazyImage src={`${headerImage}`} className='object-cover w-full h-full rounded-lg'/>
-            </div>)}
-          <div
-            className={
-              (selected ? ' text-indigo-400 dark:text-yellow-400 ' : 'text-black dark:text-white ') +
-              ' text-sm overflow-x-hidden hover:text-indigo-600 dark:hover:text-yellow-600 px-2 duration-200 w-full rounded ' +
-              ' hover:text-indigo-400 dark:hover:text-yellow-400 cursor-pointer items-center flex'
-            }
-          >
-            <div>
-              <div className='line-clamp-2 menu-link'>{post.title}</div>
-              <div className="text-gray-600 dark:text-gray-300">{post.date?.start_date || post.createdTime}</div>
-            </div>
-          </div>
+            key={post.id}
+            title={post.title}
+            href={`${BLOG.SUB_PATH}/${post.slug}`}
+            passHref
+            className={'my-3 flex'}>
 
-        </Link>)
+            {/*
+              <div className="w-20 h-14 overflow-hidden relative">
+                <LazyImage src={`${headerImage}`} className='object-cover w-full h-full rounded-lg'/>
+              </div>
+              */}
+            <div
+              className={
+                (selected ? ' text-indigo-400 ' : 'dark:text-gray-400 ') +
+                ' text-sm overflow-x-hidden hover:text-indigo-600 px-2 duration-200 w-full rounded ' +
+                ' hover:text-indigo-400 cursor-pointer items-center flex'
+              }
+            >
+                <div>
+                  <div className='line-clamp-2 menu-link'>{post.title}</div>
+                  <div className="text-gray-500">{post.lastEditedDay}</div>
+                </div>
+            </div>
+          </Link>)
       )
     })}
-  </>
+      </>
 }

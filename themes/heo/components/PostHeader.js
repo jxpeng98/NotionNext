@@ -5,7 +5,7 @@ import WavesArea from './WavesArea'
 import { HashTag } from '@/components/HeroIcons'
 import WordCount from '@/components/WordCount'
 import LazyImage from '@/components/LazyImage'
-import CONFIG from '@/themes/heo/config'
+// import CONFIG from '@/themes/heo/config'
 import { formatDateFmt } from '@/lib/formatDate'
 
 export default function PostHeader({ post, siteInfo }) {
@@ -80,13 +80,15 @@ export default function PostHeader({ post, siteInfo }) {
                                         href={`/archive#${formatDateFmt(post?.publishDate, 'yyyy-MM')}`}
                                         passHref
                                         className="pl-1 mr-2 cursor-pointer hover:underline">
-                                        <i className="fa-solid fa-calendar-days"></i> First Post: {post?.publishTime}
+                                        <i className="fa-regular fa-calendar"></i> {post?.publishDay}
                                     </Link>
                                 </>
                             )}
-                          <div className="pl-1 mr-2">
-                            <i className="fa-solid fa-calendar-days"></i> Last Edit: {post?.lastEditedTime}
-                          </div>
+
+                            <div className="pl-1 mr-2">
+                              <i className="fa-regular fa-calendar-check"></i> {post.lastEditedDay}
+                            </div>
+
                         </div>
 
                         {JSON.parse(BLOG.ANALYTICS_BUSUANZI_ENABLE) && <div className="busuanzi_container_page_pv font-light mr-2">

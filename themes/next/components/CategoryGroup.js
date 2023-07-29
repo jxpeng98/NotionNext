@@ -19,10 +19,10 @@ const CategoryGroup = ({ currentCategory, categories }) => {
 
             <i className={`${selected ? 'text-white fa-folder-open ' : 'text-gray-400 fa-folder '} mr-2 fas`} />{category.name}({category.count})
           </Link>
-        );
+        )
       })}
     </div>
-  </>;
+  </>
 }
 
 export default CategoryGroup

@@ -8,7 +8,7 @@ const CONFIG = {
     { title: '欢迎访问中文版', url: 'https://zh.pengjiaxin.com' },
     { title: 'Academia Page', url: 'https://jiaxinpeng.com' },
     { title: 'PLOG', url: 'https://plog.pengjiaxin.com' },
-    { title: 'Welcome to English Page', url: 'https://www.pengjiaxin.com'}
+    { title: 'Welcome to English Page', url: 'https://www.pengjiaxin.com' }
   ],
 
   // 英雄区(首页顶部大卡)
@@ -106,9 +106,9 @@ const CONFIG = {
   POST_LIST_COVER_HOVER_ENLARGE: false, // 列表鼠标悬停放大
 
   POST_LIST_COVER_DEFAULT: false, // 封面为空时用站点背景做默认封面
-  POST_LIST_SUMMARY: true, // 文章摘要
+  POST_LIST_SUMMARY: false, // 文章摘要
   POST_LIST_PREVIEW: false, // 读取文章预览
-  POST_LIST_IMG_CROSSOVER: true, // 博客列表图片左右交错
+  POST_LIST_IMG_CROSSOVER: false, // 博客列表图片左右交错
 
   ARTICLE_ADJACENT: true, // 显示上一篇下一篇文章推荐
   ARTICLE_COPYRIGHT: true, // 显示文章版权声明

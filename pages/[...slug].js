@@ -128,6 +128,11 @@ export async function getStaticProps({ params: { slug } }) {
     props.post.blockMap = await getPostBlocks(props.post.id, from)
   }
 
+  // 生成全文索引 && process.env.npm_lifecycle_event === 'build' && JSON.parse(BLOG.ALGOLIA_RECREATE_DATA)
+  if (BLOG.ALGOLIA_APP_ID) {
+    uploadDataToAlgolia(props?.post)
+  }
+
   // 推荐关联文章处理
   const allPosts = props.allPages.filter(page => page.type === 'Post' && page.status === 'Published')
   if (allPosts && allPosts.length > 0) {

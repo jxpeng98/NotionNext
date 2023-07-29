@@ -1,6 +1,6 @@
 import BLOG from '@/blog.config'
 import { Home } from '@/components/HeroIcons'
-import LazyImage from '@/components/LazyImage'
+// import LazyImage from '@/components/LazyImage'
 import Link from 'next/link'
 import React from 'react'
 

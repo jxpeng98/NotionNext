@@ -8,5 +8,5 @@ export default function LogoBar (props) {
             {siteInfo?.title}
           </Link>
     </div>
-  );
+  )
 }
