@@ -131,7 +131,7 @@ export async function getStaticProps({ params: { prefix } }) {
 
   // 生成全文索引 && process.env.npm_lifecycle_event === 'build' && JSON.parse(BLOG.ALGOLIA_RECREATE_DATA)
   if (BLOG.ALGOLIA_APP_ID) {
-    uploadDataToAlgolia(props?.post)
+    await uploadDataToAlgolia(props?.post)
   }
 
   // 推荐关联文章处理

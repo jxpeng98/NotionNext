@@ -9,6 +9,7 @@ import { getPageTableOfContents } from '@/lib/notion/getPageTableOfContents'
 import { getLayoutByTheme } from '@/themes/theme'
 import md5 from 'js-md5'
 import { isBrowser } from '@/lib/utils'
+import { uploadDataToAlgolia } from '@/lib/algolia'
 
 /**
  * 根据notion的slug访问页面

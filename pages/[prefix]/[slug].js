@@ -64,9 +64,10 @@ export async function getStaticProps({ params: { prefix, slug } }) {
   if (!props?.posts?.blockMap) {
     props.post.blockMap = await getPostBlocks(props.post.id, from)
   }
+
   // 生成全文索引 && JSON.parse(BLOG.ALGOLIA_RECREATE_DATA)
   if (BLOG.ALGOLIA_APP_ID) {
-    uploadDataToAlgolia(props?.post)
+    await uploadDataToAlgolia(props?.post)
   }
 
   // 推荐关联文章处理
