@@ -45,5 +45,24 @@ module.exports = {
           }
         : false
     ]
+    // [
+    //   '@fullhuman/postcss-purgecss',
+    //   {
+    //     content: [
+    //       './pages/**/*.{js,jsx,ts,tsx}',
+    //       './components/**/*.{js,jsx,ts,tsx}',
+    //       './lib/**/*.{js,jsx,ts,tsx}',
+    //       './themes/**/*.{js,jsx,ts,tsx}',
+    //       './public/**/*.{js,jsx,ts,tsx}',
+    //       '.html'
+    //     ],
+    //     css: [
+    //       './public/**/*.{css,scss,sass}',
+    //       './styles/**/*.{css,scss,sass}'
+    //     ],
+    //     defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+    //     safelist: ['html', 'body']
+    //   }
+    // ]
   ]
 }
