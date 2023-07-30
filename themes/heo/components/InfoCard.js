@@ -35,11 +35,9 @@ export function InfoCard(props) {
                 <div className={`${isSlugPage ? 'absolute right-0 -mt-8 -mr-5 hover:opacity-0 hover:scale-150 blur' : 'cursor-pointer'} justify-center items-center flex dark:text-gray-100 transform transitaion-all duration-200`}>
                   <LazyImage
                     src={siteInfo?.icon}
-                    className='rounded-full'
-                    style={{
-                      width: isSlugPage ? 100 : 65,
-                      height: isSlugPage ? 100 : 65
-                    }}
+                    className='rounded-full ml-1'
+                    height = {60}
+                    width = {60}
                     alt={BLOG.AUTHOR}
                   />
               </div>
