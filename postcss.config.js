@@ -27,10 +27,16 @@ module.exports = {
             content: [
               './pages/**/*.{js,jsx,ts,tsx}',
               './components/**/*.{js,jsx,ts,tsx}',
-              './lib/**/*.{js,jsx,ts,tsx}'
+              './lib/**/*.{js,jsx,ts,tsx}',
+              './themes/**/*.{js,jsx,ts,tsx}',
+              './public/**/*.{js,jsx,ts,tsx,html}',
+              '/./styles/**/*.{css,scss,sass,less,styl}'
             ],
-            defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
             extractors: [
+              {
+                extractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+                extensions: ['html', 'js'] // file extensions this extractor should be applied to
+              },
               {
                 extractor: purgeJs,
                 extensions: ['js']
@@ -41,9 +47,9 @@ module.exports = {
               }
             ],
             safelist: {
-              standard: ['random', 'yep', 'button', /^nav-/],
-              deep: [],
-              greedy: [],
+              standard: ['body', 'html'],
+              deep: [/white$/, /black$/, /gray$/, /red$/, /yellow$/, /indigo$/],
+              greedy: [/yellow$/, /indigo$/],
               keyframes: [],
               variables: []
             }
