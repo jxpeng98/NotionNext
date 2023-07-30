@@ -3,6 +3,7 @@ import BLOG from '@/blog.config'
 import SocialButton from './SocialButton'
 import { AdSlot } from '@/components/GoogleAdsense'
 import LazyImage from '@/components/LazyImage'
+import Image from 'next/image'
 // import DarkModeButton from '@/components/DarkModeButton'
 
 const Footer = ({ title }) => {
@@ -39,14 +40,12 @@ const Footer = ({ title }) => {
               <div id='footer-bottom-left' className="flex items-center">
                 <a href='https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral' className='mr-1'>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <LazyImage
+                  <Image
                     src="https://img.jxpeng.dev/2023-07-fdb8e19f89df3d1d0cd86bec5e725bc2.webp"
                     alt="upyun"
-                    style={{
-                      width: 60,
-                      marginLeft: 1, // adjust spacing as necessary
-                      marginRight: 5 // adjust spacing as necessary
-                    }}
+                    height={20}
+                    width={60}
+                    className="mr-1" // use Tailwind CSS for margin. Adjust as necessary
                   />
                 </a>
                 <a href='https://github.com/tangly1024/NotionNext' className='underline font-bold dark:text-gray-300 mr-1'>NotionNext</a>
