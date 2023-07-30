@@ -29,8 +29,11 @@ module.exports = {
               './components/**/*.{js,jsx,ts,tsx}',
               './lib/**/*.{js,jsx,ts,tsx}',
               './themes/**/*.{js,jsx,ts,tsx}',
-              './public/**/*.{js,jsx,ts,tsx,html}',
-              '/./styles/**/*.{css,scss,sass,less,styl}'
+              './public/**/*.{js,jsx,ts,tsx,html}'
+            ],
+            css: [
+              './styles/**/*.{css,scss,sass,less,styl}',
+              './public/**/*.{css,scss,sass,less,styl}'
             ],
             extractors: [
               {
@@ -47,11 +50,12 @@ module.exports = {
               }
             ],
             safelist: {
-              standard: ['body', 'html',],
-              deep: [/white$/, /black$/, /gray$/, /red$/, /yellow$/, /indigo$/],
+              standard: ['body', 'html', 'article'],
+              deep: [/white$/, /black$/, /gray$/],
               greedy: [/yellow$/, /indigo$/, /post$/],
-              keyframes: [],
-              variables: []
+              keyframes: true,
+              variables: true,
+              rejected: true
             }
           }
         : false
