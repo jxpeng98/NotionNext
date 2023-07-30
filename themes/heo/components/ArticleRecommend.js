@@ -50,10 +50,10 @@ export default function ArticleRecommend({ recommendPosts, siteInfo }) {
                             <div className="h-full w-full relative group">
                                 <div className="flex items-center justify-center w-full h-full duration-300 ">
                                     <div className="z-10 text-lg px-4 font-bold text-white text-center shadow-text select-none">
-                                       {post.title}
+                                      {post.title}
                                     </div>
                                 </div>
-                                <LazyImage src={headerImage} className='absolute top-0 w-full h-full object-cover object-center group-hover:scale-110 group-hover:brightness-50 transform duration-200'/>
+                                <LazyImage src={headerImage} className='absolute top-0 w-full h-full object-cover object-center group-hover:scale-110 group-hover:brightness-50 transform duration-200' height= 'auto' width='auto' alt=""/>
                             </div>
 
                         </Link>)

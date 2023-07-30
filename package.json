@@ -41,8 +41,12 @@
     "notion-client": "6.15.6",
     "notion-utils": "6.15.6",
     "nprogress": "^0.2.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^9.1.0",
     "preact": "^10.5.15",
     "prism-themes": "1.9.0",
+    "purgecss-from-html": "^6.0.0-alpha.0",
+    "purgecss-from-js": "^1.0.0",
     "qrcode.react": "^1.0.1",
     "react": "^18.2.0",
     "react-cookies": "^0.1.1",
@@ -57,8 +61,10 @@
     "use-ackee": "^3.0.0"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@waline/client": "^2.5.1",
     "autoprefixer": "^10.4.13",
+    "cssnano": "^6.0.1",
     "eslint": "^7.26.0",
     "eslint-config-next": "^13.1.1",
     "eslint-config-standard": "^16.0.2",
