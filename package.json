@@ -21,7 +21,6 @@
     "bundle-report": "ANALYZE=true yarn build"
   },
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@giscus/react": "^2.2.6",
     "@headlessui/react": "^1.7.15",
     "@next/bundle-analyzer": "^12.1.1",
@@ -62,8 +61,10 @@
     "use-ackee": "^3.0.0"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@waline/client": "^2.5.1",
     "autoprefixer": "^10.4.13",
+    "cssnano": "^6.0.1",
     "eslint": "^7.26.0",
     "eslint-config-next": "^13.1.1",
     "eslint-config-standard": "^16.0.2",

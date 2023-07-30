@@ -21,6 +21,14 @@ module.exports = {
     }],
     'tailwindcss',
     'autoprefixer',
+    ['cssnano',
+      {
+        preset: 'default',
+        discardComments: {
+          removeAll: true
+        }
+      }
+    ],
     ['@fullhuman/postcss-purgecss',
       process.env.NODE_ENV === 'production'
         ? {
