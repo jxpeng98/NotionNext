@@ -1,5 +1,5 @@
-// const purgeJs = require('purgecss-from-js')
-// const purgeHTML = require('purgecss-from-html')
+const purgeJs = require('purgecss-from-js')
+const purgeHTML = require('purgecss-from-html')
 // module.exports = {
 //   plugins: {
 //     tailwindcss: {},
@@ -21,14 +21,14 @@ module.exports = {
     }],
     'tailwindcss',
     'autoprefixer',
-    ['cssnano',
-      {
-        preset: 'default',
-        discardComments: {
-          removeAll: true
-        }
-      }
-    ],
+    // ['cssnano',
+    //   {
+    //     preset: 'default',
+    //     discardComments: {
+    //       removeAll: true
+    //     }
+    //   }
+    // ],
     ['@fullhuman/postcss-purgecss',
       process.env.NODE_ENV === 'production'
         ? {
@@ -47,6 +47,14 @@ module.exports = {
               {
                 extractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
                 extensions: ['html', 'js'] // file extensions this extractor should be applied to
+              },
+              {
+                extractor: purgeJs,
+                extensions: ['js', 'jsx', 'ts', 'tsx']
+              },
+              {
+                extractor: purgeHTML,
+                extensions: ['html']
               }
             ],
             safelist: {
