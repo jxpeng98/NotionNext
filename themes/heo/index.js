@@ -1,7 +1,7 @@
 import CONFIG from './config'
 
 import CommonHead from '@/components/CommonHead'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Footer from './components/Footer'
 import SideRight from './components/SideRight'
 import NavBar from './components/NavBar'
@@ -27,7 +27,7 @@ import { Transition } from '@headlessui/react'
 import dynamic from 'next/dynamic'
 import { Style } from './style'
 import { NoticeBar } from './components/NoticeBar'
-import { HashTag } from '@/components/HeroIcons'
+import { HashTag, Home } from '@/components/HeroIcons'
 import LatestPostsGroup from './components/LatestPostsGroup'
 import FloatTocButton from './components/FloatTocButton'
 import replaceSearchResult from '@/components/Mark'
@@ -277,7 +277,7 @@ const Layout404 = props => {
   const { meta, siteInfo } = props
   const { onLoading } = useGlobal()
   return (
-        <div id='theme-heo' className='bg-[#f7f9fe] h-full min-h-screen flex flex-col'>
+        <div id='theme-heo' className='bg-[#f7f9fe] dark:bg-[#18171d] h-full min-h-screen flex flex-col dark:text-white'>
             {/* 网页SEO */}
             <CommonHead meta={meta} siteInfo={siteInfo} />
             <Style />
@@ -306,16 +306,18 @@ const Layout404 = props => {
                     >
 
                         {/* 404卡牌 */}
-                        <div className='error-content flex flex-col md:flex-row w-full mt-12 h-[30rem] md:h-96 justify-center items-center bg-white border rounded-3xl'>
+                        <div className='error-content flex flex-col md:flex-row w-full mt-12 h-[30rem] md:h-96 justify-center items-center bg-white border rounded-3xl dark:bg-[#18171d]'>
                             {/* 左侧动图 */}
+                          {/*
                             <LazyImage className="error-img h-60 md:h-full p-4" src={'https://bu.dusays.com/2023/03/03/6401a7906aa4a.gif'}></LazyImage>
-
+                          */}
                             {/* 右侧文字 */}
-                            <div className='error-info flex-1 flex flex-col justify-center items-center space-y-4'>
+                            <div className='error-info flex-1 flex flex-col justify-center items-center space-y-4 text-black dark:text-white'>
                                 <h1 className='error-title font-extrabold md:text-9xl text-7xl'>404</h1>
                                 <div>请尝试站内搜索寻找文章</div>
+                                <div>Please try again</div>
                                 <Link href='/'>
-                                    <button className='bg-blue-500 p-2 text-white shadow rounded-lg hover:bg-blue-600 hover:shadow-md duration-200 transition-all'>回到主页</button>
+                                    <button className='bg-indigo-600 dark:bg-yellow-600 px-6 py-1 text-white shadow rounded-lg hover:bg-indigo-400 dark:hover:bg-yellow-400 hover:shadow-md duration-200 transition-all'><Home className={'w-6 h-6 stroke-white stroke-2 '}/></button>
                                 </Link>
                             </div>
                         </div>

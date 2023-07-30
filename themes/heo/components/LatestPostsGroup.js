@@ -1,5 +1,5 @@
 import BLOG from '@/blog.config'
-import LazyImage from '@/components/LazyImage'
+// import LazyImage from '@/components/LazyImage'
 import Link from 'next/link'
 
 /**
@@ -17,19 +17,19 @@ const LatestPostsGroup = ({ latestPosts, siteInfo }) => {
 
   return <div className='grid grid-cols-2 gap-4'>
         {latestPosts.map(post => {
-          const headerImage = post?.pageCoverThumbnail ? post.pageCoverThumbnail : siteInfo?.pageCover
+          // const headerImage = post?.pageCoverThumbnail ? post.pageCoverThumbnail : siteInfo?.pageCover
 
           return (
             (<Link key={post.id} passHref
                     title={post.title}
                     href={`${BLOG.SUB_PATH}/${post.slug}`}
 
-                    className={'my-3 flex flex-col w-full'}>
-
+                    className={'my-3 flex flex-col w-full error-content  md:flex-row  mt-12 h-auto justify-center items-center bg-white border rounded-xl dark:bg-[#18171d]'}>
+              {/*
                     <div className="w-full h-24 md:h-60 overflow-hidden relative rounded-lg mb-2">
                         <LazyImage src={`${headerImage}`} className='object-cover w-full h-full' />
                     </div>
-
+  */}
                     <div
                         className={
                             ' font-bold  overflow-x-hidden hover:text-indigo-600 px-2 duration-200 w-full rounded ' +

@@ -157,7 +157,7 @@ const NavBar = props => {
                 <div className='flex flex-shrink-0 justify-center items-center'>
                     <RandomPostButton {...props} />
                     <SearchButton {...props}/>
-                    {!JSON.parse(BLOG.THEME_SWITCH) && <div className='hidden md:block'><DarkModeButton {...props} /></div>}
+                    {!JSON.parse(BLOG.THEME_SWITCH) && <div className='block'><DarkModeButton {...props} /></div>}
                     <ReadingProgress />
                     {/* 移动端菜单按钮 */}
                     <div onClick={toggleMenuOpen} className='flex lg:hidden  justify-center rounded-full items-center w-10 h-10  cursor-pointer dark:hover:bg-gray-100 dark:hover:bg-opacity-10 hover:bg-black hover:bg-opacity-10'>
