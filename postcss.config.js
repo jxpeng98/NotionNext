@@ -47,9 +47,9 @@ module.exports = {
               }
             ],
             safelist: {
-              standard: ['body', 'html'],
+              standard: ['body', 'html',],
               deep: [/white$/, /black$/, /gray$/, /red$/, /yellow$/, /indigo$/],
-              greedy: [/yellow$/, /indigo$/],
+              greedy: [/yellow$/, /indigo$/, /post$/],
               keyframes: [],
               variables: []
             }
