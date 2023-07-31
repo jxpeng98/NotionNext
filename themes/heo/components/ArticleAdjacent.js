@@ -69,8 +69,8 @@ export default function ArticleAdjacent({ prev, next }) {
             </section>
 
             {/* 桌面端 */}
-
-            <div id='pc-next-post' className={`hidden md:block fixed z-20 right-16 bottom-4 duration-200 transition-all ${isScrollEnd ? 'mb-0 opacity-100' : '-mb-24 opacity-0'}`}>
+          {/*
+            <div id='pc-next-post' className={`hidden lg:block fixed z-20 right-16 bottom-4 duration-200 transition-all ${isScrollEnd ? 'mb-0 opacity-100' : '-mb-24 opacity-0'}`}>
                 <Link
                     href={`/${next.slug}`}
                     className='cursor-pointer duration transition-all h-24 dark:bg-[#1e1e1e] border dark:border-gray-600 p-3 bg-white dark:text-gray-300 dark:hover:text-yellow-600 hover:text-white hover:font-bold hover:bg-gray-400 rounded-lg flex flex-col justify-between'
@@ -80,7 +80,27 @@ export default function ArticleAdjacent({ prev, next }) {
                     <div>{next?.title}</div>
                 </Link>
             </div>
-
+            */}
+          {/*/!**/}
+          <section className='lg:block lg:flex lg:flex-col lg:justify-between hidden pt-8 text-gray-800 items-center text-xs md:text-sm m-1 h-30'>
+            <Link
+              href={`/${prev.slug}`}
+              passHref
+              className='flex-1 cursor-pointer justify-between space-y-1 px-5 py-6 rounded-xl dark:bg-[#1e1e1e] border dark:border-gray-600 items-start dark:text-white flex flex-col duration-200 w-full  hover:text-indigo-600 dark:hover:text-yellow-600'
+            >
+              <div className='flex flex-col justify-start items-start h-full '>上一篇</div>
+              <div className='flex justify-center items-start text-lg font-bold h-full '>{prev.title}</div>
+            </Link>
+            <Link
+              href={`/${next.slug}`}
+              passHref
+              className='flex-1 cursor-pointer justify-between space-y-1 px-5 py-6 rounded-xl dark:bg-[#1e1e1e] border border-t-0 dark:border-gray-600 items-end dark:text-white flex flex-col duration-200 w-full  hover:text-indigo-600 dark:hover:text-yellow-600'
+            >
+              <div className='flex flex-col justify-end items-end h-full '>下一篇</div>
+              <div className='flex justify-center items-end text-lg font-bold h-full'>{next.title}</div>
+            </Link>
+          </section>
+          {/* *!/ */}
         </div>
   )
 }
