@@ -871,6 +871,13 @@ code[class*='language-'] {
   text-overflow: ellipsis;
 }
 
+.notion-bookmark-link-icon > img {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  margin-right: 6px;
+}
+
 .notion-bookmark-image {
   flex: 1 1 180px;
   position: relative;
