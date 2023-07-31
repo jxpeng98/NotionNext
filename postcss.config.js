@@ -59,7 +59,7 @@ module.exports = {
               }
             ],
             safelist: {
-              standard: ['body', 'html', 'article', 'main'],
+              standard: ['body', 'html', 'article', 'main', 'header'],
               deep: [/white$/, /black$/, /gray$/, /data-aos/, /aos-init$/, /aos-animate$/, /fade-up$/, /fade-down$/, /fade-right$/, /fade-left$/, /aos-duration-/],
               greedy: [/yellow$/, /indigo$/, /post$/],
               keyframes: true,
