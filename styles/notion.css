@@ -1,4 +1,3 @@
-/*! purgecss start ignore */
 :root {
   --fg-color: rgb(0, 0, 0);
   --fg-color-0: rgba(55, 53, 47, 0.09);
@@ -179,7 +178,6 @@
 .notion-table-of-contents-active-item {
   color: var(--select-color-2) !important;
 }
-
 
 .notion-app {
   position: relative;
@@ -870,6 +868,13 @@ code[class*='language-'] {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.notion-bookmark-link-icon > img {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  margin-right: 6px;
 }
 
 .notion-bookmark-image {
@@ -2059,4 +2064,3 @@ code.language-mermaid {
 figure.notion-asset-wrapper.notion-asset-wrapper-video>div {
     height: 100% !important;
 }
-/*! purgecss end ignore */
