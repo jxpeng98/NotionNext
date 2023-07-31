@@ -16,7 +16,7 @@ export default function PostHeader({ post, siteInfo }) {
   const headerImage = post?.pageCover ? post.pageCover : siteInfo?.pageCover
 
   return (
-        <div id='post-bg' className="w-full h-[30rem] relative md:flex-shrink-0 overflow-hidden bg-cover bg-center bg-no-repeat z-10 mb-5">
+        <div id='post-bg' className="w-full h-[30rem] relative md:flex-shrink-0 overflow-hidden bg-cover bg-center bg-no-repeat z-10 mb-5 dark:brightness-75">
             <style jsx>{` 
                 .coverdiv:after {
                     position: absolute;
@@ -32,8 +32,8 @@ export default function PostHeader({ post, siteInfo }) {
             <div style={{ backdropFilter: 'blur(15px)' }} className={'bg-[#0060e0] absolute top-0 w-full h-full py-10 flex justify-center items-center'}>
 
                 {/* 文章背景图 */}
-                <div id='post-cover-wrapper' style={{ filter: 'blur(15px)' }} className='coverdiv lg:translate-x-96 opacity-50 lg:rotate-12'>
-                    <LazyImage id='post-cover' className='w-full h-full object-cover opacity-80 max-h-[50rem] min-w-[50vw] min-h-[20rem]' src={headerImage} />
+                <div id='post-cover-wrapper' style={{ filter: 'blur(15px)' }} className='coverdiv lg:translate-x-96 opacity-50 lg:rotate-12 dark:bg-gray-300'>
+                    <LazyImage id='post-cover' className='w-full h-full object-cover opacity-80 max-h-[50rem] min-w-[50vw] min-h-[20rem] dark:brightness-60' height='auto' width='auto' src={headerImage} />
                 </div>
 
                 {/* 文章文字描述 */}
@@ -65,7 +65,7 @@ export default function PostHeader({ post, siteInfo }) {
                     </div>
 
                     {/* 文章Title */}
-                    <div className="max-w-5xl font-bold text-3xl lg:text-5xl md:leading-snug shadow-text-md flex  justify-center md:justify-start text-white">
+                    <div className="max-w-5xl font-bold text-3xl lg:text-5xl md:leading-snug shadow-text-md flex justify-center md:justify-start text-white">
                         <NotionIcon icon={post.pageIcon} />{post.title}
                     </div>
 

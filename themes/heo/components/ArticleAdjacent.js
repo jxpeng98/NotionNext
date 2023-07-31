@@ -49,6 +49,7 @@ export default function ArticleAdjacent({ prev, next }) {
   return (
         <div id='article-end'>
             {/* 移动端 */}
+            {/*
             <section className='lg:hidden pt-8 text-gray-800 items-center text-xs md:text-sm flex flex-col m-1 '>
                 <Link
                     href={`/${prev.slug}`}
@@ -67,7 +68,7 @@ export default function ArticleAdjacent({ prev, next }) {
                     <div className='flex justify-center items-center text-lg font-bold'>{next.title}</div>
                 </Link>
             </section>
-
+            */}
             {/* 桌面端 */}
           {/*
             <div id='pc-next-post' className={`hidden lg:block fixed z-20 right-16 bottom-4 duration-200 transition-all ${isScrollEnd ? 'mb-0 opacity-100' : '-mb-24 opacity-0'}`}>
@@ -81,14 +82,13 @@ export default function ArticleAdjacent({ prev, next }) {
                 </Link>
             </div>
             */}
-          {/* /!* */}
-          <section className='hidden lg:block pt-8 text-gray-800 items-center text-xs md:text-sm flex flex-col m-1 w-full '>
+          <section className='pt-8 text-gray-800 items-center text-xs md:text-sm flex flex-col m-1 w-full '>
             <Link
               href={`/${prev.slug}`}
               passHref
               className='cursor-pointer justify-start space-y-1 px-5 py-6 rounded-t-xl dark:bg-[#1e1e1e] dark:border-gray-600 border items-start dark:text-white flex flex-col w-full h-18 duration-200 hover:text-indigo-600 dark:hover:text-yellow-600 hover:border-indigo-600 dark:hover:border-yellow-600'
             >
-              <div className='flex flex-col justify-start items-start h-full '>上一篇</div>
+              <div className='flex flex-col justify-start items-start h-full '><i className="fa-solid fa-arrow-left"></i></div>
               <div className='flex justify-start items-start text-lg font-bold h-full '>{prev.title}</div>
             </Link>
             <Link
@@ -96,7 +96,7 @@ export default function ArticleAdjacent({ prev, next }) {
               passHref
               className='cursor-pointer justify-end space-y-1 px-5 py-6 rounded-b-xl dark:bg-[#1e1e1e] dark:border-gray-600 border items-end dark:text-white flex flex-col w-full h-18 duration-200 hover:text-indigo-600 dark:hover:text-yellow-600 hover:border-indigo-600 dark:hover:border-yellow-600'
             >
-              <div className='flex flex-col justify-end items-end items-end h-full '>下一篇</div>
+              <div className='flex flex-col justify-end items-end h-full '><i class="fa-solid fa-arrow-right"></i></div>
               <div className='flex justify-end items-end text-lg font-bold h-full'>{next.title}</div>
             </Link>
           </section>
