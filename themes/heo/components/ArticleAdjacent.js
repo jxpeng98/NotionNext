@@ -81,23 +81,23 @@ export default function ArticleAdjacent({ prev, next }) {
                 </Link>
             </div>
             */}
-          {/*/!**/}
-          <section className='lg:block lg:flex lg:flex-col lg:justify-between hidden pt-8 text-gray-800 items-center text-xs md:text-sm m-1 h-30'>
+          {/* /!* */}
+          <section className='hidden lg:block pt-8 text-gray-800 items-center text-xs md:text-sm flex flex-col m-1 '>
             <Link
               href={`/${prev.slug}`}
               passHref
-              className='flex-1 cursor-pointer justify-between space-y-1 px-5 py-6 rounded-xl dark:bg-[#1e1e1e] border dark:border-gray-600 items-start dark:text-white flex flex-col duration-200 w-full  hover:text-indigo-600 dark:hover:text-yellow-600'
+              className='cursor-pointer justify-start space-y-1 px-5 py-6 rounded-t-xl dark:bg-[#1e1e1e] dark:border-gray-600 border items-start dark:text-white flex flex-col w-full h-18 duration-200 hover:text-indigo-600 dark:hover:text-yellow-600 hover:border-indigo-600 dark:hover:border-yellow-600'
             >
               <div className='flex flex-col justify-start items-start h-full '>上一篇</div>
-              <div className='flex justify-center items-start text-lg font-bold h-full '>{prev.title}</div>
+              <div className='flex justify-start items-start text-lg font-bold h-full '>{prev.title}</div>
             </Link>
             <Link
               href={`/${next.slug}`}
               passHref
-              className='flex-1 cursor-pointer justify-between space-y-1 px-5 py-6 rounded-xl dark:bg-[#1e1e1e] border border-t-0 dark:border-gray-600 items-end dark:text-white flex flex-col duration-200 w-full  hover:text-indigo-600 dark:hover:text-yellow-600'
+              className='cursor-pointer justify-end space-y-1 px-5 py-6 rounded-b-xl dark:bg-[#1e1e1e] dark:border-gray-600 border items-end dark:text-white flex flex-col w-full h-18 duration-200 hover:text-indigo-600 dark:hover:text-yellow-600 hover:border-indigo-600 dark:hover:border-yellow-600'
             >
-              <div className='flex flex-col justify-end items-end h-full '>下一篇</div>
-              <div className='flex justify-center items-end text-lg font-bold h-full'>{next.title}</div>
+              <div className='flex flex-col justify-end items-end items-end h-full '>下一篇</div>
+              <div className='flex justify-end items-end text-lg font-bold h-full'>{next.title}</div>
             </Link>
           </section>
           {/* *!/ */}
