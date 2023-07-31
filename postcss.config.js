@@ -22,14 +22,14 @@ module.exports = {
     }],
     'tailwindcss',
     'autoprefixer',
-    // ['cssnano',
-    //   {
-    //     preset: 'default',
-    //     discardComments: {
-    //       removeAll: true
-    //     }
-    //   }
-    // ],
+    ['cssnano',
+      {
+        preset: 'default',
+        discardComments: {
+          removeAll: true
+        }
+      }
+    ],
     ['@fullhuman/postcss-purgecss',
       process.env.NODE_ENV === 'production'
         ? {
@@ -59,9 +59,9 @@ module.exports = {
               }
             ],
             safelist: {
-              standard: ['body', 'html', 'article', 'main', 'header'],
+              standard: ['body', 'html', 'article', 'main', 'header', 'post-cover-wrapper', 'post-info'],
               deep: [/white$/, /black$/, /gray$/, /data-aos/, /aos-init$/, /aos-animate$/, /fade-up$/, /fade-down$/, /fade-right$/, /fade-left$/, /aos-duration-/],
-              greedy: [/yellow$/, /indigo$/, /post$/],
+              greedy: [/yellow$/, /indigo$/, /$post/, /$notion/, 'post-bg'],
               keyframes: true,
               variables: true,
               rejected: true

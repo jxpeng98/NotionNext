@@ -1,3 +1,4 @@
+/*! purgecss start ignore */
 :root {
   --fg-color: rgb(0, 0, 0);
   --fg-color-0: rgba(55, 53, 47, 0.09);
@@ -2058,3 +2059,4 @@ code.language-mermaid {
 figure.notion-asset-wrapper.notion-asset-wrapper-video>div {
     height: 100% !important;
 }
+/*! purgecss end ignore */
