@@ -226,7 +226,7 @@ const LayoutSlug = props => {
             <div className="w-full max-w-5xl lg:hover:shadow lg:border rounded-t-2xl lg:px-2 lg:py-4 bg-white dark:bg-[#18171d] dark:border-gray-600 article">
                 {lock && <ArticleLock validPassword={validPassword} />}
 
-                {!lock && <div id="article-wrapper" className="overflow-x-auto flex-grow mx-auto md:w-full md:px-5 ">
+                {!lock && <div id="article-wrapper" className="overflow-x-auto flex-grow mx-auto w-full md:px-5 ">
 
                     <article
                         data-aos="fade-up"
