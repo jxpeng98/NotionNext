@@ -12,6 +12,7 @@ import '@/styles/notion.css' //  重写部分样式
 import { GlobalContextProvider } from '@/lib/global'
 
 import AOS from 'aos'
+
 import 'aos/dist/aos.css' // You can also use <link> for styles
 import dynamic from 'next/dynamic'
 
@@ -22,7 +23,13 @@ const ExternalPlugins = dynamic(() => import('@/components/ExternalPlugins'))
 
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
-    AOS.init()
+    AOS.init({
+      easing: "ease-out-cubic",
+      delay: 200,
+      duration: 300,
+      once: true,
+      offset: 50,
+    })
   }, [])
 
   return (
