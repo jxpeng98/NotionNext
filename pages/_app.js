@@ -24,11 +24,13 @@ const ExternalPlugins = dynamic(() => import('@/components/ExternalPlugins'))
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     AOS.init({
-      easing: "ease-out-cubic",
+      initClassName: 'aos-init', // class applied after initialization
+      animatedClassName: 'aos-animate', // class applied on animation
+      easing: 'ease-out-cubic',
       delay: 200,
       duration: 300,
       once: true,
-      offset: 50,
+      offset: 50
     })
   }, [])
 
