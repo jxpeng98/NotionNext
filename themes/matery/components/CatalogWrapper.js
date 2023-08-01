@@ -8,9 +8,9 @@ import Catalog from './Catalog'
 export default function CatalogWrapper({ post }) {
   if (post?.toc?.length > 0) {
     return <div id='toc-wrapper' style={{ zIndex: '-1' }} className='absolute top-0 w-full h-full xl:block hidden lg:max-w-3xl 2xl:max-w-4xl' >
-            <div data-aos-delay="200"
+            <div data-aos-delay="200ms"
                 data-aos="fade-down"
-                data-aos-duration="200"
+                data-aos-duration="200ms"
                 data-aos-once="true"
                 data-aos-anchor-placement="top-center"
                 className='relative h-full'>

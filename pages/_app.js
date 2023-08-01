@@ -18,6 +18,7 @@ import dynamic from 'next/dynamic'
 
 // 自定义样式css和js引入
 import ExternalScript from '@/components/ExternalScript'
+// import { delay } from '@/lib/utils'
 // 各种扩展插件 动画等
 const ExternalPlugins = dynamic(() => import('@/components/ExternalPlugins'))
 

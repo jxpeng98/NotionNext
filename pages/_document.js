@@ -18,14 +18,14 @@ class MyDocument extends Document {
                   {/* 预加载字体 */}
                   {BLOG.FONT_AWESOME && <>
                       <link rel='preload' href={BLOG.FONT_AWESOME} as="style" crossOrigin="anonymous" />
-                      <link rel="stylesheet" href={BLOG.FONT_AWESOME} crossOrigin="anonymous" referrerPolicy="no-referrer" />
+                      <link rel="stylesheet" href={BLOG.FONT_AWESOME} crossOrigin="anonymous" referrerpolicy="no-referrer" />
                   </>}
 
                   {BLOG.FONT_URL && BLOG.FONT_URL.map((fontUrl, index) => {
                     if (fontUrl.endsWith('.css')) {
                       return <link key={index} rel="stylesheet" href={fontUrl} />
                     } else {
-                      return <link key={index} rel="preload" href={fontUrl} as="font" type="font/woff2" />
+                      return <link key={index} rel="preload" href={fontUrl} as="font" type="font/woff2" crossOrigin />
                     }
                   })}
                 </Head>

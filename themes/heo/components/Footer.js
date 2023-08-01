@@ -2,7 +2,7 @@ import React from 'react'
 import BLOG from '@/blog.config'
 import SocialButton from './SocialButton'
 import { AdSlot } from '@/components/GoogleAdsense'
-import LazyImage from '@/components/LazyImage'
+// import LazyImage from '@/components/LazyImage'
 import Image from 'next/image'
 // import DarkModeButton from '@/components/DarkModeButton'
 
