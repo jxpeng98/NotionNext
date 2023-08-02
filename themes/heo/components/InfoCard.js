@@ -3,7 +3,7 @@ import { ArrowRightCircle, GlobeAlt } from '@/components/HeroIcons'
 import LazyImage from '@/components/LazyImage'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+// import { useState } from 'react'
 import CONFIG from '../config'
 import Announcement from './Announcement'
 import Card from './Card'
@@ -20,7 +20,7 @@ export function InfoCard(props) {
   const isSlugPage = router.pathname === '/[...slug]'
 
   return (
-        <Card className='bg-[#4f65f0] bg-indigo-600 dark:bg-[#1e1e1e] text-white flex flex-col w-72 overflow-hidden relative'>
+        <Card className='bg-indigo-600 dark:bg-[#1e1e1e] text-white flex flex-col w-72 overflow-hidden relative'>
             {/* 信息卡牌第一行 */}
             {/* <div className='flex justify-between'> */}
                 {/* 问候语 */}
@@ -36,8 +36,8 @@ export function InfoCard(props) {
                   <LazyImage
                     src={siteInfo?.icon}
                     className='rounded-full ml-1'
-                    height = {60}
-                    width = {60}
+                    height = 'auto'
+                    width ={60}
                     alt={BLOG.AUTHOR}
                   />
               </div>

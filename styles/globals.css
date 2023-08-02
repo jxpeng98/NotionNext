@@ -93,11 +93,10 @@ nav {
 
 .tag-container ul {
   -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
+  overflow: auto;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  -khtml-user-select: none;
   user-select: none;
 }
 
@@ -308,4 +307,10 @@ a.avatar-wrapper {
 
 .reply-author-name {
   font-weight: 500;
+}
+
+.forbid-copy {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }

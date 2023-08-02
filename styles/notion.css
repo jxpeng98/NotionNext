@@ -154,8 +154,8 @@
   line-height: 1;
 }
 
-.notion-aside-table-of-contents
-  .notion-table-of-contents-item-indent-level-0:first-of-type {
+.notion-aside-table-of-contents,
+.notion-table-of-contents-item-indent-level-0:first-of-type {
   margin-top: 0;
 }
 
@@ -1452,9 +1452,9 @@ code[class*='language-'] {
   border-bottom: 0 none;
 }
 
-.notion-collection-card-property
-  .notion-property-relation
-  .notion-page-title-text {
+.notion-collection-card-property,
+.notion-property-relation,
+.notion-page-title-text {
   border-bottom: 1px solid;
 }
 
@@ -1514,9 +1514,9 @@ code[class*='language-'] {
   border-bottom: 0 none;
 }
 
-.notion-collection-row-property
-  .notion-property-relation
-  .notion-page-title-text {
+.notion-collection-row-property,
+.notion-property-relation,
+.notion-page-title-text {
   border-bottom: 1px solid;
 }
 
@@ -2057,7 +2057,7 @@ code.language-mermaid {
 }
 
 .notion-simple-table td{
-  border: 1px solid var(#eee) !important
+  border: 1px solid #eeeeee !important
 }
 
 /* 竖屏视频高度bug */

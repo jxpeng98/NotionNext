@@ -24,14 +24,14 @@ import ShareBar from '@/components/ShareBar'
 import Link from 'next/link'
 import CategoryBar from './components/CategoryBar'
 import { Transition } from '@headlessui/react'
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 import { Style } from './style'
 import { NoticeBar } from './components/NoticeBar'
 import { HashTag, Home } from '@/components/HeroIcons'
 import LatestPostsGroup from './components/LatestPostsGroup'
 import FloatTocButton from './components/FloatTocButton'
 import replaceSearchResult from '@/components/Mark'
-import LazyImage from '@/components/LazyImage'
+// import LazyImage from '@/components/LazyImage'
 
 /**
  * 基础布局 采用上中下布局，移动端使用顶部侧边导航栏
