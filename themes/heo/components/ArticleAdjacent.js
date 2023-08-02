@@ -96,7 +96,7 @@ export default function ArticleAdjacent({ prev, next }) {
               passHref
               className='cursor-pointer justify-end space-y-1 px-5 py-6 rounded-b-xl dark:bg-[#1e1e1e] dark:border-gray-600 border items-end dark:text-white flex flex-col w-full h-18 duration-200 hover:text-indigo-600 dark:hover:text-yellow-600 hover:border-indigo-600 dark:hover:border-yellow-600'
             >
-              <div className='flex flex-col justify-end items-end h-full '><i class="fa-solid fa-arrow-right"></i></div>
+              <div className='flex flex-col justify-end items-end h-full '><i className="fa-solid fa-arrow-right"></i></div>
               <div className='flex justify-end items-end text-lg font-bold h-full'>{next.title}</div>
             </Link>
           </section>
