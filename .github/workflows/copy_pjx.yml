@@ -13,6 +13,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Debugging environment
+        run: |
+          git remote -v
+          curl -H "Authorization: token ${{ secrets.REPO_ACCESS_TOKEN }}" https://api.github.com/repos/jxpeng98/NotionNext-pjx
+
+
       - name: Set up Git
         run: |
           git config user.name "jxpeng98"
