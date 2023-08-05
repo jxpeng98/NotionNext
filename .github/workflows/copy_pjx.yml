@@ -17,12 +17,17 @@ jobs:
         run: |
           git config user.name "jxpeng98"
           git config user.email "jiaxin.peng@outlook.com"
+          git fetch
           git config --global push.default simple
           git remote add destination https://x-access-token:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/jxpeng98/NotionNext-pjx.git
           git fetch origin
           git fetch destination
           git checkout -b temporary
-          
+
+      - name: Debugging by cloning
+        run: |
+          git clone https://x-access-token:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/jxpeng98/NotionNext-pjx.git
+
       - name: Push changes
         run: |
           git checkout main
