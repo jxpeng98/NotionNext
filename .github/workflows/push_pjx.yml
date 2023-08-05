@@ -1,0 +1,41 @@
+name: Push to notion-next-pjx
+
+  
+
+on:
+
+push:
+
+branches:
+
+- main # replace this with the name of your source branch
+
+  
+
+jobs:
+
+build:
+
+runs-on: ubuntu-latest
+
+  
+
+steps:
+
+- name: Checkout source branch
+
+uses: actions/checkout@v2
+
+with:
+
+ref: main # replace this with the name of your source branch
+
+  
+
+- name: Push to pjx
+run: |
+git remote add destination https://x-access-token:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/jxpeng98/NotionNext-pjx.git
+git push destination main
+
+  
+
