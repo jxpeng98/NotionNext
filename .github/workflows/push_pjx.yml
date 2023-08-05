@@ -27,6 +27,7 @@ jobs:
       - name: Push to pjx
         run: |
           git remote add NotionNext-pjx https://x-access-token:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/jxpeng98/NotionNext-pjx.git
-          git push NotionNext-pjx main
+          git fetch
+          git push NotionNext-pjx main --force # replace this with the name of your target branch
   
 
