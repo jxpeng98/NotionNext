@@ -15,7 +15,7 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.REPO_ACCESS_TOKEN }}
       with:
         source_file: '.'
-        destination_repo: 'jxpeng98/main'
+        destination_repo: 'jxpeng98/NotionNext-pjx'
         destination_folder: '.'
         user_email: 'jiaxin.peng@outlook.com'
         user_name: 'jxpeng98'
