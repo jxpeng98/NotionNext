@@ -1,46 +1,22 @@
-name: Push to Another Repository
+name: Push File
 
-on:
-  push:
-    branches:
-      - main  # 修改为适用的分支
+on: push
 
 jobs:
-  push:
+  copy-file:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
-      - name: Debugging environment
-        run: |
-          git remote -v
-          curl -H "Authorization: token ${{ secrets.REPO_ACCESS_TOKEN }}" https://api.github.com/repos/jxpeng98/NotionNext-pjx
-
-
-      - name: Set up Git
-        run: |
-          git config user.name "jxpeng98"
-          git config user.email "jiaxin.peng@outlook.com"
-          git fetch
-          git config --global push.default simple
-          git remote add destination git://x-access-token:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/jxpeng98/NotionNext-pjx.git
-          git fetch origin
-          git fetch destination
-          git checkout -b temporary
-
-      - name: Debugging by cloning
-        run: |
-          git clone https://x-access-token:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/jxpeng98/NotionNext-pjx.git
-
-      - name: Push changes
-        run: |
-          git checkout main
-          git merge origin/main
-          git push destination main
-
-      - name: Cleanup
-        run: |
-          git checkout main
-          git branch -D temporary
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.REPO_ACCESS_TOKEN }}
+      with:
+        source_file: '.'
+        destination_repo: 'jxpeng98/main'
+        destination_folder: '.'
+        user_email: 'jiaxin.peng@outlook.com'
+        user_name: 'jxpeng98'
+        commit_message: 'A custom message for the commit'
