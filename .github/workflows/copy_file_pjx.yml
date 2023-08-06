@@ -26,7 +26,7 @@ jobs:
 
       - name: Push to pjx
         run: |
-          git remote add origin https://jxpeng98:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/jxpeng98/NotionNext-pjx.git
+          git remote set-url origin https://jxpeng98:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/jxpeng98/NotionNext-pjx.git
           git push -u origin main
 
 
