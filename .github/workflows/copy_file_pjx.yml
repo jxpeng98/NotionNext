@@ -1,41 +1,33 @@
-name: Push to Another Repository
+name: Push to notion-next-pjx
 
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
 on:
   push:
     branches:
-      - main  # 修改为适用的分支
+      - main # replace this with the name of your source branch
 
 jobs:
-  push:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout source branch
         uses: actions/checkout@v2
+        with:
+          ref: main # replace this with the name of your source branch
 
-      - name: Set up Git
+      - name: set up git config
         run: |
-          git config user.name "jxpeng98"
-          git config user.email "jiaxin.peng@outlook.com"
-          git fetch
-          git config --global push.default simple
-          git remote add destination https://x-access-token:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/jxpeng98/NotionNext-pjx.git
-          git fetch origin
-          git fetch destination
-          git checkout -b temporary
+          git config --global user.name 'jxpeng98'
+          git config --global user.email 'jiaxin.peng@outlook.com'
 
+      - name: List remotes (debugging)
+        run: git remote -v
 
-      - name: Debugging by cloning
+      - name: Push to pjx
         run: |
-          git clone https://x-access-token:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/jxpeng98/NotionNext-pjx.git
+          git remote add origin https://jxpeng98:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/jxpeng98/NotionNext-pjx.git
+          git push -u origin main
 
-      - name: Push changes
-        run: |
-          git checkout main
-          git merge origin/main
-          git push destination main
 
-      - name: Cleanup
-        run: |
-          git checkout main
-          git branch -D temporary
+
