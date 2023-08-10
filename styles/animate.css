@@ -13,18 +13,15 @@
 }
 
 .animate__animated {
-  animation-duration: 1s;
   animation-duration: var(--animate-duration);
   animation-fill-mode: both;
 }
 
 
 .animate__animated.animate__faster {
-  animation-duration: calc(1s / 2);
   animation-duration: calc(var(--animate-duration) / 2);
 }
 .animate__animated.animate__fast {
-  animation-duration: calc(1s * 0.8);
   animation-duration: calc(var(--animate-duration) * 0.8);
 }
 
