@@ -1,8 +1,9 @@
 
-import { Fragment, useImperativeHandle, useRef, useState } from 'react'
+// import { Fragment, useImperativeHandle, useRef, useState } from 'react'
+import { Fragment, useImperativeHandle, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import DarkModeButton from '@/components/DarkModeButton'
-import Link from 'next/link'
+// import DarkModeButton from '@/components/DarkModeButton'
+// import Link from 'next/link'
 import TagGroups from './TagGroups'
 import { MenuListSide } from './MenuListSide'
 
@@ -114,21 +115,21 @@ export default function SlideOver(props) {
 /**
  * 一个包含图标的按钮
  */
-function DarkModeBlockButton() {
-  const darkModeRef = useRef()
-  function handleChangeDarkMode() {
-    darkModeRef?.current?.handleChangeDarkMode()
-  }
-  return <button onClick={handleChangeDarkMode} className={'group duration-200 hover:text-white hover:shadow-md hover:bg-blue-600 flex justify-between items-center px-2 py-2 border dark:border-gray-600 bg-white dark:bg-[#ff953e]  rounded-lg'}>
-        <DarkModeButton cRef={darkModeRef} className='group-hover:text-white' /> 显示模式
-    </button>
-}
+// function DarkModeBlockButton() {
+//   const darkModeRef = useRef()
+//   function handleChangeDarkMode() {
+//     darkModeRef?.current?.handleChangeDarkMode()
+//   }
+//   return <button onClick={handleChangeDarkMode} className={'group duration-200 hover:text-white hover:shadow-md hover:bg-blue-600 flex justify-between items-center px-2 py-2 border dark:border-gray-600 bg-white dark:bg-[#ff953e]  rounded-lg'}>
+//         <DarkModeButton cRef={darkModeRef} className='group-hover:text-white' /> 显示模式
+//     </button>
+// }
 
 /**
  * 一个简单的按钮
  */
-function Button({ title, url }) {
-  return <Link href={url} className={'duration-200 hover:text-white hover:shadow-md flex cursor-pointer justify-between items-center px-2 py-2 border dark:border-gray-600 bg-white hover:bg-blue-600 dark:bg-[#1e1e1e] rounded-lg'}>
-        {title}
-    </Link>
-}
+// function Button({ title, url }) {
+//   return <Link href={url} className={'duration-200 hover:text-white hover:shadow-md flex cursor-pointer justify-between items-center px-2 py-2 border dark:border-gray-600 bg-white hover:bg-blue-600 dark:bg-[#1e1e1e] rounded-lg'}>
+//         {title}
+//     </Link>
+// }

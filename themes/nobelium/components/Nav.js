@@ -10,6 +10,7 @@ import { MenuItemCollapse } from './MenuItemCollapse'
 import LazyImage from '@/components/LazyImage'
 import RandomPostButton from './RandomPostButton'
 import SearchButton from './SearchButton'
+import DarkModeButton from '@/components/DarkModeButton'
 
 const Nav = props => {
   const { navBarTitle, fullWidth, siteInfo } = props

@@ -174,7 +174,7 @@ function createFlutteringRibbon() {
             const l = 'right' === t ? s : h
             let c = Math.round(o(0, this._height))
             ;/^(top|min)$/i.test(this._options.verticalPosition)
-              ? (c = 0 + n)
+              ? (c = n)
               : /^(middle|center)$/i.test(this._options.verticalPosition)
               ? (c = this._height / 2)
               : /^(bottom|max)$/i.test(this._options.verticalPosition) &&
@@ -189,10 +189,10 @@ function createFlutteringRibbon() {
               if (
                 (i--,
                 (a = Math.round(
-                  (1 * Math.random() - 0.2) * this._options.horizontalSpeed
+                  (Math.random() - 0.2) * this._options.horizontalSpeed
                 )),
                 (r = Math.round(
-                  (1 * Math.random() - 0.5) * (0.25 * this._height)
+                  (Math.random() - 0.5) * (0.25 * this._height)
                 )),
                 (u = new e()),
                 u.copy(d),
@@ -223,7 +223,7 @@ function createFlutteringRibbon() {
               if (t.delay <= 0) {
                 if (
                   ((t.phase += 0.02),
-                  (t.alpha = 1 * Math.sin(t.phase)),
+                  (t.alpha = Math.sin(t.phase)),
                   (t.alpha = t.alpha <= 0 ? 0 : t.alpha),
                   (t.alpha = t.alpha >= 1 ? 1 : t.alpha),
                   this._options.animateSections)

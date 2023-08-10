@@ -1,5 +1,5 @@
 import BLOG from '@/blog.config'
-import DarkModeButton from '@/components/DarkModeButton'
+// import DarkModeButton from '@/components/DarkModeButton'
 import Vercel from '@/components/Vercel'
 
 export const Footer = (props) => {

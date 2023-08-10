@@ -9,7 +9,8 @@ import CONFIG from '../config'
  * @returns
  */
 export default function ArticleAdjacent({ prev, next }) {
-  const [isScrollEnd, setIsScrollEnd] = useState(false)
+  // const [isScrollEnd, setIsScrollEnd] = useState(false)
+  const [, setIsScrollEnd] = useState(false)
   const router = useRouter()
 
   useEffect(() => {

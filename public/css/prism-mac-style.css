@@ -24,7 +24,7 @@
 }
 
 pre[class*='language-'] {
-  margin-top: 0rem !important;
+  margin-top: 0 !important;
   // margin-bottom: 0rem !important;
   padding-top: 1.5rem !important;
 

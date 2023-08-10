@@ -1,5 +1,5 @@
 import BLOG from '@/blog.config'
-import DarkModeButton from '@/components/DarkModeButton'
+// import DarkModeButton from '@/components/DarkModeButton'
 
 export const Footer = (props) => {
   const d = new Date()
