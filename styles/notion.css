@@ -594,8 +594,7 @@ summary > .notion-h {
 }
 
 .notion-page-icon {
-  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', NotoColorEmoji,
-    'Noto Color Emoji', 'Segoe UI Symbol', 'Android Emoji', EmojiSymbols;
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', NotoColorEmoji, 'Noto Color Emoji', 'Segoe UI Symbol', 'Android Emoji', EmojiSymbols, sans-serif;
   font-size: 1.1em;
   margin: 2px 4px 0 2px;
   fill: var(--fg-color-6);
@@ -934,7 +933,6 @@ code[class*='language-'] {
   display: inline-flex;
   width: 100%;
   border-radius: 3px;
-  border-width: 1px;
   align-items: center;
   box-sizing: border-box;
   margin: 4px 0;
@@ -1169,7 +1167,6 @@ code[class*='language-'] {
   width: 100%;
   display: flex;
   align-items: center;
-  width: 100%;
   padding-left: 2px;
   min-height: calc(1.5em + 3px + 3px);
 }
@@ -1357,13 +1354,12 @@ code[class*='language-'] {
   position: relative;
   display: inline-flex;
   color: inherit;
-  fill: inherit;
+  fill: currentColor;
   user-select: none;
   border-radius: 3px;
   transition: background 20ms ease-in 0s;
   text-align: center;
   -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
   scrollbar-width: none; /* firefox */
 }
 
@@ -1534,7 +1530,7 @@ code[class*='language-'] {
 
 .notion-list-item-property .notion-property-multi_select-item {
   margin-bottom: 0;
-  flex-wrap: none;
+  flex-wrap: nowrap;
 }
 
 .notion-list-item-property .notion-property-multi_select-item:last-of-type {

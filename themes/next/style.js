@@ -6,15 +6,13 @@
  */
 const Style = () => {
   return <style jsx global>{`
-
     // 底色
-    body{
-        background-color: #eeedee
+    body {
+      background-color: #eeedee;
     }
-    .dark body{
-        background-color: black;
+    body.dark {
+      background-color: black;
     }
-
   `}</style>
 }
 

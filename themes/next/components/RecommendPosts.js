@@ -7,11 +7,10 @@ import CONFIG from '../config'
  * 展示文章推荐
  */
 const RecommendPosts = ({ recommendPosts }) => {
+  const { locale } = useGlobal()
   if (!CONFIG.ARTICLE_RELATE_POSTS || !recommendPosts || recommendPosts.length < 1) {
     return <></>
   }
-  const { locale } = useGlobal()
-
   return (
     <div className="pt-2 border pl-4 py-2 my-4 dark:text-gray-300 ">
       <div className="mb-2 font-bold text-lg">{locale.COMMON.RELATE_POSTS} :</div>

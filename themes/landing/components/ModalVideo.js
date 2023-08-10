@@ -99,12 +99,11 @@ export default function ModalVideo({
                                 </video> */}
                                 <div>
                                     <iframe
-                                        className="video-iframe aspect-video w-screen md:w-[800px] mx-auto"
+                                        className="video-iframe aspect-video w-screen md:w-[800px] mx-auto border-0"
                                         src={CONFIG.HERO_VIDEO_IFRAME}
                                         scrolling="no"
-                                        border="0"
                                         frameBorder="no"
-                                        allowfullscreen="true"
+                                        allowfullscreen
                                     ></iframe>
                                 </div>
 

@@ -65,7 +65,7 @@ const Hero = props => {
                 </div>
             </div>
 
-            <LazyImage priority={true} id='header-cover'src={siteInfo?.pageCover}
+            <LazyImage priority={true} id='header-cover' src={siteInfo?.pageCover}
                 className={`header-cover object-center w-full h-screen object-cover ${CONFIG.HOME_NAV_BACKGROUND_IMG_FIXED ? 'fixed' : ''}`} />
 
         </header>

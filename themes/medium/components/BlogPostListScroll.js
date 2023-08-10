@@ -17,7 +17,8 @@ const BlogPostListScroll = ({ posts = [], currentSearch }) => {
   const postsPerPage = BLOG.POSTS_PER_PAGE
   const [page, updatePage] = useState(1)
   let filteredPosts = Object.assign(posts)
-  const searchKey = getSearchKey()
+  const router = useRouter()
+  const searchKey = router.query && router.query.s ? router.query.s : null
   if (searchKey) {
     filteredPosts = posts.filter(post => {
       const tagContent = post?.tags ? post?.tags.join(' ') : ''
@@ -93,14 +94,6 @@ const getPostByPage = function (page, totalPosts, postsPerPage) {
     0,
     postsPerPage * page
   )
-}
-
-function getSearchKey() {
-  const router = useRouter()
-  if (router.query && router.query.s) {
-    return router.query.s
-  }
-  return null
 }
 
 export default BlogPostListScroll

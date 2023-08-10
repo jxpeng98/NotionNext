@@ -10,7 +10,7 @@
   "author": {
     "name": "tangly",
     "email": "mail@tangly1024.com",
-    "url": "http://tangly1024.com"
+    "url": "https://tangly1024.com"
   },
   "scripts": {
     "dev": "next dev",
