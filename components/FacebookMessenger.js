@@ -3,7 +3,6 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default function Messenger() {
-  console.log('facebook', BLOG.FACEBOOK_PAGE_ID, BLOG.FACEBOOK_APP_ID)
   return <MessengerCustomerChat
     pageId={BLOG.FACEBOOK_PAGE_ID}
     appId={BLOG.FACEBOOK_APP_ID}
@@ -170,7 +169,7 @@ class MessengerCustomerChat extends Component {
 
     return {
       __html: `<div
-        class="fb-customerchat"
+        className="fb-customerchat"
         page_id="${pageId}"
         ${refAttribute}
         ${minimizedAttribute}

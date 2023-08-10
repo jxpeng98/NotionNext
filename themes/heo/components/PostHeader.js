@@ -16,7 +16,7 @@ export default function PostHeader({ post, siteInfo }) {
   const headerImage = post?.pageCover ? post.pageCover : siteInfo?.pageCover
 
   return (
-        <div id='post-bg' className="w-full h-[30rem] relative md:flex-shrink-0 overflow-hidden bg-cover bg-center bg-no-repeat z-10 mb-5 dark:brightness-75">
+        <div id='post-bg' className="w-full h-[30rem] relative md:flex-shrink-0 overflow-hidden bg-cover bg-center bg-no-repeat z-10 mb-5 dark:brightness-80">
             <style jsx>{` 
                 .coverdiv:after {
                     position: absolute;
@@ -33,7 +33,7 @@ export default function PostHeader({ post, siteInfo }) {
 
                 {/* 文章背景图 */}
                 <div id='post-cover-wrapper' style={{ filter: 'blur(15px)' }} className='coverdiv lg:translate-x-96 opacity-50 lg:rotate-12 dark:bg-gray-300'>
-                    <LazyImage id='post-cover' className='w-full h-full object-cover opacity-80 max-h-[50rem] min-w-[50vw] min-h-[20rem] dark:brightness-60' height='auto' width='auto' src={headerImage} />
+                    <LazyImage id='post-cover' className='w-full h-full object-cover opacity-80 max-h-[50rem] min-w-[50vw] min-h-[20rem] dark:brightness-80' height='auto' width='auto' src={headerImage} />
                 </div>
 
                 {/* 文章文字描述 */}

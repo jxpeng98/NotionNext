@@ -74,7 +74,7 @@ export default function ArticleAdjacent({ prev, next }) {
             <div id='pc-next-post' className={`hidden lg:block fixed z-20 right-16 bottom-4 duration-200 transition-all ${isScrollEnd ? 'mb-0 opacity-100' : '-mb-24 opacity-0'}`}>
                 <Link
                     href={`/${next.slug}`}
-                    className='cursor-pointer duration transition-all h-24 dark:bg-[#1e1e1e] border dark:border-gray-600 p-3 bg-white dark:text-gray-300 dark:hover:text-yellow-600 hover:text-white hover:font-bold hover:bg-gray-400 rounded-lg flex flex-col justify-between'
+                    className='cursor-pointer drop-shadow-xl duration transition-all h-24 dark:bg-[#1e1e1e] border dark:border-gray-600 p-3 bg-white dark:text-gray-300 dark:hover:text-yellow-600 hover:text-white hover:font-bold hover:bg-blue-600 rounded-lg flex flex-col justify-between'
                 >
                     <div className='text-xs'>下一篇</div>
                     <hr />
@@ -96,7 +96,7 @@ export default function ArticleAdjacent({ prev, next }) {
               passHref
               className='cursor-pointer justify-end space-y-1 px-5 py-6 rounded-b-xl dark:bg-[#1e1e1e] dark:border-gray-600 border items-end dark:text-white flex flex-col w-full h-18 duration-200 hover:text-indigo-600 dark:hover:text-yellow-600 hover:border-indigo-600 dark:hover:border-yellow-600'
             >
-              <div className='flex flex-col justify-end items-end h-full '><i class="fa-solid fa-arrow-right"></i></div>
+              <div className='flex flex-col justify-end items-end h-full '><i className="fa-solid fa-arrow-right"></i></div>
               <div className='flex justify-end items-end text-lg font-bold h-full'>{next.title}</div>
             </Link>
           </section>

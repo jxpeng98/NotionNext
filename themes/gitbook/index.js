@@ -98,7 +98,7 @@ const LayoutBase = (props) => {
                                 appear={true}
                                 enter="transition ease-in-out duration-700 transform order-first"
                                 enterFrom="opacity-0 translate-y-16"
-                                enterTo="opacity-100 translate-y-0"
+                                enterTo="opacity-100"
                                 leave="transition ease-in-out duration-300 transform"
                                 leaveFrom="opacity-100 translate-y-0"
                                 leaveTo="opacity-0 -translate-y-16"
@@ -178,7 +178,7 @@ const LayoutIndex = (props) => {
           if (!article) {
             console.log('请检查您的Notion数据库中是否包含此slug页面： ', CONFIG.INDEX_PAGE)
             const containerInner = document.querySelector('#theme-gitbook #container-inner')
-            const newHTML = `<h1 class="text-3xl pt-12  dark:text-gray-300">配置有误</h1><blockquote class="notion-quote notion-block-ce76391f3f2842d386468ff1eb705b92"><div>请在您的notion中添加一个slug为${CONFIG.INDEX_PAGE}的文章</div></blockquote>`
+            const newHTML = `<h1 className="text-3xl pt-12  dark:text-gray-300">配置有误</h1><blockquote className="notion-quote notion-block-ce76391f3f2842d386468ff1eb705b92"><div>请在您的notion中添加一个slug为${CONFIG.INDEX_PAGE}的文章</div></blockquote>`
             containerInner?.insertAdjacentHTML('afterbegin', newHTML)
           }
         }
