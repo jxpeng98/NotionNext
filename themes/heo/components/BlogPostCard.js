@@ -44,7 +44,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
                         <Link
                             href={`${BLOG.SUB_PATH}/${post.slug}`}
                             passHref
-                            className={' group-hover:text-indigo-700 dark:hover:text-yellow-700 dark:group-hover:text-yellow-600 text-black dark:text-gray-100  line-clamp-2 replace cursor-pointer text-xl font-extrabold leading-tight'}>
+                            className={' group-hover:text-indigo-700 dark:hover:text-yellow-700 dark:group-hover:text-yellow-600 text-black dark:text-gray-100  line-clamp-2 replace cursor-pointer text-xl font-bold leading-tight'}>
                             <span className='menu-link '>{post.title}</span>
                         </Link>
                     </div>
