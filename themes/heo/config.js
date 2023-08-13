@@ -5,7 +5,7 @@ const CONFIG = {
 
   // 首页顶部通知条滚动内容，如不需要可以留空 []
   NOTICE_BAR: [
-    { title: '欢迎访问中文版', url: 'https://zh.pengjiaxin.com' },
+    // { title: '欢迎访问中文版', url: 'https://zh.pengjiaxin.com' },
     { title: 'Academia Page', url: 'https://jiaxinpeng.com' },
     { title: 'PLOG', url: 'https://plog.pengjiaxin.com' },
     { title: 'Welcome to English Page', url: 'https://www.pengjiaxin.com' }
