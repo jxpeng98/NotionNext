@@ -4,8 +4,7 @@ import { useImperativeHandle, useRef, useState } from 'react'
 
 let lock = false
 
-const SearchInput = props => {
-  const { tag, keyword, cRef } = props
+const SearchInput = ({ currentTag, currentSearch, cRef }) => {
   const { locale } = useGlobal()
   const router = useRouter()
   const searchInputRef = useRef(null)
@@ -62,14 +61,14 @@ const SearchInput = props => {
   <input
     ref={searchInputRef}
     type='text'
-    placeholder={tag ? `${locale.SEARCH.TAGS} #${tag}` : `${locale.SEARCH.ARTICLES}`}
+    placeholder={currentTag ? `${locale.SEARCH.TAGS} #${currentTag}` : `${locale.SEARCH.ARTICLES}`}
     className={'outline-none w-full text-sm pl-4 transition focus:shadow-lg font-light leading-10 text-black bg-gray-100 dark:bg-gray-900 dark:text-white'}
     onKeyUp={handleKeyUp}
     onCompositionStart={lockSearchInput}
     onCompositionUpdate={lockSearchInput}
     onCompositionEnd={unLockSearchInput}
     onChange={e => updateSearchKey(e.target.value)}
-    defaultValue={keyword || ''}
+    defaultValue={currentSearch || ''}
   />
 
   <div className='-ml-8 cursor-pointer float-right items-center justify-center py-2'
