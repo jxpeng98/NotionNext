@@ -18,6 +18,8 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+  # add PAGE_ID
+  NOTION_PAGE_ID: ${{ secrets.PAGE_ID }}
 
 jobs:
   build:
