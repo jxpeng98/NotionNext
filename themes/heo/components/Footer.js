@@ -31,7 +31,6 @@ const Footer = ({ title }) => {
                 <SocialButton />
             </div>
 
-            <AdSlot type='native'/>
             <br />
 
             {/* 底部页面信息 */}
