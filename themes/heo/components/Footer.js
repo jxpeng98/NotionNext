@@ -35,7 +35,7 @@ const Footer = ({ title }) => {
             <br />
 
             {/* 底部页面信息 */}
-            <div id='footer-bottom' className='w-full h-12 flex flex-col p-3 lg:flex-row justify-between px-6 items-center bg-[#f1f3f7] dark:bg-[#30343f]'>
+            <div id='footer-bottom' className='w-full h-16 lg:h-12 flex flex-col py-2 lg:flex-row justify-between px-6 items-center bg-[#f1f3f7] dark:bg-[#30343f]'>
 
               <div id='footer-bottom-left' className="flex items-center flex-auto">
                 <a href='https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral' className='mr-1'>
