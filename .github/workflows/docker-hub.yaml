@@ -33,6 +33,6 @@ jobs:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           platforms: linux/amd64,linux/arm64/v8
-          tags: ${{ secrets.DOCKER_USERNAME }}/my-repo-name:${{ github.sha }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/notionnext
           build-args: |
             NOTION_PAGE_ID=${{ secrets.NOTION_PAGE_ID }}
