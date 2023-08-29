@@ -1,26 +1,38 @@
-name: Deploy to Docker
+name: Docker Image CI
 
 on:
   push:
-    branches:
-      - main  # or the default branch you use
+    branches: [main]
 
 jobs:
+
   build:
+
     runs-on: ubuntu-latest
+    if: github.repository_owner == 'jxpeng98'
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Login to Docker Hub
-        uses: docker/login-action@v1
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push Docker image
-        run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/my-repo-name:${{ github.sha }} .
-          docker push ${{ secrets.DOCKER_USERNAME }}/my-repo-name:${{ github.sha }}
-
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: ${{ github.event_name != 'pull_request' }}
+          platforms: linux/amd64,linux/arm64/v8
+          tags: jxpeng98/NotionNext
+          build-args: |
+            NOTION_PAGE_ID=${{ secrets.NOTION_PAGE_ID }}
