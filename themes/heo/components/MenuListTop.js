@@ -13,6 +13,7 @@ export const MenuListTop = (props) => {
     { id: 2, icon: 'fas fa-search', name: locale.NAV.SEARCH, to: '/search', show: CONFIG.MENU_SEARCH },
     { id: 3, icon: 'fas fa-archive', name: locale.NAV.ARCHIVE, to: '/archive', show: CONFIG.MENU_ARCHIVE }
   ]
+
   if (customNav) {
     links = links.concat(customNav)
   }

@@ -169,7 +169,7 @@ class MessengerCustomerChat extends Component {
 
     return {
       __html: `<div
-        className="fb-customerchat"
+        class="fb-customerchat"
         page_id="${pageId}"
         ${refAttribute}
         ${minimizedAttribute}

@@ -1,6 +1,6 @@
 {
   "name": "notion-next",
-  "version": "4.0.12",
+  "version": "4.0.13",
   "homepage": "https://github.com/tangly1024/NotionNext.git",
   "license": "MIT",
   "repository": {
@@ -10,7 +10,7 @@
   "author": {
     "name": "tangly",
     "email": "mail@tangly1024.com",
-    "url": "https://tangly1024.com"
+    "url": "http://tangly1024.com"
   },
   "scripts": {
     "dev": "next dev",
@@ -27,7 +27,7 @@
     "@vercel/analytics": "^1.0.0",
     "algoliasearch": "^4.18.0",
     "animejs": "^3.2.1",
-    "aos": "^2.3.4",
+    "aos": "^3.0.0-beta.6",
     "axios": ">=0.21.1",
     "copy-to-clipboard": "^3.3.1",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -41,8 +41,6 @@
     "notion-client": "6.15.6",
     "notion-utils": "6.15.6",
     "nprogress": "^0.2.0",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-preset-env": "^9.1.0",
     "preact": "^10.5.15",
     "prism-themes": "1.9.0",
     "react": "^18.2.0",
@@ -55,10 +53,8 @@
     "typed.js": "^2.0.12"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@waline/client": "^2.5.1",
     "autoprefixer": "^10.4.13",
-    "cssnano": "^6.0.1",
     "eslint": "^7.26.0",
     "eslint-config-next": "^13.1.1",
     "eslint-config-standard": "^16.0.2",
@@ -67,7 +63,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.23.2",
     "next-sitemap": "^1.6.203",
-    "postcss": "^8.4.27",
+    "postcss": "^8.4.20",
     "tailwindcss": "^3.3.2",
     "webpack-bundle-analyzer": "^4.5.0"
   },

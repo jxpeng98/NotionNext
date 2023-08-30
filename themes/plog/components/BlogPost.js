@@ -34,7 +34,7 @@ const BlogPost = (props) => {
             data-aos-anchor-placement="top-bottom"
             key={post?.id} className='cursor-pointer relative'>
 
-            <LazyImage src={pageThumbnail} className='aspect-[16/9] w-full h-full object-cover filter contrast-120' alt={post?.title}/>
+            <LazyImage src={pageThumbnail} className='aspect-[16/9] w-full h-full object-cover filter contrast-120' />
 
             <h2 className="text-md absolute left-0 bottom-0 m-4 text-black dark:text-gray-100 text-shadow">
                 {post?.title}

@@ -138,6 +138,7 @@
   flex-direction: column;
   align-items: center;
   max-height: calc(100vh - 148px - 16px);
+  overflow: hidden auto;
   min-width: 222px;
   overflow: auto;
 }
@@ -153,8 +154,8 @@
   line-height: 1;
 }
 
-.notion-aside-table-of-contents,
-.notion-table-of-contents-item-indent-level-0:first-of-type {
+.notion-aside-table-of-contents
+  .notion-table-of-contents-item-indent-level-0:first-of-type {
   margin-top: 0;
 }
 
@@ -177,6 +178,7 @@
 .notion-table-of-contents-active-item {
   color: var(--select-color-2) !important;
 }
+
 
 .notion-app {
   position: relative;
@@ -593,7 +595,8 @@ summary > .notion-h {
 }
 
 .notion-page-icon {
-  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', NotoColorEmoji, 'Noto Color Emoji', 'Segoe UI Symbol', 'Android Emoji', EmojiSymbols, sans-serif;
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', NotoColorEmoji,
+    'Noto Color Emoji', 'Segoe UI Symbol', 'Android Emoji', EmojiSymbols;
   font-size: 1.1em;
   margin: 2px 4px 0 2px;
   fill: var(--fg-color-6);
@@ -868,13 +871,6 @@ code[class*='language-'] {
   text-overflow: ellipsis;
 }
 
-.notion-bookmark-link-icon > img {
-  width: 16px;
-  height: 16px;
-  min-width: 16px;
-  margin-right: 6px;
-}
-
 .notion-bookmark-image {
   flex: 1 1 180px;
   position: relative;
@@ -932,6 +928,7 @@ code[class*='language-'] {
   display: inline-flex;
   width: 100%;
   border-radius: 3px;
+  border-width: 1px;
   align-items: center;
   box-sizing: border-box;
   margin: 4px 0;
@@ -1166,6 +1163,7 @@ code[class*='language-'] {
   width: 100%;
   display: flex;
   align-items: center;
+  width: 100%;
   padding-left: 2px;
   min-height: calc(1.5em + 3px + 3px);
 }
@@ -1353,12 +1351,13 @@ code[class*='language-'] {
   position: relative;
   display: inline-flex;
   color: inherit;
-  fill: currentColor;
+  fill: inherit;
   user-select: none;
   border-radius: 3px;
   transition: background 20ms ease-in 0s;
   text-align: center;
   -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
   scrollbar-width: none; /* firefox */
 }
 
@@ -1451,9 +1450,9 @@ code[class*='language-'] {
   border-bottom: 0 none;
 }
 
-.notion-collection-card-property,
-.notion-property-relation,
-.notion-page-title-text {
+.notion-collection-card-property
+  .notion-property-relation
+  .notion-page-title-text {
   border-bottom: 1px solid;
 }
 
@@ -1513,9 +1512,9 @@ code[class*='language-'] {
   border-bottom: 0 none;
 }
 
-.notion-collection-row-property,
-.notion-property-relation,
-.notion-page-title-text {
+.notion-collection-row-property
+  .notion-property-relation
+  .notion-page-title-text {
   border-bottom: 1px solid;
 }
 
@@ -1529,7 +1528,7 @@ code[class*='language-'] {
 
 .notion-list-item-property .notion-property-multi_select-item {
   margin-bottom: 0;
-  flex-wrap: nowrap;
+  flex-wrap: none;
 }
 
 .notion-list-item-property .notion-property-multi_select-item:last-of-type {
@@ -1686,8 +1685,8 @@ svg + .notion-page-title-text {
 }
 
 .notion-bookmark {
-  @apply border;
-  @apply border-gray-200;
+  @apply border-2;
+  @apply border-gray-100;
   color: inherit;
 }
 
@@ -2013,7 +2012,7 @@ code.language-mermaid {
 }
 
 .code-toolbar{
-  @apply w-full;
+  @apply w-full shadow-md pb-0;
 }
 
 .mermaid > svg {
@@ -2056,7 +2055,7 @@ code.language-mermaid {
 }
 
 .notion-simple-table td{
-  border: 1px solid #eeeeee !important
+  border: 1px solid var(#eee) !important
 }
 
 /* 竖屏视频高度bug */

@@ -41,6 +41,8 @@ module.exports = withBundleAnalyzer({
       'source.unsplash.com',
       'p1.qhimg.com',
       'webmention.io',
+      'cdn.jsdelivr.net',
+      'minioapi.pjx.ac.cn',
       'img.jxpeng.dev'
     ]
   },

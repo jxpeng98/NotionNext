@@ -17,7 +17,6 @@ const BlogPostArchive = ({ posts = [], archiveTitle, siteInfo }) => {
   } else {
     return (
             <div className=''>
-              <div className="border-b-2 border-gray-200 dark:border-gray-600 w-full my-2" />
                 <div
                     className="pb-4 dark:text-gray-300"
                     id={archiveTitle}
@@ -31,7 +30,7 @@ const BlogPostArchive = ({ posts = [], archiveTitle, siteInfo }) => {
                         post.pageCoverThumbnail = siteInfo?.pageCover
                       }
                       const showPageCover = CONFIG.POST_LIST_COVER && post?.pageCoverThumbnail && !showPreview
-                      return <div key={post.id} className={'cursor-pointer flex flex-row mb-4 h-20 md:flex-row group w-full  dark:border-gray-600 hover:border-indigo-600  dark:hover:border-yellow-600 duration-300 transition-colors justify-between overflow-hidden'}>
+                      return <div key={post.id} className={'cursor-pointer flex flex-row mb-4 h-24 md:flex-row group w-full  dark:border-gray-600 hover:border-indigo-600  dark:hover:border-yellow-600 duration-300 transition-colors justify-between overflow-hidden'}>
 
                             {/* 图片封面 */}
                             {showPageCover && (
@@ -48,7 +47,7 @@ const BlogPostArchive = ({ posts = [], archiveTitle, siteInfo }) => {
                                     {/* 分类 */}
                                     {post?.category && <div className={`flex items-center ${showPreview ? 'justify-center' : 'justify-start'} hidden md:block flex-wrap dark:text-gray-500 text-gray-600 `}>
                                         <Link passHref href={`/category/${post.category}`}
-                                            className="cursor-pointer text-xs font-normal menu-link hover:text-indigo-700  dark:text-gray-100 text-hexo-black-gray transform">
+                                            className="cursor-pointer text-xs font-normal menu-link hover:text-indigo-700  dark:text-gray-600 transform">
                                             {post.category}
                                         </Link>
                                     </div>}
@@ -61,10 +60,12 @@ const BlogPostArchive = ({ posts = [], archiveTitle, siteInfo }) => {
                                         <span className='menu-link '>{post.title}</span>
                                     </Link>
                                 </div>
+
                                 {/* 摘要 */}
                                     {/* <p className="line-clamp-1 replace my-3 2xl:my-0 text-gray-700  dark:text-gray-300 text-xs font-light leading-tight">
                                         {post.summary}
                                     </p> */}
+
                                 <div className="md:flex-nowrap flex-wrap md:justify-start inline-block">
                                     <div>
                                         {' '}
@@ -78,7 +79,6 @@ const BlogPostArchive = ({ posts = [], archiveTitle, siteInfo }) => {
                         </div>
                     })}
                 </ul>
-                {/* add a line to separate the archive */}
             </div>
     )
   }

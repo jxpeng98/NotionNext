@@ -12,8 +12,8 @@ const ShareBar = ({ post }) => {
 
   const shareUrl = BLOG.LINK + router.asPath
 
-  return <div className='m-1 overflow-x-auto w-full'>
-        <div className='flex w-full justify-left'>
+  return <div className='m-1 overflow-x-auto'>
+        <div className='flex w-full md:justify-end'>
             <ShareButtons shareUrl={shareUrl} title={post.title} image={post.pageCover} body={
                 post?.title +
                 ' | ' +

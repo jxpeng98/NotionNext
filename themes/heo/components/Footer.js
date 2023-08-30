@@ -31,7 +31,6 @@ const Footer = ({ title }) => {
                 <SocialButton />
             </div>
 
-            <AdSlot type='native'/>
             <br />
 
             {/* 底部页面信息 */}
@@ -41,7 +40,7 @@ const Footer = ({ title }) => {
                 <a href='https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral' className='mr-1'>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <Image
-                    src="https://img.jxpeng.dev/2023-07-fdb8e19f89df3d1d0cd86bec5e725bc2.webp"
+                    src="https://minioapi.pjx.ac.cn/img1/2023/08/5007652236d013d564e0b761104699d8.webp"
                     alt="upyun"
                     height={20}
                     width={60}

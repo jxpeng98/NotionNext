@@ -22,7 +22,7 @@ export default function ModalVideo({
 
             {/* Video thumbnail */}
             <div>
-                <div className="relative flex justify-center mb-8" data-aos="zoom-y-out" data-aos-delay="450ms">
+                <div className="relative flex justify-center mb-8" data-aos="zoom-y-out" data-aos-delay="450">
                     <div className="flex flex-col justify-center">
                         <LazyImage src={thumb} width={thumbWidth} height={thumbHeight} alt={thumbAlt} />
                         <svg className="absolute inset-0 max-w-full mx-auto md:max-w-none h-auto" width="768" height="432" viewBox="0 0 768 432" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -99,11 +99,12 @@ export default function ModalVideo({
                                 </video> */}
                                 <div>
                                     <iframe
-                                        className="video-iframe aspect-video w-screen md:w-[800px] mx-auto border-0"
+                                        className="video-iframe aspect-video w-screen md:w-[800px] mx-auto"
                                         src={CONFIG.HERO_VIDEO_IFRAME}
                                         scrolling="no"
+                                        border="0"
                                         frameBorder="no"
-                                        allowfullscreen
+                                        allowfullscreen="true"
                                     ></iframe>
                                 </div>
 

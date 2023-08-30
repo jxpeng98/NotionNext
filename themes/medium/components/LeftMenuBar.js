@@ -12,5 +12,5 @@ export default function LeftMenuBar () {
         </Link>
       </section>
     </div>
-  )
+  );
 }

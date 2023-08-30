@@ -53,9 +53,9 @@ const Hero = props => {
 
             <div className="text-white absolute flex flex-col h-full items-center justify-center w-full ">
                 {/* 站点标题 */}
-                {/* <div className='text-4xl md:text-5xl shadow-text'>{siteInfo?.title}</div> */}
+                <div className='text-4xl md:text-5xl shadow-text'>{siteInfo?.title}</div>
                 {/* 站点欢迎语 */}
-                <div className='mt-2 h-12 items-center text-center shadow-text text-white text-4xl'>
+                <div className='mt-2 h-12 items-center text-center shadow-text text-white text-lg'>
                     <span id='typed' />
                 </div>
                 {/* 滚动按钮 */}
@@ -65,7 +65,7 @@ const Hero = props => {
                 </div>
             </div>
 
-            <LazyImage priority={true} id='header-cover' src={siteInfo?.pageCover}
+            <LazyImage priority={true} id='header-cover'src={siteInfo?.pageCover}
                 className={`header-cover object-center w-full h-screen object-cover ${CONFIG.HOME_NAV_BACKGROUND_IMG_FIXED ? 'fixed' : ''}`} />
 
         </header>

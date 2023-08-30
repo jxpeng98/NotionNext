@@ -98,7 +98,7 @@ const BlogPostCard = ({ post, showSummary }) => {
             data-aos-duration="500"
             data-aos-delay="100"
             data-aos-once="true"
-            data-aos-anchor-placement="top-bottom" className="overflow-ellipsis truncate">
+            data-aos-anchor-placement="top-bottom"className="overflow-ellipsis truncate">
               <NotionPage post={post} />
             </div>
           )}

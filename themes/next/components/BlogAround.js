@@ -28,5 +28,5 @@ export default function BlogAround ({ prev, next }) {
 
       </Link>}
     </section>
-  )
+  );
 }

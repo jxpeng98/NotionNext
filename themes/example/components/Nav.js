@@ -2,8 +2,6 @@ import BLOG from '@/blog.config'
 import { useGlobal } from '@/lib/global'
 import CONFIG from '../config'
 import { MenuItemDrop } from './MenuItemDrop'
-import DarkModeButton from '@/components/DarkModeButton'
-import React from 'react'
 
 /**
  * 菜单导航
@@ -38,12 +36,7 @@ export const Nav = (props) => {
         <nav className="w-full bg-white md:pt-0 px-6 relative z-20 border-t border-b border-gray-light dark:border-hexo-black-gray dark:bg-black">
             <div className="container mx-auto max-w-4xl md:flex justify-between items-center text-sm md:text-md md:justify-start">
                 <ul className="w-full text-center md:text-left flex flex-wrap justify-center items-stretch md:justify-start md:items-start">
-                  <li className="cursor-pointer">
-                  <div className='rounded py-0 md:pl-0 md:mr-2 my-3 md:pr-2 text-gray-700 dark:text-gray-200 no-underline md:border-r border-gray-light'>
-                    <DarkModeButton/>
-                  </div>
-                  </li>
-                  {/* {links.map(link => <NormalMenuItem key={link?.id} link={link}/>)} */}
+                    {/* {links.map(link => <NormalMenuItem key={link?.id} link={link}/>)} */}
                     {links.map(link => <MenuItemDrop key={link?.id} link={link} />)}
                 </ul>
                 {/* <div className="w-full md:w-1/3 text-center md:text-right"> */}

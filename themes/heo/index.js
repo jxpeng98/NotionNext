@@ -1,7 +1,7 @@
 import CONFIG from './config'
 
 import CommonHead from '@/components/CommonHead'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import Footer from './components/Footer'
 import SideRight from './components/SideRight'
 import NavBar from './components/NavBar'
@@ -24,14 +24,15 @@ import ShareBar from '@/components/ShareBar'
 import Link from 'next/link'
 import CategoryBar from './components/CategoryBar'
 import { Transition } from '@headlessui/react'
-// import dynamic from 'next/dynamic'
 import { Style } from './style'
 import { NoticeBar } from './components/NoticeBar'
-import { HashTag, Home } from '@/components/HeroIcons'
+import { HashTag } from '@/components/HeroIcons'
 import LatestPostsGroup from './components/LatestPostsGroup'
 import FloatTocButton from './components/FloatTocButton'
 import replaceSearchResult from '@/components/Mark'
-// import LazyImage from '@/components/LazyImage'
+import LazyImage from '@/components/LazyImage'
+// import WWAds from '@/components/WWAds'
+// import { AdSlot } from '@/components/GoogleAdsense'
 
 /**
  * 基础布局 采用上中下布局，移动端使用顶部侧边导航栏
@@ -68,6 +69,7 @@ const LayoutBase = props => {
 
                 </div>
             </main>
+
             {/* 页脚 */}
             <Footer title={siteInfo?.title || BLOG.TITLE} />
         </div>
@@ -86,7 +88,10 @@ const LayoutIndex = (props) => {
         <div id='nav-bar-wrapper' className='h-16'><NavBar {...props} /></div>
         {/* 通知横幅 */}
         <NoticeBar />
-        {/* <Hero {...props} /> */}
+        {/* <Hero {...props} />
+        <div className='max-w-[86rem] mx-auto px-3'>
+          <WWAds className='w-full' orientation='horizontal' />
+        </div> */}
     </header>
 
   // 右侧栏 用户信息+标签列表
@@ -226,9 +231,10 @@ const LayoutSlug = props => {
   return (
         <LayoutBase {...props} headerSlot={headerSlot} showCategory={false} showTag={false} slotRight={slotRight}>
             <div className="w-full max-w-5xl lg:hover:shadow lg:border rounded-2xl lg:px-2 lg:py-4 bg-white dark:bg-[#18171d] dark:border-gray-600 article">
+
                 {lock && <ArticleLock validPassword={validPassword} />}
 
-                {!lock && <div id="article-wrapper" className="overflow-x-auto flex-grow mx-auto w-full md:px-5 ">
+                {!lock && <div id="article-wrapper" className="overflow-x-auto flex-grow mx-auto md:w-full md:px-5 ">
 
                     <article
                         data-aos="fade-up"
@@ -238,7 +244,9 @@ const LayoutSlug = props => {
                         itemScope itemType="https://schema.org/Movie" className="subpixel-antialiased overflow-y-hidden" >
                         {/* Notion文章主体 */}
                         <section className='px-5 justify-center mx-auto'>
+                            {/* <WWAds orientation='horizontal' className='w-full'/> */}
                             {post && <NotionPage post={post} />}
+                            {/* <WWAds orientation='horizontal' className='w-full'/> */}
                         </section>
 
                         {/* 分享 */}
@@ -256,12 +264,16 @@ const LayoutSlug = props => {
                     </article>
 
                     <div className={`${commentEnable && post ? '' : 'hidden'}`}>
+
                         <hr className='my-4 border-dashed' />
 
                         {/* 评论互动 */}
                         <div className="duration-200 overflow-x-auto px-5">
                             <div className='text-2xl dark:text-white'><i className='fas fa-comment mr-1' />{locale.COMMON.COMMENTS}</div>
                             <Comment frontMatter={post} className='' />
+                            {/* <div className='py-2'>
+                             <AdSlot/>
+                            </div> */}
                         </div>
 
                     </div>
@@ -283,7 +295,7 @@ const Layout404 = props => {
   const { meta, siteInfo } = props
   const { onLoading } = useGlobal()
   return (
-        <div id='theme-heo' className='bg-[#f7f9fe] dark:bg-[#18171d] h-full min-h-screen flex flex-col dark:text-white'>
+        <div id='theme-heo' className='bg-[#f7f9fe] h-full min-h-screen flex flex-col'>
             {/* 网页SEO */}
             <CommonHead meta={meta} siteInfo={siteInfo} />
             <Style />
@@ -312,18 +324,16 @@ const Layout404 = props => {
                     >
 
                         {/* 404卡牌 */}
-                        <div className='error-content flex flex-col md:flex-row w-full mt-12 h-[30rem] md:h-96 justify-center items-center bg-white border dark:border-0 rounded-3xl dark:bg-[#18171d]'>
+                        <div className='error-content flex flex-col md:flex-row w-full mt-12 h-[30rem] md:h-96 justify-center items-center bg-white border rounded-3xl'>
                             {/* 左侧动图 */}
-                          {/*
                             <LazyImage className="error-img h-60 md:h-full p-4" src={'https://bu.dusays.com/2023/03/03/6401a7906aa4a.gif'}></LazyImage>
-                          */}
+
                             {/* 右侧文字 */}
-                            <div className='error-info flex-1 flex flex-col justify-center items-center space-y-4 text-black dark:text-white'>
+                            <div className='error-info flex-1 flex flex-col justify-center items-center space-y-4'>
                                 <h1 className='error-title font-extrabold md:text-9xl text-7xl'>404</h1>
                                 <div>请尝试站内搜索寻找文章</div>
-                                <div>Please try again</div>
                                 <Link href='/'>
-                                    <button className='bg-indigo-600 dark:bg-yellow-600 px-6 py-1 text-white shadow rounded-lg hover:bg-indigo-400 dark:hover:bg-yellow-400 hover:shadow-md duration-200 transition-all'><Home className={'w-6 h-6 stroke-white stroke-2 '}/></button>
+                                    <button className='bg-blue-500 p-2 text-white shadow rounded-lg hover:bg-blue-600 hover:shadow-md duration-200 transition-all'>回到主页</button>
                                 </Link>
                             </div>
                         </div>

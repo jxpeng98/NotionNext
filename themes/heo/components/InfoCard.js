@@ -3,7 +3,7 @@ import { ArrowRightCircle, GlobeAlt } from '@/components/HeroIcons'
 import LazyImage from '@/components/LazyImage'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-// import { useState } from 'react'
+import { useState } from 'react'
 import CONFIG from '../config'
 import Announcement from './Announcement'
 import Card from './Card'
@@ -22,26 +22,16 @@ export function InfoCard(props) {
   return (
         <Card className='bg-indigo-600 dark:bg-[#1e1e1e] text-white flex flex-col w-72 overflow-hidden relative'>
             {/* 信息卡牌第一行 */}
-            {/* <div className='flex justify-between'> */}
+            <div className='flex justify-between'>
                 {/* 问候语 */}
                 {/* <GreetingsWords /> */}
-                {/* <div className={`${isSlugPage ? 'absolute right-0 -mt-8 -mr-5 hover:opacity-0 hover:scale-150 blur' : 'cursor-pointer'} justify-center items-center flex dark:text-gray-100 transform transitaion-all duration-200`}> */}
-                {/*    <LazyImage src={siteInfo?.icon} className='rounded-full' width={isSlugPage ? 100 : 28} alt={BLOG.AUTHOR} /> */}
-                {/* </div> */}
-            {/* </div> */}
-
-            <h2 className='flex text-3xl font-extrabold mt-3 justify-between items-center'>
-                {BLOG.AUTHOR}
+              <h2 className='text-3xl font-extrabold mt-3'>
+                              {BLOG.AUTHOR}
+                          </h2>
                 <div className={`${isSlugPage ? 'absolute right-0 -mt-8 -mr-5 hover:opacity-0 hover:scale-150 blur' : 'cursor-pointer'} justify-center items-center flex dark:text-gray-100 transform transitaion-all duration-200`}>
-                  <LazyImage
-                    src={siteInfo?.icon}
-                    className='rounded-full ml-1'
-                    height = 'auto'
-                    width ={60}
-                    alt={BLOG.AUTHOR}
-                  />
-              </div>
-            </h2>
+                    <LazyImage src={siteInfo?.icon} className='rounded-full ml-1' height = 'auto' width={isSlugPage ? 100 : 50} alt={BLOG.AUTHOR} />
+                </div>
+            </div>
 
             {/* 公告栏 */}
             <div>
@@ -49,7 +39,7 @@ export function InfoCard(props) {
             </div>
 
             <div className='flex justify-between'>
-                <div className='flex space-x-3  hover:text-black dark:hover:text-white'>
+                <div className='flex space-x-2  hover:text-black dark:hover:text-white'>
                     {/* 两个社交按钮 */}
                     <div className=' p-2 rounded-full w-10 h-10 items-center flex justify-center transition-colors duration-200 dark:bg-[#1e1e1e] dark:hover:bg-black hover:bg-white'>
                         <Link href={BLOG.WEBURL} alt={BLOG.AUTHOR}><GlobeAlt className={'w-6 h-6'} /></Link>

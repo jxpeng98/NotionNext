@@ -12,7 +12,7 @@ import { useRouter } from 'next/router'
  * @param sliceCount 截取展示的数量 默认6
  * @constructor
  */
-export default function LatestPostsGroupMini({ latestPosts, siteInfo }) {
+export default function LatestPostsGroupMini ({ latestPosts, siteInfo }) {
   // 获取当前路径
   const currentPath = useRouter().asPath
   const { locale } = useGlobal()
@@ -29,24 +29,24 @@ export default function LatestPostsGroupMini({ latestPosts, siteInfo }) {
   })
 
   return <>
-    <div className=" mb-2 px-1 flex flex-nowrap justify-between">
-      <div>
-        <i className="mr-2 fas fas fa-history" />
-        {locale.COMMON.LATEST_POSTS}
-      </div>
-    </div>
-    {latestPosts.map(post => {
-      const selected = currentPath === `${BLOG.SUB_PATH}/${post.slug}`
+        <div className=" mb-2 px-1 flex flex-nowrap justify-between">
+            <div>
+                <i className="mr-2 fas fas fa-history" />
+                {locale.COMMON.LATEST_POSTS}
+            </div>
+        </div>
+        {latestPosts.map(post => {
+          const selected = currentPath === `${BLOG.SUB_PATH}/${post.slug}`
 
       // const headerImage = post?.pageCoverThumbnail ? post.pageCoverThumbnail : siteInfo?.pageCover
 
-      return (
-        (<Link
-            key={post.id}
-            title={post.title}
-            href={`${BLOG.SUB_PATH}/${post.slug}`}
-            passHref
-            className={'my-3 flex'}>
+          return (
+            (<Link
+                    key={post.id}
+                    title={post.title}
+                    href={`${BLOG.SUB_PATH}/${post.slug}`}
+                    passHref
+                    className={'my-3 flex'}>
 
             {/*
               <div className="w-20 h-14 overflow-hidden relative">

@@ -5,7 +5,7 @@ import { useGlobal } from '@/lib/global'
 const TagItem = ({ tag, selected }) => {
   const { locale } = useGlobal()
   if (!tag) {
-    <div> ${ locale.COMMON.NOTAG } </div>
+    <div> { locale.COMMON.NOTAG } </div>
   }
   return (
     <Link
@@ -21,7 +21,7 @@ const TagItem = ({ tag, selected }) => {
         </div>
       </li>
     </Link>
-  )
+  );
 }
 
 export default TagItem
