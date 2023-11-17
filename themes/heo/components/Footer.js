@@ -52,6 +52,18 @@ const Footer = ({ title }) => {
             <div id='footer-bottom-right'>
                 {siteConfig('BEI_AN') && <><i className='fas fa-shield-alt' /> <a href='https://beian.miit.gov.cn/' className='mr-2'>{siteConfig('BEI_AN')}</a></>}
 
+                {siteConfig('GONGAN_BEIAN') && (
+                    <a href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802034173' className='mr-2 inline-flex items-center'>
+                        <Image
+                            src="https://minioapi.pjx.ac.cn/img1/2023/09/131bfa275fccc72869b3bfa62e166257.png"
+                            alt="公安备案"
+                            height={2}
+                            width={15}
+                            className="mr-1" // use Tailwind CSS for margin. Adjust as necessary
+                        />
+                        {siteConfig('GONGAN_BEIAN')}
+                    </a>
+                )}
                 <span className='hidden busuanzi_container_site_pv'>
                     <i className='fas fa-eye' /><span className='px-1 busuanzi_value_site_pv'> </span>  </span>
                 <span className='pl-2 hidden busuanzi_container_site_uv'>
