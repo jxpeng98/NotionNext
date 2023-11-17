@@ -1,7 +1,8 @@
+import BLOG from '@/blog.config'
 import { Home } from '@/components/HeroIcons'
 // import LazyImage from '@/components/LazyImage'
 import Link from 'next/link'
-import { siteConfig } from '@/lib/config'
+import React from 'react'
 
 const Logo = props => {
   const { siteInfo } = props

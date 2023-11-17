@@ -1,4 +1,4 @@
-import { siteConfig } from '@/lib/config'
+import BLOG from '@/blog.config'
 import { loadExternalResource } from '@/lib/utils'
 import { useEffect } from 'react'
 
@@ -6,14 +6,12 @@ import { useEffect } from 'react'
  * 二维码生成
  */
 export default function QrCode({ value }) {
-  const qrCodeCDN = siteConfig('QR_CODE_CDN')
-
   useEffect(() => {
     let qrcode
     if (!value) {
       return
     }
-    loadExternalResource(qrCodeCDN, 'js').then(url => {
+    loadExternalResource(BLOG.QR_CODE_CDN, 'js').then(url => {
       const QRCode = window.QRCode
       qrcode = new QRCode(document.getElementById('qrcode'), {
         text: value,

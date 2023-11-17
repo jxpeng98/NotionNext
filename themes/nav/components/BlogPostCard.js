@@ -1,14 +1,16 @@
+import BLOG from '@/blog.config'
 import Link from 'next/link'
 import NotionIcon from './NotionIcon'
 import { useRouter } from 'next/router'
+import React from 'react'
 
 const BlogPostCard = ({ post, className }) => {
   const router = useRouter()
   const currentSelected = router.asPath.split('?')[0] === '/' + post.slug
-  const pageIcon = post.pageIcon.indexOf('amazonaws.com') !== -1 ? post.pageIcon + '&width=88' : post.pageIcon
+  const pageIcon = post.pageIcon.indexOf("amazonaws.com")!=-1 ? post.pageIcon+"&width=88" : post.pageIcon
   return (
     <Link href={`${removeHttp(post.slug)}`} target={(checkRemoveHttp(post.slug) ? '_blank' : '_self')} passHref>
-        <div key={post.id} className={`${className} h-full rounded-2xl p-4 dark:bg-neutral-800 cursor-pointer bg-white hover:bg-white dark:hover:bg-gray-800 ${currentSelected ? 'bg-green-50 text-green-500' : ''}`}>
+        <div key={post.id} className={`${className} h-full rounded-lg p-4 dark:bg-neutral-800 cursor-pointer bg-white hover:bg-white rounded-2xl dark:hover:bg-gray-800 ${currentSelected ? 'bg-green-50 text-green-500' : ''}`}>
                 <div className="stack-entry w-full flex space-x-3 select-none dark:text-neutral-200">
                     <NotionIcon icon={pageIcon} size='10' className='text-6xl w-11 h-11 mx-1 my-0 flex-none' />
                     <div className="stack-comment flex-auto">
@@ -21,9 +23,9 @@ const BlogPostCard = ({ post, className }) => {
   )
   function removeHttp(str) {
     // 检查字符串是否包含http
-    if (str.includes('http')) {
+    if (str.includes("http")) {
       // 如果包含，找到http的位置
-      const index = str.indexOf('http');
+      let index = str.indexOf("http");
       // 返回http之后的部分
       return str.slice(index, str.length);
     } else {
@@ -33,9 +35,11 @@ const BlogPostCard = ({ post, className }) => {
   }
   function checkRemoveHttp(str) {
     // 检查字符串是否包含http
-    if (str.includes('http')) {
+    if (str.includes("http")) {
       // 如果包含，找到http的位置
-      return str.indexOf('http') > -1
+      let index = str.indexOf("http");
+      // 包含
+      return true;
     } else {
       // 不包含
       return false;

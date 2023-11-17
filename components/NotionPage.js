@@ -4,10 +4,11 @@ import mediumZoom from '@fisch0920/medium-zoom'
 import React, { useEffect, useRef } from 'react'
 // import { Code } from 'react-notion-x/build/third-party/code'
 import TweetEmbed from 'react-tweet-embed'
+
+import BLOG from '@/blog.config'
 import 'katex/dist/katex.min.css'
 import { mapImgUrl } from '@/lib/notion/mapImage'
 import { isBrowser } from '@/lib/utils'
-import { siteConfig } from '@/lib/config'
 
 const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then(async (m) => {
@@ -62,7 +63,7 @@ const NotionPage = ({ post, className }) => {
 
   useEffect(() => {
     // 将相册gallery下的图片加入放大功能
-    if (siteConfig('POST_DISABLE_GALLERY_CLICK')) {
+    if (JSON.parse(BLOG.POST_DISABLE_GALLERY_CLICK)) {
       setTimeout(() => {
         if (isBrowser) {
           const imgList = document?.querySelectorAll('.notion-collection-card-cover img')

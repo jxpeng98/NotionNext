@@ -15,7 +15,7 @@ import Link from 'next/link'
 import { TopBar } from './components/TopBar'
 import { Header } from './components/Header'
 import { NavBar } from './components/NavBar'
-import { siteConfig } from '@/lib/config'
+import BLOG from '@/blog.config'
 import { SideBar } from './components/SideBar'
 import JumpToTopButton from './components/JumpToTopButton'
 import { Footer } from './components/Footer'
@@ -45,7 +45,7 @@ const LayoutBase = props => {
             <CommonHead meta={meta}/>
             <Style/>
 
-            {siteConfig('SIMPLE_TOP_BAR', null, CONFIG) && <TopBar {...props} />}
+            {CONFIG.TOP_BAR && <TopBar {...props} />}
 
             {/* 顶部LOGO */}
             <Header {...props} />
@@ -54,7 +54,7 @@ const LayoutBase = props => {
             <NavBar {...props} />
 
             {/* 主体 */}
-            <div id='container-wrapper' className={(JSON.parse(siteConfig('LAYOUT_SIDEBAR_REVERSE')) ? 'flex-row-reverse' : '') + ' w-full flex-1 flex items-start max-w-9/10 mx-auto pt-12'}>
+            <div id='container-wrapper' className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + ' w-full flex-1 flex items-start max-w-9/10 mx-auto pt-12'}>
                 <div id='container-inner ' className='w-full flex-grow min-h-fit'>
                     <Transition
                         show={!onLoading}
@@ -107,7 +107,7 @@ const LayoutIndex = props => {
 const LayoutPostList = props => {
   return (
         <LayoutBase {...props}>
-            {siteConfig('POST_LIST_STYLE') === 'page' ? <BlogListPage {...props} /> : <BlogListScroll {...props} />}
+            {BLOG.POST_LIST_STYLE === 'page' ? <BlogListPage {...props} /> : <BlogListScroll {...props} />}
         </LayoutBase>
   )
 }

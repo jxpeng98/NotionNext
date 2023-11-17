@@ -1,4 +1,4 @@
-import { siteConfig } from '@/lib/config'
+import BLOG from '@/blog.config'
 import { useGlobal } from '@/lib/global'
 import copy from 'copy-to-clipboard'
 import dynamic from 'next/dynamic'
@@ -57,8 +57,8 @@ const QrCode = dynamic(() => import('@/components/QrCode'), { ssr: false })
  * @returns
  */
 const ShareButtons = ({ shareUrl, title, body, image }) => {
-  const services = siteConfig('POSTS_SHARE_SERVICES').split(',')
-  const titleWithSiteInfo = title + ' | ' + siteConfig('TITLE')
+  const services = BLOG.POSTS_SHARE_SERVICES.split(',')
+  const titleWithSiteInfo = title + ' | ' + BLOG.TITLE
   const { locale } = useGlobal()
   const [qrCodeShow, setQrCodeShow] = useState(false)
 
@@ -93,7 +93,7 @@ const ShareButtons = ({ shareUrl, title, body, image }) => {
                         <FacebookMessengerShareButton
                             key={singleService}
                             url={shareUrl}
-                            appId={siteConfig('FACEBOOK_APP_ID')}
+                            appId={BLOG.FACEBOOK_APP_ID}
                             className="mx-1"
                         >
                             <FacebookMessengerIcon size={32} round />

@@ -1,6 +1,6 @@
+import BLOG from '@/blog.config'
 // import CONFIG from '@/themes/heo/config'
 // import LazyImage from '@/components/LazyImage'
-import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 // import Image from 'next/image'
 import Link from 'next/link'
@@ -44,7 +44,7 @@ export default function LatestPostsGroupMini ({ latestPosts, siteInfo }) {
             (<Link
                     key={post.id}
                     title={post.title}
-                    href={`${siteConfig('SUB_PATH', '')}/${post.slug}`}
+                    href={`${BLOG.SUB_PATH}/${post.slug}`}
                     passHref
                     className={'my-3 flex'}>
 
