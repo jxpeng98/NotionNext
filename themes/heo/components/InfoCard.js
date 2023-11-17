@@ -26,10 +26,10 @@ export function InfoCard(props) {
                 {/* 问候语 */}
                 {/* <GreetingsWords /> */}
               <h2 className='text-3xl font-extrabold mt-3'>
-                              {BLOG.AUTHOR}
+                              {siteConfig('AUTHOR')}
                           </h2>
                 <div className={`${isSlugPage ? 'absolute right-0 -mt-8 -mr-5 hover:opacity-0 hover:scale-150 blur' : 'cursor-pointer'} justify-center items-center flex dark:text-gray-100 transform transitaion-all duration-200`}>
-                    <LazyImage src={siteInfo?.icon} className='rounded-full ml-1' height = 'auto' width={isSlugPage ? 100 : 50} alt={BLOG.AUTHOR} />
+                    <LazyImage src={siteInfo?.icon} className='rounded-full ml-1' height = 'auto' width={isSlugPage ? 100 : 50} alt={siteConfig('AUTHOR')} />
                 </div>
             </div>
 
@@ -42,7 +42,7 @@ export function InfoCard(props) {
                 <div className='flex space-x-2  hover:text-black dark:hover:text-white'>
                     {/* 两个社交按钮 */}
                     <div className=' p-2 rounded-full w-10 h-10 items-center flex justify-center transition-colors duration-200 dark:bg-[#1e1e1e] dark:hover:bg-black hover:bg-white'>
-                        <Link href={BLOG.WEBURL} alt={BLOG.AUTHOR}><GlobeAlt className={'w-6 h-6'} /></Link>
+                        <Link href={siteConfig('WEBURL')} alt={siteConfig('AUTHOR')}><GlobeAlt className={'w-6 h-6'} /></Link>
                     </div>
                     <div className=' p-2 rounded-full w-10 h-10 items-center flex justify-center transition-colors duration-200 dark:bg-[#1e1e1e] dark:hover:bg-black hover:bg-white'>
                         <Link href={siteConfig('HEO_INFO_CARD_URL', null, CONFIG)}><i className='fab fa-github text-xl' />

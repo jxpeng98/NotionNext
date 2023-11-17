@@ -1,6 +1,6 @@
 import SocialButton from './SocialButton'
 import { siteConfig } from '@/lib/config'
-import { AdSlot } from '@/components/GoogleAdsense'
+// import { AdSlot } from '@/components/GoogleAdsense'
 // import LazyImage from '@/components/LazyImage'
 import Image from 'next/image'
 // import DarkModeButton from '@/components/DarkModeButton'
@@ -46,7 +46,7 @@ const Footer = ({ title }) => {
                 {/* {` ${BLOG.VERSION} `} */}
                 <i className='fas fa-copyright mx-1' /> {`${copyrightDate}`}
                 {/* <i className='mx-1 animate-pulse fas fa-heart' /> */}
-                <a href={BLOG.WEBURL} className='underline font-bold dark:text-gray-300 ml-1'>{BLOG.AUTHOR}</a>
+                <a href={siteConfig('WEBURL')} className='underline font-bold dark:text-gray-300 ml-1'>{siteConfig('AUTHOR')}</a>
               </div>
 
             <div id='footer-bottom-right'>
