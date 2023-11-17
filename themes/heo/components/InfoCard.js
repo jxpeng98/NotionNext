@@ -1,4 +1,4 @@
-import BLOG from '@/blog.config'
+import { siteConfig } from '@/lib/config'
 import { ArrowRightCircle, GlobeAlt } from '@/components/HeroIcons'
 import LazyImage from '@/components/LazyImage'
 import Link from 'next/link'
@@ -17,8 +17,8 @@ export function InfoCard(props) {
   const { siteInfo, notice } = props
   const router = useRouter()
   // 在文章详情页特殊处理
-  const isSlugPage = router.pathname === '/[...slug]'
-
+  const isSlugPage = router.pathname.indexOf('/[prefix]') === 0
+  console.log('TITLE:', siteConfig('TITLE'))
   return (
         <Card className='bg-indigo-600 dark:bg-[#1e1e1e] text-white flex flex-col w-72 overflow-hidden relative'>
             {/* 信息卡牌第一行 */}
@@ -45,7 +45,7 @@ export function InfoCard(props) {
                         <Link href={BLOG.WEBURL} alt={BLOG.AUTHOR}><GlobeAlt className={'w-6 h-6'} /></Link>
                     </div>
                     <div className=' p-2 rounded-full w-10 h-10 items-center flex justify-center transition-colors duration-200 dark:bg-[#1e1e1e] dark:hover:bg-black hover:bg-white'>
-                        <Link href={CONFIG.INFO_CARD_URL} alt="GitHub"><i className='fab fa-github text-xl' />
+                        <Link href={siteConfig('HEO_INFO_CARD_URL', null, CONFIG)}><i className='fab fa-github text-xl' />
                         </Link>
                     </div>
                 </div>

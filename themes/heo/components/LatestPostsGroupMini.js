@@ -1,6 +1,5 @@
-import BLOG from '@/blog.config'
-// import CONFIG from '@/themes/heo/config'
-// import LazyImage from '@/components/LazyImage'
+import LazyImage from '@/components/LazyImage'
+import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 // import Image from 'next/image'
 import Link from 'next/link'
@@ -36,7 +35,7 @@ export default function LatestPostsGroupMini ({ latestPosts, siteInfo }) {
             </div>
         </div>
         {latestPosts.map(post => {
-          const selected = currentPath === `${BLOG.SUB_PATH}/${post.slug}`
+          const selected = currentPath === `${siteConfig('SUB_PATH', '')}/${post.slug}`
 
       // const headerImage = post?.pageCoverThumbnail ? post.pageCoverThumbnail : siteInfo?.pageCover
 
@@ -44,7 +43,7 @@ export default function LatestPostsGroupMini ({ latestPosts, siteInfo }) {
             (<Link
                     key={post.id}
                     title={post.title}
-                    href={`${BLOG.SUB_PATH}/${post.slug}`}
+                    href={`${siteConfig('SUB_PATH', '')}/${post.slug}`}
                     passHref
                     className={'my-3 flex'}>
 
