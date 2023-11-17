@@ -1,20 +1,14 @@
-import React from 'react'
-import BLOG from '@/blog.config'
 import SocialButton from './SocialButton'
 import { AdSlot } from '@/components/GoogleAdsense'
 // import LazyImage from '@/components/LazyImage'
 import Image from 'next/image'
-// import DarkModeButton from '@/components/DarkModeButton'
+import { siteConfig } from '@/lib/config'
 
 const Footer = ({ title }) => {
   const d = new Date()
   const currentYear = d.getFullYear()
-  const copyrightDate = (function () {
-    if (Number.isInteger(BLOG.SINCE) && BLOG.SINCE < currentYear) {
-      return BLOG.SINCE + '-' + currentYear
-    }
-    return currentYear
-  })()
+  const since = siteConfig('SINCE')
+  const copyrightDate = parseInt(since) < currentYear ? since + '-' + currentYear : currentYear
 
   return (
         <footer
@@ -47,7 +41,7 @@ const Footer = ({ title }) => {
                     className="mr-1" // use Tailwind CSS for margin. Adjust as necessary
                   />
                 </a>
-                <a href='https://github.com/tangly1024/NotionNext' className='underline font-bold dark:text-gray-300 mr-1'>NotionNext</a>
+                   NotionNext {BLOG.VERSION} <i className='fas fa-copyright' /> {`${copyrightDate}`} <i className='mx-1 animate-pulse fas fa-heart' /> <a href={BLOG.LINK} className='underline font-bold  dark:text-gray-300 '>{BLOG.AUTHOR}</a>.
                 {/* {` ${BLOG.VERSION} `} */}
                 <i className='fas fa-copyright mx-1' /> {`${copyrightDate}`}
                 {/* <i className='mx-1 animate-pulse fas fa-heart' /> */}
@@ -59,7 +53,7 @@ const Footer = ({ title }) => {
                     {BLOG.BEI_AN && (
                         <>
                             <i className='fas fa-shield-alt mr-1' />
-                            <a href='https://beian.miit.gov.cn/' className='mr-2 inline-flex items-center'>
+                {BLOG.BEI_AN && <><i className='fas fa-shield-alt' /> <a href='https://beian.miit.gov.cn/' className='mr-2'>{BLOG.BEI_AN}</a></>}
                                 {BLOG.BEI_AN}
                             </a>
                         </>
@@ -82,7 +76,7 @@ const Footer = ({ title }) => {
                 <span className='pl-2 hidden busuanzi_container_site_uv'>
                     <i className='fas fa-users' /> <span className='px-1 busuanzi_value_site_uv'> </span> </span>
 
-                {/* <h1 className='text-xs pt-4 text-light-400 dark:text-gray-400'>{title} {BLOG.BIO && <>|</>} {BLOG.BIO}</h1> */}
+                {/* <h1 className='text-xs pt-4 text-light-400 dark:text-gray-400'>{title} {siteConfig('BIO') && <>|</>} {siteConfig('BIO')}</h1> */}
                 </div>
             </div>
         </div>

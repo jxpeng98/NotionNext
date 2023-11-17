@@ -22,7 +22,7 @@ import SearchNav from './components/SearchNav'
 import BlogPostArchive from './components/BlogPostArchive'
 import { ArticleLock } from './components/ArticleLock'
 import PostHeader from './components/PostHeader'
-import Comment, { commentEnable } from '@/components/Comment'
+import Comment from '@/components/Comment'
 import NotionPage from '@/components/NotionPage'
 import ArticleAdjacent from './components/ArticleAdjacent'
 import ArticleCopyright from './components/ArticleCopyright'
@@ -40,6 +40,7 @@ import replaceSearchResult from '@/components/Mark'
 import LazyImage from '@/components/LazyImage'
 // import WWAds from '@/components/WWAds'
 // import { AdSlot } from '@/components/GoogleAdsense'
+import { siteConfig } from '@/lib/config'
 
 /**
  * 基础布局 采用上中下布局，移动端使用顶部侧边导航栏
@@ -483,7 +484,7 @@ const LayoutCategoryIndex = props => {
           id="category-list"
           className="duration-200 flex flex-wrap m-10 justify-center"
         >
-          {categoryOptions.map(category => {
+          {categoryOptions?.map(category => {
             return (
               <Link
                 key={category.name}
