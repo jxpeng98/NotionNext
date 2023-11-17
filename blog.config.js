@@ -19,8 +19,8 @@ const BLOG = {
 
   AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || 'PENG Jiaxin', // 您的昵称 例如 tangly1024
   BIO: process.env.NEXT_PUBLIC_BIO || 'A father', // 作者简介
-  WEBURL: process.env.NEXT_PUBLIC_WEBURL || 'https://jiaxinpeng.com', // 您的网站地址
-  LINK: process.env.NEXT_PUBLIC_LINK || 'https://pengjiaxin.com', // 网站地址
+  WEBURL: process.env.NEXT_PUBLIC_WEBURL || 'https://www.jiaxinpeng.com', // 您的网站地址
+  LINK: process.env.NEXT_PUBLIC_LINK || 'https://www.pengjiaxin.com', // 网站地址
   KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || 'Jiaxin Peng, PENG Jiaxin, Jiaxin, Blog', // 网站关键词 英文逗号隔开
 
   // 社交链接，不需要可留空白，例如 CONTACT_WEIBO:''
