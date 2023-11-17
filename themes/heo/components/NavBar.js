@@ -8,7 +8,8 @@ import SlideOver from './SlideOver'
 import ReadingProgress from './ReadingProgress'
 import { MenuListTop } from './MenuListTop'
 import { isBrowser } from '@/lib/utils'
-import BLOG from '@/blog.config'
+import { siteConfig } from '@/lib/config'
+
 /**
  * 顶部导航
  * @param {*} param0
@@ -157,7 +158,7 @@ const NavBar = props => {
                 <div className='flex flex-shrink-0 justify-center items-center'>
                     <RandomPostButton {...props} />
                     <SearchButton {...props}/>
-                    {!JSON.parse(BLOG.THEME_SWITCH) && <div className='block'><DarkModeButton {...props} /></div>}
+                    {!JSON.parse(siteConfig('THEME_SWITCH')) && <div className='hidden md:block'><DarkModeButton {...props} /></div>}
                     <ReadingProgress />
 
                     {/* 移动端菜单按钮 */}

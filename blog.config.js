@@ -19,8 +19,8 @@ const BLOG = {
 
   AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || 'PENG Jiaxin', // 您的昵称 例如 tangly1024
   BIO: process.env.NEXT_PUBLIC_BIO || 'A father', // 作者简介
-  WEBURL: process.env.NEXT_PUBLIC_WEBURL || 'https://jiaxinpeng.com', // 您的网站地址
-  LINK: process.env.NEXT_PUBLIC_LINK || 'https://pengjiaxin.com', // 网站地址
+  WEBURL: process.env.NEXT_PUBLIC_WEBURL || 'https://www.jiaxinpeng.com', // 您的网站地址
+  LINK: process.env.NEXT_PUBLIC_LINK || 'https://www.pengjiaxin.com', // 网站地址
   KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || 'Jiaxin Peng, PENG Jiaxin, Jiaxin, Blog', // 网站关键词 英文逗号隔开
 
   // 社交链接，不需要可留空白，例如 CONTACT_WEIBO:''
@@ -113,9 +113,11 @@ const BLOG = {
   PRISM_THEME_LIGHT_PATH: process.env.NEXT_PUBLIC_PRISM_THEME_LIGHT_PATH || 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-solarizedlight.css', // 浅色模式主题
   PRISM_THEME_DARK_PATH: process.env.NEXT_PUBLIC_PRISM_THEME_DARK_PATH || 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css', // 深色模式主题
 
-  CODE_MAC_BAR: process.env.NEXT_PUBLIC_CODE_MAC_BAR || true, // 代码左上角显示mac的红黄绿图标
+  CODE_MAC_BAR: process.env.NEXT_PUBLIC_CODE_MAC_BAR || false, // 代码左上角显示mac的红黄绿图标
   CODE_LINE_NUMBERS: process.env.NEXT_PUBLIC_CODE_LINE_NUMBERS || false, // 是否显示行号
-  CODE_COLLAPSE: process.env.NEXT_PUBLIC_CODE_COLLAPSE || true, // 是否折叠代码框
+  CODE_COLLAPSE: process.env.NEXT_PUBLIC_CODE_COLLAPSE || false, // 是否支持折叠代码框
+  CODE_COLLAPSE_EXPAND_DEFAULT: process.env.NEXT_PUBLIC_CODE_COLLAPSE_EXPAND_DEFAULT || true, // 折叠代码默认是展开状态
+
   // END********代码相关********
 
   // Mermaid 图表CDN
@@ -303,13 +305,11 @@ const BLOG = {
   // HOSTNAME: Webmention绑定之网域，通常即为本站网址
   // TWITTER_USERNAME: 评论显示区域需要的资讯
   // TOKEN: Webmention的API token
-  COMMENT_WEBMENTION: {
-    ENABLE: process.env.NEXT_PUBLIC_WEBMENTION_ENABLE || false,
-    AUTH: process.env.NEXT_PUBLIC_WEBMENTION_AUTH || '',
-    HOSTNAME: process.env.NEXT_PUBLIC_WEBMENTION_HOSTNAME || '',
-    TWITTER_USERNAME: process.env.NEXT_PUBLIC_TWITTER_USERNAME || '',
-    TOKEN: process.env.NEXT_PUBLIC_WEBMENTION_TOKEN || ''
-  },
+  COMMENT_WEBMENTION_ENABLE: process.env.NEXT_PUBLIC_WEBMENTION_ENABLE || false,
+  COMMENT_WEBMENTION_AUTH: process.env.NEXT_PUBLIC_WEBMENTION_AUTH || '',
+  COMMENT_WEBMENTION_HOSTNAME: process.env.NEXT_PUBLIC_WEBMENTION_HOSTNAME || '',
+  COMMENT_WEBMENTION_TWITTER_USERNAME: process.env.NEXT_PUBLIC_TWITTER_USERNAME || '',
+  COMMENT_WEBMENTION_TOKEN: process.env.NEXT_PUBLIC_WEBMENTION_TOKEN || '',
 
   // <---- 评论插件
 

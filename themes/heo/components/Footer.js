@@ -1,7 +1,6 @@
-import React from 'react'
-import BLOG from '@/blog.config'
 import SocialButton from './SocialButton'
-import { AdSlot } from '@/components/GoogleAdsense'
+import { siteConfig } from '@/lib/config'
+// import { AdSlot } from '@/components/GoogleAdsense'
 // import LazyImage from '@/components/LazyImage'
 import Image from 'next/image'
 // import DarkModeButton from '@/components/DarkModeButton'
@@ -9,12 +8,8 @@ import Image from 'next/image'
 const Footer = ({ title }) => {
   const d = new Date()
   const currentYear = d.getFullYear()
-  const copyrightDate = (function () {
-    if (Number.isInteger(BLOG.SINCE) && BLOG.SINCE < currentYear) {
-      return BLOG.SINCE + '-' + currentYear
-    }
-    return currentYear
-  })()
+  const since = siteConfig('SINCE')
+  const copyrightDate = parseInt(since) < currentYear ? since + '-' + currentYear : currentYear
 
   return (
         <footer
@@ -51,39 +46,31 @@ const Footer = ({ title }) => {
                 {/* {` ${BLOG.VERSION} `} */}
                 <i className='fas fa-copyright mx-1' /> {`${copyrightDate}`}
                 {/* <i className='mx-1 animate-pulse fas fa-heart' /> */}
-                <a href={BLOG.WEBURL} className='underline font-bold dark:text-gray-300 ml-1'>{BLOG.AUTHOR}</a>
+                <a href={siteConfig('WEBURL')} className='underline font-bold dark:text-gray-300 ml-1'>{siteConfig('AUTHOR')}</a>
               </div>
 
             <div id='footer-bottom-right'>
-                <div className="flex items-center">
-                    {BLOG.BEI_AN && (
-                        <>
-                            <i className='fas fa-shield-alt mr-1' />
-                            <a href='https://beian.miit.gov.cn/' className='mr-2 inline-flex items-center'>
-                                {BLOG.BEI_AN}
-                            </a>
-                        </>
-                    )}
-                    {BLOG.GONGAN_BEIAN && (
-                        <a href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802034173' className='mr-2 inline-flex items-center'>
-                            <Image
-                                src="https://minioapi.pjx.ac.cn/img1/2023/09/131bfa275fccc72869b3bfa62e166257.png"
-                                alt="公安备案"
-                                height={2}
-                                width={15}
-                                className="mr-1" // use Tailwind CSS for margin. Adjust as necessary
-                            />
-                            {BLOG.GONGAN_BEIAN}
-                        </a>
-                    )}
+                {siteConfig('BEI_AN') && <><i className='fas fa-shield-alt' /> <a href='https://beian.miit.gov.cn/' className='mr-2'>{siteConfig('BEI_AN')}</a></>}
 
+                {siteConfig('GONGAN_BEIAN') && (
+                    <a href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802034173' className='mr-2 inline-flex items-center'>
+                        <Image
+                            src="https://minioapi.pjx.ac.cn/img1/2023/09/131bfa275fccc72869b3bfa62e166257.png"
+                            alt="公安备案"
+                            height={2}
+                            width={15}
+                            className="mr-1" // use Tailwind CSS for margin. Adjust as necessary
+                        />
+                        {siteConfig('GONGAN_BEIAN')}
+                    </a>
+                )}
                 <span className='hidden busuanzi_container_site_pv'>
                     <i className='fas fa-eye' /><span className='px-1 busuanzi_value_site_pv'> </span>  </span>
                 <span className='pl-2 hidden busuanzi_container_site_uv'>
                     <i className='fas fa-users' /> <span className='px-1 busuanzi_value_site_uv'> </span> </span>
 
-                {/* <h1 className='text-xs pt-4 text-light-400 dark:text-gray-400'>{title} {BLOG.BIO && <>|</>} {BLOG.BIO}</h1> */}
-                </div>
+                {/* <h1 className='text-xs pt-4 text-light-400 dark:text-gray-400'>{title} {siteConfig('BIO') && <>|</>} {siteConfig('BIO')}</h1> */}
+
             </div>
         </div>
         </footer >
