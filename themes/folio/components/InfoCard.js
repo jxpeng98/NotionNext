@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import CONFIG from '../config'
 import Announcement from './Announcement'
 import Card from './Card'
+// import { useState } from 'react';
 
 /**
  * 社交信息卡
@@ -59,7 +60,7 @@ export function InfoCard(props) {
  * 欢迎语
  */
 // function GreetingsWords() {
-//   const greetings = CONFIG.INFOCARD_GREETINGS
+//   const greetings = CONFIG.FOLIO_INFOCARD_GREETINGS
 //   const [greeting, setGreeting] = useState(greetings[0])
 //   // 每次点击，随机获取greetings中的一个
 //   const handleChangeGreeting = () => {
