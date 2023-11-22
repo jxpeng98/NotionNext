@@ -49,17 +49,17 @@ const Footer = ({ title }) => {
                 <a href={siteConfig('WEBURL')} className='underline font-bold dark:text-gray-300 ml-1'>{siteConfig('AUTHOR')}</a>
               </div>
 
-            <div id='footer-bottom-right'>
-                {siteConfig('BEI_AN') && <><i className='fas fa-shield-alt' /> <a href='https://beian.miit.gov.cn/' className='mr-2'>{siteConfig('BEI_AN')}</a></>}
+            <div id='footer-bottom-right flex inline-flex items-center'>
+                {siteConfig('BEI_AN') && <><i className='fas fa-shield-alt' /> <a href='https://beian.miit.gov.cn/' className='mr-2 inline-flex'>{siteConfig('BEI_AN')}</a></>}
 
                 {siteConfig('GONGAN_BEIAN') && (
-                    <a href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802034173' className='mr-2 inline-flex items-center'>
+                    <a href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802034173' className='mr-2'>
                         <Image
                             src="https://minioapi.pjx.ac.cn/img1/2023/09/131bfa275fccc72869b3bfa62e166257.png"
                             alt="公安备案"
                             height={2}
-                            width={15}
-                            className="mr-1" // use Tailwind CSS for margin. Adjust as necessary
+                            width={18}
+                            className={'flex inline-flex items-center mr-1'}
                         />
                         {siteConfig('GONGAN_BEIAN')}
                     </a>
