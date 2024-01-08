@@ -79,6 +79,7 @@ const BLOG = {
     'Bitter',
     '"Noto Serif SC"',
     'SimSun',
+    'Palatino',
     '"Times New Roman"',
     'Times',
     'serif',
